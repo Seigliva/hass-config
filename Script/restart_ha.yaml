@@ -1,8 +1,0 @@
-alias: Restart HASS
-sequence:
-  - service: script.tts
-    data:
-      message: restarter hass
-  - delay:
-      seconds: 1
-  - service: homeassistant.restart

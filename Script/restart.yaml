@@ -1,0 +1,7 @@
+alias: 'Restart Jarvis'
+sequence:
+  - service: script.tts
+    data:
+      message: restarter hass
+  - service: shell_command.updatefromgit
+  - service: homeassistant.restart
