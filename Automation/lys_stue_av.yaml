@@ -1,0 +1,11 @@
+alias: Slå av alle stuelys
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: switch.stua
+  from: "on"
+  to: "off"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.stua_2

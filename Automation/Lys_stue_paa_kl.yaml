@@ -1,0 +1,18 @@
+alias: 'Morgen lys'
+initial_state: 'on'
+trigger:
+  platform: time
+  after: '06:45:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  - condition: state
+    entity_id: light.stua_2
+    state: 'off'
+action:
+  - service: light.turn_on

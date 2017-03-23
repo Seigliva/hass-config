@@ -1,0 +1,14 @@
+- platform: icloud
+  username: !secret ios-user
+  password: !secret ios-password
+  
+# - platform: asuswrt
+  # host: 192.168.1.1
+  # username: Superlangbein
+  # password: !secret superlangbein
+  # protocol: telnet
+  
+- platform: ping
+  hosts:
+    hosthome: 192.168.1.25
+    hostspace: 8.8.4.4

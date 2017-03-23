@@ -1,0 +1,1 @@
+garage: ssh pi@192.168.1.161 python garage.py

@@ -1,0 +1,57 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 184
+  unit_system: metric
+  time_zone: Europe/Oslo
+  customize: !include Include/customize.yaml
+########################################
+http:
+  api_password: !secret http-password
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.1.0/24
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+########################################
+
+
+########################################
+frontend:
+config:
+
+updater:
+conversation:
+history:
+logbook:
+logger:
+  default: warn
+  logs:
+    homeassistant.components: critical
+    homeassistant.components.camera: critical
+########################################
+
+
+########################################
+ 
+ 
+########################################
+group: !include_dir_named Groups/
+automation: !include_dir_list Automation/
+script: !include_dir_named Script/
+media_player: !include Include/media_player.yaml
+netatmo: !include Include/netatmo.yaml
+camera: !include Include/camera.yaml
+device_tracker: !include Include/device_tracker.yaml
+ifttt: !include Include/ifttt.yaml
+input_boolean: !include Include/input_boolean.yaml
+notify: !include Include/notify.yaml
+panel_iframe: !include Include/panel_iframe.yaml
+sensor: !include Include/sensor.yaml
+tts: !include Include/tts.yaml
+input_select: !include_dir_named Input/Select/
+light: !include Include/light.yaml
+switch: !include Include/switch.yaml
+shell_command: !include Include/shell_command.yaml
+wemo: !include Include/wemo.yaml

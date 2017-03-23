@@ -1,0 +1,3 @@
+control: hidden
+entities:
+  - input_select.radio

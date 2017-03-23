@@ -1,0 +1,15 @@
+- platform: plex
+  host: 192.168.1.25
+- platform: apple_tv
+  host: 192.168.1.41
+  login_id: 00000000-4fd8-172c-a545-33f73f0a4715
+  name: ATV Stua
+#Stua
+- platform: cast
+  host: 192.168.1.45
+#Lyd
+- platform: cast
+  host: 192.168.1.46
+#Barnerom1
+- platform: cast
+  host: 192.168.1.47

@@ -1,0 +1,6 @@
+control: hidden
+view: yes
+icon: mdi:garage
+entities:
+  - group.garage
+  - camera.utekamera

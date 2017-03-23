@@ -1,0 +1,17 @@
+alias: Fjern Dimming av lys når TV ikke viser noe
+initial_state: 'on'
+trigger:
+  platform: state
+  entity_id: media_player.atv_stua
+  from: "playing"
+  to: "paused"
+  for: '00:00:20'
+condition:
+  - condition: time
+    before: '20:30:00' 
+    after: '18:00:00'
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.h01
+      brightness: 180

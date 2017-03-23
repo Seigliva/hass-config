@@ -1,0 +1,5 @@
+control: hidden
+view: yes
+icon: mdi:sofa
+entities:
+  - group.stue

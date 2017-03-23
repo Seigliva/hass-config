@@ -1,0 +1,71 @@
+###############################
+##  Automations
+###############################
+automation.morgen_radio_ukedager_0700_hjemme:
+  icon: mdi:radio
+automation.varsling_lav_temp_ukedager_0703_hjemme:
+  icon: mdi:snowflake
+
+###############################
+##  Devices
+###############################
+light.alle:
+  hidden: true
+light.gutta:
+  hidden: true
+light.soverom:
+  hidden: true
+light.stua:
+  hidden: true
+###############################
+##  Groups
+###############################
+group.all_automations:
+  control: hidden
+  hidden: false
+  friendly_name: Automations
+
+group.all_scripts:
+  control: hidden
+  hidden: true
+  friendly_name: Script
+
+###############################
+##  Inputs
+###############################
+input_boolean.test_automation:
+  hidden: false
+  icon: mdi:wrench
+
+###############################
+##  Scripts
+###############################
+script.tts:
+  hidden: true
+  icon: mdi:wrench
+script.restart_ha:
+  icon: mdi:restart 
+script.webradio_start:
+  hidden: true
+script.webradio_stop:
+  hidden: true
+
+###############################
+##  Sensors
+###############################
+sensor.speedtest_ping:
+  friendly_name: Ping
+  icon: mdi:signal-variant
+sensor.speedtest_download:
+  friendly_name: Download
+  icon: mdi:download
+sensor.speedtest_upload:
+  friendly_name: Upload
+  icon: mdi:upload
+sensor.phone_to_home:
+  friendly_name: Tid til hjemme
+  
+  
+###############################
+##  Netatmo
+###############################
