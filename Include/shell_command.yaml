@@ -1,2 +1,2 @@
-garage: ssh pi@192.168.1.161 gpio toggle 0 && sleep 1 && gpio toggle 0
+garage: ssh pi@192.168.1.161 'gpio toggle 0 && sleep 1 && gpio toggle 0'
 updatefromgit: cd /home/homeassistant/.homeassistant && git pull https://github.com/Seigliva/hass-config
