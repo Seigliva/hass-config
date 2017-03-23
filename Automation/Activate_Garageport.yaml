@@ -3,7 +3,7 @@ alias: 'Activate Garageport'
 initial_state: 'on'
 trigger:
   platform: time
-  after: '23:36:00'
+  after: '23:43:00'
 condition:
   - condition: time
     weekday:
