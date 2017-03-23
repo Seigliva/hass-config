@@ -4,3 +4,4 @@ icon: mdi:garage
 entities:
   - group.garage
   - camera.utekamera
+  - automation.activate_garageport
