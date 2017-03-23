@@ -16,11 +16,9 @@ http:
   login_attempts_threshold: 5
 ########################################
 
-
 ########################################
 frontend:
 config:
-
 updater:
 conversation:
 history:
