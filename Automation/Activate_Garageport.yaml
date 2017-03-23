@@ -1,0 +1,16 @@
+
+alias: 'Activate Garageport'
+initial_state: 'on'
+trigger:
+  platform: time
+  after: '23:36:00'
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  - service: shell_command.garage
