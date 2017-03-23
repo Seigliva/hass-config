@@ -3,3 +3,4 @@ view: yes
 icon: mdi:sofa
 entities:
   - group.stue
+  - switch.stua 
