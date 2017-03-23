@@ -32,10 +32,6 @@ logger:
     homeassistant.components.camera: critical
 ########################################
 
-
-########################################
- 
- 
 ########################################
 group: !include_dir_named Groups/
 automation: !include_dir_list Automation/
