@@ -8,5 +8,5 @@ trigger:
 action:
   - service: light.turn_on
     data:
-      entity_id: light.stua_2
+      entity_id: light.h01
       brightness: 255
