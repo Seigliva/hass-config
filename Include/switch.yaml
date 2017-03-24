@@ -1,31 +1,7 @@
 - platform: wake_on_lan
   name: Flash
   mac_address: "2C-56-DC-DC-3E-E9"
-  
-- platform: template
-  switches:
-    alle_lys:
-      value_template: "{{ states.group.all_lights.state }}"
-      turn_on:
-        - service: light.turn_on
-      turn_off:
-        - service: light.turn_off
-        
-- platform: template
-  switches:
-    stua:
-      value_template: "{{ states.switch.rf04.state }}"
-      turn_on:
-        - service: light.turn_on
-          entity_id: light.h01
-        - service: switch.turn_on
-          entity_id: switch.rf04
-      turn_off:
-        - service: light.turn_off
-          entity_id: light.h01
-        - service: switch.turn_off
-          entity_id: switch.rf04
-          
+
 - platform: rfxtrx
   automatic_add: True
   devices:
