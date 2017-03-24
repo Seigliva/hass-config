@@ -2,7 +2,7 @@ alias: 'Morgen lys'
 initial_state: 'on'
 trigger:
   platform: time
-  after: '21:15:00'
+  after: '06:30:00'
 condition:
   - condition: time
     weekday:
@@ -11,8 +11,6 @@ condition:
       - wed
       - thu
       - fri
-  - condition: state
-    entity_id: switch.rf04
-    state: 'off'
 action:
-  - service: light.turn_off
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.rf04
