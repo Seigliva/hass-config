@@ -71,3 +71,6 @@
       - pressure
       - noise
       - humidity
+      
+platform: rfxtrx
+automatic_add: True
