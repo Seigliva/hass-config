@@ -8,4 +8,4 @@ trigger:
 action:
   - service: light.turn_off
     data:
-      entity_id: light.stua_2
+      entity_id: light.h01
