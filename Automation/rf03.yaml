@@ -6,5 +6,5 @@ trigger:
   - platform: event
     event_type: homeassistant_start
 action:
-  - service_template: '{%- if is_state("input_boolean.rf01", "on")%}switch.turn_on{% else %}switch.turn_off{%- endif %}'
+  - service_template: '{%- if is_state("input_boolean.rf03", "on")%}switch.turn_on{% else %}switch.turn_off{%- endif %}'
     entity_id: switch.rf03
