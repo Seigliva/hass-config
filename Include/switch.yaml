@@ -14,7 +14,7 @@
 - platform: template
   switches:
     stua:
-      value_template: "{{ states.switch.w01.state }}"
+      value_template: "{{ states.switch.rf04.state }}"
       turn_on:
         - service: light.turn_on
           entity_id: light.h01
