@@ -25,3 +25,6 @@
           entity_id: light.h01
         - service: switch.turn_off
           entity_id: switch.w01
+          
+- platform: rfxtrx
+  automatic_add: True
