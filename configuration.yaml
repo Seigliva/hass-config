@@ -23,6 +23,8 @@ updater:
 conversation:
 history:
 logbook:
+recorder:
+  purge_days: 3
 logger:
   default: warn
   logs:
