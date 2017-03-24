@@ -13,7 +13,7 @@ rf03:
   name: Stua - vegglys2
   icon: mdi:lightbulb
 rf04:
-  name: NA
+  name: Stue - spisebord
   icon: mdi:power
 rf05:
   name: NA
@@ -21,3 +21,7 @@ rf05:
 rf06:
   name: Kaffe
   icon: mdi:coffee
+
+allestuelys:
+  name: Alle stuelys
+  icon: lightbulb
