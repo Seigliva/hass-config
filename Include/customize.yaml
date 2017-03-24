@@ -5,7 +5,18 @@ automation.morgen_radio_ukedager_0700_hjemme:
   icon: mdi:radio
 automation.varsling_lav_temp_ukedager_0703_hjemme:
   icon: mdi:snowflake
-
+automation.rf01:
+  hidden: true
+automation.rf02:
+  hidden: true
+automation.rf03:
+  hidden: true
+automation.rf04:
+  hidden: true
+automation.rf05:
+  hidden: true
+automation.rf06:
+  hidden: true
 ###############################
 ##  Devices
 ###############################
@@ -16,6 +27,18 @@ light.gutta:
 light.soverom:
   hidden: true
 light.stua:
+  hidden: true
+switch.rf01:
+  hidden: true
+switch.rf02:
+  hidden: true
+switch.rf03:
+  hidden: true
+switch.rf04:
+  hidden: true
+switch.rf05:
+  hidden: true
+switch.rf06:
   hidden: true
 ###############################
 ##  Groups
