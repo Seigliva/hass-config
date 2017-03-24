@@ -33,5 +33,10 @@
       name: rf01
     0b11000000c02e1a02010f70:
       name: rf02
+    0b11000000c02e1a03010f70:
+      name: rf03      
     0b11000203f70bf210010f70:
       name: rf04
+    0b11000003f70bf20f010f70:
+      name: rf05
+    
