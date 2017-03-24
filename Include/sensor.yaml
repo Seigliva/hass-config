@@ -72,5 +72,5 @@
       - noise
       - humidity
       
-platform: rfxtrx
-automatic_add: True
+- platform: rfxtrx
+  automatic_add: True
