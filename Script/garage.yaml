@@ -1,3 +1,7 @@
 alias: Garasjeport
 sequence:
   - service: shell_command.garage
+  - service: notify.pushbullet
+    data:
+      title: 'Jarvis'
+      message: 'Garageport activated.'
