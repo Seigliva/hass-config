@@ -28,3 +28,8 @@
           
 - platform: rfxtrx
   automatic_add: True
+  devices:
+    0b11000000c02e1a01010f70:
+      name: rf01
+    0b11000203f70bf210010f70:
+      name: rf04
