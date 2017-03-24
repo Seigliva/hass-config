@@ -2,3 +2,22 @@ privacy_mode:
   name: Privacy Mode
   initial: off
   icon: mdi:volume-off
+  
+rf01:
+  name: Kjellerlys
+  icon: mdi:lightbulb
+rf02:
+  name: Stua - vegglys
+  icon: mdi:lightbulb
+rf03:
+  name: Stua - vegglys2
+  icon: mdi:lightbulb
+rf04:
+  name: NA
+  icon: mdi:power
+rf05:
+  name: NA
+  icon: mdi:power
+rf06:
+  name: Kaffe
+  icon: mdi:coffee
