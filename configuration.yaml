@@ -30,6 +30,13 @@ logger:
     homeassistant.components.camera: critical
 ########################################
 
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A118TT41-if00-port0
+#######################################
+#temp
+cover:
+  platform: rfxtrx
+  automatic_add: True
 ########################################
 group: !include_dir_named Groups/
 automation: !include_dir_list Automation/
