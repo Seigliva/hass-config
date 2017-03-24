@@ -31,5 +31,7 @@
   devices:
     0b11000000c02e1a01010f70:
       name: rf01
+    0b11000000c02e1a02010f70
+      name: rf02
     0b11000203f70bf210010f70:
       name: rf04
