@@ -13,4 +13,5 @@ condition:
       - thu
       - fri
 action:
-  - service: script.garage
+  - service: script.turn_on
+    entity_id: script.garage
