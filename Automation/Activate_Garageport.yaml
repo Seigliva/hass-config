@@ -13,4 +13,4 @@ condition:
       - thu
       - fri
 action:
-  - service: shell_command.garage
+  - service: script.garage
