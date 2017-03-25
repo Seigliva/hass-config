@@ -14,10 +14,10 @@ rf03:
   icon: mdi:lightbulb
 rf04:
   name: Stue - spisebord
-  icon: mdi:power
+  icon: mdi:lightbulb
 rf05:
-  name: NA
-  icon: mdi:power
+  name: Stue - ekstralys
+  icon: mdi:lightbulb
 rf06:
   name: Kaffe
   icon: mdi:coffee
