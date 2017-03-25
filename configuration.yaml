@@ -1,3 +1,8 @@
+########################################################################################################################
+# Home-assistant config v.2
+########################################################################################################################
+# Default config elements
+########################################################################################################################
 homeassistant:
   name: Home
   latitude: !secret latitude
@@ -5,18 +10,8 @@ homeassistant:
   elevation: 184
   unit_system: metric
   time_zone: Europe/Oslo
-  customize: !include Include/customize.yaml
-########################################
-http:
-  api_password: !secret http-password
-  trusted_networks:
-    - 127.0.0.1
-    - 192.168.1.0/24
-  ip_ban_enabled: True
-  login_attempts_threshold: 5
-########################################
-
-########################################
+  customize: !include customize.yaml
+#discovery:
 frontend:
 config:
 updater:
@@ -28,33 +23,312 @@ recorder:
 logger:
   default: warn
   logs:
-    homeassistant.components: critical
     homeassistant.components.camera: critical
-########################################
+http:
+  api_password: !secret http-password
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.1.0/24
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+########################################################################################################################
+# Automations - located in a seperate folder ./Automation 
+# This is where the magic happen :)
+########################################################################################################################
+automation: !include_dir_list Automation/
 
-rfxtrx:
-  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A118TT41-if00-port0
-#######################################
-#temp
+########################################################################################################################
+# Groups / Views- located in a seperate folder ./Groups
+# This tell home-assistant how to present the different stuff on the website.
+# Group shit together, show stuff as an tab, and so on.
+########################################################################################################################
+group: !include_dir_named Groups/
+
+########################################################################################################################
+# Script located in a seperate folder ./Scripts
+########################################################################################################################
+script: !include_dir_named Script/
+
+########################################################################################################################
+# Camera
+########################################################################################################################
+camera:
+  - platform: mjpeg
+    name: RV3 Rena
+    mjpeg_url: http://webkamera.vegvesen.no/kamera?id=185544
+    
+  - platform: synology
+    url: http://192.168.1.3:5000
+    username: HAuser
+    password: !secret synology-password
+    verify_ssl: False
+
+########################################################################################################################
+# Cover, this is blinds, marquese, and so on.
+########################################################################################################################
 cover:
   platform: rfxtrx
   automatic_add: True
-########################################
-group: !include_dir_named Groups/
-automation: !include_dir_list Automation/
-script: !include_dir_named Script/
-media_player: !include Include/media_player.yaml
-netatmo: !include Include/netatmo.yaml
-camera: !include Include/camera.yaml
-device_tracker: !include Include/device_tracker.yaml
-ifttt: !include Include/ifttt.yaml
+  
+########################################################################################################################
+# Device tracker
+########################################################################################################################
+device_tracker:
+  - platform: icloud
+    username: !secret ios-user
+    password: !secret ios-password
+    
+  - platform: ping
+    hosts:
+      hosthome: 192.168.1.25
+      hostspace: 8.8.4.4
+
+########################################################################################################################
+# IFTTT
+########################################################################################################################
+ifttt:
+  key: !secret ifttt-apikey
+
+########################################################################################################################
+# Input Boolean, simple slider buttons
+########################################################################################################################
 input_boolean: !include Include/input_boolean.yaml
-notify: !include Include/notify.yaml
-panel_iframe: !include Include/panel_iframe.yaml
-sensor: !include Include/sensor.yaml
-tts: !include Include/tts.yaml
-input_select: !include_dir_named Input/Select/
-light: !include Include/light.yaml
-switch: !include Include/switch.yaml
-shell_command: !include Include/shell_command.yaml
-wemo: !include Include/wemo.yaml
+  privacy_mode:
+    name: Privacy Mode
+    initial: off
+    icon: mdi:volume-off
+  rf01:
+    name: Kjellerlys
+    icon: mdi:lightbulb
+  rf02:
+    name: Stua - vegglys
+    icon: mdi:lightbulb
+  rf03:
+    name: Stua - vegglys2
+    icon: mdi:lightbulb
+  rf04:
+    name: Stue - spisebord
+    icon: mdi:lightbulb
+  rf05:
+    name: Stue - ekstralys
+    icon: mdi:lightbulb
+  rf06:
+    name: Kaffe
+    icon: mdi:coffee
+  allestuelys:
+    name: Alle stuelys
+    icon: mdi:lightbulb
+
+########################################################################################################################
+# Input Select, dropdown menu
+########################################################################################################################
+input_select:
+  radio:
+    name: Velg radiokanal
+    options:
+      - "Stopp"
+      - "P4"
+      - "Radio Norge"
+      - "Solør Radio"
+    initial: "Stopp"
+    icon: mdi:radio
+
+########################################################################################################################
+# Light, hue, lifx, and so on.
+########################################################################################################################
+light:
+  - platform: hue
+    host: 192.168.1.40
+
+  - platform: rfxtrx
+    automatic_add: True
+
+########################################################################################################################
+# Media player, Apple TV, Chromecast, and so on.
+########################################################################################################################
+media_player: !include Include/media_player.yaml
+  - platform: plex
+    host: 192.168.1.25
+  - platform: apple_tv
+    host: 192.168.1.41
+    login_id: 00000000-4fd8-172c-a545-33f73f0a4715
+    name: ATV Stua
+  #Stua
+  - platform: cast
+    host: 192.168.1.45
+  #Lyd
+  - platform: cast
+    host: 192.168.1.46
+  #Barnerom1
+  - platform: cast
+    host: 192.168.1.47
+
+########################################################################################################################
+# Netatmo, just for the hub component
+########################################################################################################################
+netatmo:
+  api_key: 58ba8ac42b2b468dc48b4bf9
+  secret_key: S1aF5GNSaoTb1HPmpbOWu7RemzL2T
+  username: oyvind.risvold@gmail.com
+  password: !secret netatmo-password
+
+########################################################################################################################
+# Notify, for pushbullet and other notify component
+########################################################################################################################
+notify:
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet-apikey
+
+########################################################################################################################
+# Panel iframe, this wil add stuff to the menu on the left side of the website
+########################################################################################################################
+panel_iframe:
+  router:
+    title: 'Router'
+    url: http://192.168.1.1:80
+    icon: mdi:router-wireless
+
+  plex:
+    title: 'PLEX'
+    url: http://192.168.1.25:32400
+    icon: mdi:plex
+
+########################################################################################################################
+# RFXTRX, SUPER FANCY RF HUB
+########################################################################################################################
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A118TT41-if00-port0
+
+########################################################################################################################
+# Sensor
+########################################################################################################################
+sensor:
+  - platform: speedtest
+    minute:
+      - 0
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+      
+  - platform: google_travel_time
+    name: Phone To Home
+    api_key: !secret googleapi
+    origin: device_tracker.iphone
+    destination: zone.home
+    
+  - platform: template
+    sensors:
+      battery_iphone:
+        friendly_name: iPhone
+        unit_of_measurement: '%'
+        value_template: >
+            {%- if states.device_tracker.iphone.attributes.battery %}
+                {{ states.device_tracker.iphone.attributes.battery|round }}
+            {% else %}
+                {{ states.sensor.battery_iphone.state }}
+            {%- endif %}
+        icon_template: '{%- if is_state("sensor.battery_iphone_owntracks", "unknown") %}mdi:battery-unknown{%- elif is_state_attr("device_tracker.iphone", "battery_status", "Charging") %}mdi:battery-charging{%- elif  states.device_tracker.iphone.attributes.battery <= 5 %}mdi:battery-outline{%- elif states.device_tracker.iphone.attributes.battery >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.device_tracker.iphone.attributes.battery|float / 10)|round*10}}{%- endif %}'
+
+  - platform: pi_hole
+        
+  - platform: synologydsm
+    host: 192.168.1.3
+    username: Superlangbein
+    password: !secret synology-password
+    monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - network_up  
+      - network_down      
+      - disk_status
+      - volume_status      
+      
+  - platform: netatmo
+    station: Kjellerstue
+    modules:
+      Kjellersoverom:
+        - temperature
+        - humidity
+        - min_temp
+        - max_temp
+        - battery_vp
+      Kjellerstue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+      
+  - platform: netatmo
+    station: Søbakkvegen
+    modules:
+      Ute:
+        - temperature
+        - humidity
+        - min_temp
+        - max_temp
+        - battery_vp
+      Stue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+        
+  - platform: rfxtrx
+    automatic_add: True
+
+########################################################################################################################
+# Shell command
+########################################################################################################################
+shell_command:
+  garage: ssh pi@192.168.1.161 'python garage.py'
+  updatefromgit: cd /home/homeassistant/.homeassistant && git pull https://github.com/Seigliva/hass-config
+
+########################################################################################################################
+# Switch, all outlets, and other switches
+########################################################################################################################
+switch:
+  - platform: wake_on_lan
+    name: Flash
+    mac_address: "2C-56-DC-DC-3E-E9"
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      0b11000000c02e1a01010f70:
+        name: rf01
+      0b11000000c02e1a02010f70:
+        name: rf02
+      0b11000000c02e1a03010f70:
+        name: rf03
+      0b11000203f70bf210010f70:
+        name: rf04
+      0b11000003f70bf20f010f70:
+        name: rf05
+      0b11000d03f70bf20e010f70:
+        name: rf06
+
+########################################################################################################################
+# TTS - Text To Speach
+########################################################################################################################
+tts:
+  - platform: google
+    language: 'no'
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+########################################################################################################################
+# Wemo
+########################################################################################################################
+wemo:
+  static:
+    - 192.168.1.48
+    - 192.168.1.49
+
+########################################################################################################################
+# End of config file
+########################################################################################################################
