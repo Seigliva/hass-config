@@ -95,7 +95,7 @@ ifttt:
 ########################################################################################################################
 # Input Boolean, simple slider buttons
 ########################################################################################################################
-input_boolean: !include Include/input_boolean.yaml
+input_boolean:
   privacy_mode:
     name: Privacy Mode
     initial: off
