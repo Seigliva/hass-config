@@ -169,7 +169,7 @@ media_player: !include Include/media_player.yaml
 netatmo:
   api_key: !secret netatmo-apikey
   secret_key: !secret netatmo-secretkey
-  username: oyvind.risvold@gmail.com
+  username: !secret mail
   password: !secret netatmo-password
 
 ########################################################################################################################
@@ -236,7 +236,7 @@ sensor:
         
   - platform: synologydsm
     host: 192.168.1.3
-    username: Superlangbein
+    username: !secret username
     password: !secret synology-password
     monitored_conditions:
       - cpu_total_load
