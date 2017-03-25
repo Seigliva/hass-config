@@ -3,9 +3,3 @@ view: yes
 icon: mdi:sofa
 entities:
   - group.stue
-  - input_boolean.allestuelys
-  - light.h01
-  - input_boolean.rf02
-  - input_boolean.rf03
-  - input_boolean.rf04
-  - input_boolean.rf05
