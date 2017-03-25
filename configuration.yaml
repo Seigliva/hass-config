@@ -167,8 +167,8 @@ media_player: !include Include/media_player.yaml
 # Netatmo, just for the hub component
 ########################################################################################################################
 netatmo:
-  api_key: 58ba8ac42b2b468dc48b4bf9
-  secret_key: S1aF5GNSaoTb1HPmpbOWu7RemzL2T
+  api_key: !secret netatmo-apikey
+  secret_key: !secret netatmo-secretkey
   username: oyvind.risvold@gmail.com
   password: !secret netatmo-password
 
