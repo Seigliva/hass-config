@@ -1,4 +1,4 @@
-alias: 'Morgen radio, ukedager 07:00, hjemme'
+alias: 'Morgen radio'
 initial_state: 'on'
 trigger:
   platform: time
