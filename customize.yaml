@@ -28,6 +28,8 @@ light.soverom:
   hidden: true
 light.stua:
   hidden: true
+light.h01
+  friendly_name: Stuebord
 switch.rf01:
   hidden: true
 switch.rf02:
