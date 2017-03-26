@@ -8,7 +8,7 @@ condition:
     weekday:
       - mon
       - tue
-      - wedni
+      - wed
       - thu
       - fri
   - condition: state
