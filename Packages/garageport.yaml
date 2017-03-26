@@ -3,8 +3,7 @@ switch:
     switches:
       garageport:
         friendly_name: 'Garageport'
-        value_template:>-
-         {{states.switch.garageport_status.state}}
+        value_template: '{{states.switch.garageport_status.state}}'
         turn_on:
           service: script.turn_on
           entity_id: script.garage
