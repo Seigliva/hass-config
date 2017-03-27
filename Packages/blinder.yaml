@@ -7,8 +7,9 @@ script:
       - service: cover.stop_cover
         entity_id: cover.persienner
       - service: mqtt.publish
-        topic: HA/cover
-        payload: '-'
+        data:
+          topic: HA/cover
+          payload: '-'
   tilt_ned:
     sequence:
       - service: cover.close_cover
@@ -17,8 +18,9 @@ script:
       - service: cover.stop_cover
         entity_id: cover.persienner
       - service: mqtt.publish
-        topic: HA/cover
-        payload: '-'
+        data:
+          topic: HA/cover
+          payload: '-'
 cover:
   - platform: mqtt
     command_topic: "HA/cover"
