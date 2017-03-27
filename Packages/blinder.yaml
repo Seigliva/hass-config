@@ -15,12 +15,12 @@ script:
         entity_id: cover.persienner
 cover:
   - platform: mqtt
-    command_topic: "HA/covert"
+    command_topic: "HA/cover"
     name: "Perienner tilt"
     qos: 0
     retain: true
-    payload_open: "up"
-    payload_close: "down"
+    payload_open: "opp"
+    payload_close: "ned"
 sensor:
   - platform: mqtt
     name: mqttcover
@@ -33,4 +33,4 @@ automation:
     action:
       service: script.turn_on
       data_template:
-        entity_id: 'script.{{trigger.to_state.state}}'
+        entity_id: 'script.tilt_{{trigger.to_state.state}}'
