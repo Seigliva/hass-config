@@ -8,3 +8,7 @@ action:
     data:
       title: 'Jarvis'
       message: 'Jarvis started successfully.'
+  - service: mqtt.publish
+    data:
+      topic: HA/cover
+      payload: '-'
