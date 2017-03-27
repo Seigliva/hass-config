@@ -94,7 +94,7 @@ sensor.speedtest_upload:
 sensor.phone_to_home:
   friendly_name: Tid til hjemme
 sensor.mqttcover:
-  hidden:true
+  hidden: true
   
 ###############################
 ##  Netatmo
