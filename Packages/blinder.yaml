@@ -13,3 +13,24 @@ script:
       - delay: '00:00:01'
       - service: cover.stop_cover
         entity_id: cover.persienner
+cover:
+  - platform: mqtt
+    command_topic: "HA/covert"
+    name: "Perienner tilt"
+    qos: 0
+    retain: true
+    payload_open: "up"
+    payload_close: "down"
+sensor:
+  - platform: mqtt
+    name: mqttcover
+    state_topic: "HA/cover"
+automation:
+  - alias: 'Persienner tilt MQTT'
+    trigger:
+      platform: state
+      entity_id: sensor.mqttcover
+    action:
+      service: script.turn_on
+      data_template:
+        entity_id: 'script.{{trigger.to_state.state}}
