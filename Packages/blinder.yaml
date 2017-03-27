@@ -16,6 +16,7 @@ script:
 cover:
   - platform: mqtt
     command_topic: "HA/cover"
+    state_topic: "HA/cover/state"
     name: "Perienner tilt"
     qos: 0
     retain: true
