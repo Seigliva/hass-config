@@ -1,5 +1,7 @@
 entities:
   - cover.persienner
+  - script.tilt_opp
+  - script.tilt_ned
   - input_boolean.allestuelys
   - light.h01
   - input_boolean.rf02
