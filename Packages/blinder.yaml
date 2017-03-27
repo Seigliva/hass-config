@@ -1,26 +1,14 @@
-input_slider:
-  blinder_tilt:
-    name: Solskjerming
-    initial: 0
-    min: 0
-    max: 100
-    step: 1
-    
-automation:
-  - alias: Solskjerming
-    trigger:
-      plattform: state
-      entity_id: input_slider.blinder_tilt
-    action:
-      - service: cover.set_cover_tilt_position
-        data_template:
-          entity_id: cover.persienner
-          brightness: '{{ trigger.to_state.state | int }}'
-
 script:
-  tilt:
+  tilt_opp:
     sequence:
       - service: cover.open_cover
+        entity_id: cover.persienner
+      - delay: '00:00:01'
+      - service: cover.stop_cover
+        entity_id: cover.persienner
+  tilt_ned:
+    sequence:
+      - service: cover.close_cover
         entity_id: cover.persienner
       - delay: '00:00:01'
       - service: cover.stop_cover
