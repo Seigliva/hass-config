@@ -89,7 +89,8 @@ sensor.speedtest_upload:
   icon: mdi:upload
 sensor.phone_to_home:
   friendly_name: Tid til hjemme
-  
+sensor.mqttcover:
+  hidden:true
   
 ###############################
 ##  Netatmo
