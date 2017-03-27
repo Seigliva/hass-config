@@ -20,8 +20,8 @@ automation:
 script:
   tilt:
     sequence:
-      - service: cover.open
+      - service: cover.open_cover
         entity_id: cover.persienner
       - delay: '00:00:01'
-      - service: cover_stop
+      - service: cover.stop_cover
         entity_id: cover.persienner
