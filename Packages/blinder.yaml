@@ -16,4 +16,12 @@ automation:
         data_template:
           entity_id: cover.persienner
           brightness: '{{ trigger.to_state.state | int }}'
-  
+
+script:
+  tilt:
+  sequence:
+    - service: cover.open
+      entity_id: cover.persienner
+    - delay: '00:00:01'
+    - service: cover_stop
+      entity_id: cover.persienner
