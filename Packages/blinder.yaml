@@ -1,0 +1,19 @@
+input_slider:
+  bilnder_tilt:
+    name: Solskjerming
+    initial: 0
+    min: 0
+    max: 100
+    step: 1
+    
+automation:
+  - alias: Solskjerming
+    trigger:
+      - plattform: state
+        entity_id: input_slider.blinder_tilt
+    action:
+      - service: cover.set_cover_tilt_position
+        data_template:
+          entity_id: cover.persienner
+          brightness: '{{ trigger.to_state.state | int }}'
+  
