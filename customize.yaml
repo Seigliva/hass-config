@@ -74,6 +74,10 @@ script.webradio_start:
   hidden: true
 script.webradio_stop:
   hidden: true
+script.tilt_ned:
+  hidden: true
+script.tilt_opp:
+  hidden: true
 
 ###############################
 ##  Sensors
