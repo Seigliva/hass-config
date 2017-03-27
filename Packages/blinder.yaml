@@ -1,5 +1,5 @@
 input_slider:
-  bilnder_tilt:
+  blinder_tilt:
     name: Solskjerming
     initial: 0
     min: 0
