@@ -33,4 +33,4 @@ automation:
     action:
       service: script.turn_on
       data_template:
-        entity_id: 'script.{{trigger.to_state.state}}
+        entity_id: 'script.{{trigger.to_state.state}}'
