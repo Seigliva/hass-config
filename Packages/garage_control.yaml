@@ -1,6 +1,7 @@
 cover:
   - platform: mqtt
-    state_topic: "HA/garage/state"
+    # Denne aktiveres når magnet er ok state_topic: "HA/garage/state"
+    state_topic: "HA/garage"
     command_topic: "HA/garage"
     name: "Garasjeport"
     qos: 0
