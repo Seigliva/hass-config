@@ -95,6 +95,10 @@ sensor.phone_to_home:
   friendly_name: Tid til hjemme
 sensor.mqttcover:
   hidden: true
+sensor.garage_status:
+  hidden: true
+sensor.mqtt_garage_sensor:
+  hidden: true
   
 ###############################
 ##  Netatmo
