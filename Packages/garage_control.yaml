@@ -1,0 +1,13 @@
+cover:
+  - platform: mqtt
+    state_topic: "home-assistant/cover"
+    command_topic: "home-assistant/cover/set"
+    name: "Garasjeport"
+    qos: 0
+    retain: true
+    payload_open: "opp"
+    payload_close: "ned"
+    state_open: "opp"
+    state_closed: "ned"
+    optimistic: false
+    value_template: '{{ states.sensor.garage_status.states }}'
