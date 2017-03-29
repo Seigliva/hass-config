@@ -10,3 +10,27 @@ cover:
     state_open: "opp"
     state_closed: "ned"
     optimistic: false
+    
+sensor:
+  - platform: mqtt
+    name: "MQTT garage sensor"
+    state_topic: "HA/garage"
+
+automation:
+  - alias: Garage Get state from sensor
+    trigger:
+      platform: state
+      entity_id: sensor.garage_status
+    action:
+      service: mqtt.publish
+      data_template:
+        topic: "HA/garage/state"
+        payload_template: {{trigger.to.state}}
+        
+  - alias: Garage move door
+    trigger:
+      platform: state
+      entity_id: sensor.mqtt_garage_sensor
+    action:
+      service: script.turn_on
+      entity_it: script.garage
