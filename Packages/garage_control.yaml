@@ -33,4 +33,4 @@ automation:
       entity_id: sensor.mqtt_garage_sensor
     action:
       service: script.turn_on
-      entity_it: script.garage
+      entity_id: script.garage
