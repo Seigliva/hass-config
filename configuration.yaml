@@ -247,6 +247,9 @@ sensor:
             {%- endif %}
         icon_template: '{%- if is_state("sensor.battery_iphone_owntracks", "unknown") %}mdi:battery-unknown{%- elif is_state_attr("device_tracker.iphone", "battery_status", "Charging") %}mdi:battery-charging{%- elif  states.device_tracker.iphone.attributes.battery <= 5 %}mdi:battery-outline{%- elif states.device_tracker.iphone.attributes.battery >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.device_tracker.iphone.attributes.battery|float / 10)|round*10}}{%- endif %}'
 
+      garage_status:
+        value_template: '{%- if is_state("switch.garasjeport_status","on") %}ned{% elif is_state("switch.garasjeport_status","off") %}opp{%else%}error_reading_state{%- endif %}'
+
   - platform: pi_hole
         
   - platform: synologydsm
