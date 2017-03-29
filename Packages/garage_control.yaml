@@ -25,7 +25,7 @@ automation:
       service: mqtt.publish
       data:
         topic: "HA/garage/state"
-        payload_template: {{trigger.to_state.state}}
+        payload_template: '{{trigger.to_state.state}}'
         
   - alias: Garage move door
     trigger:
