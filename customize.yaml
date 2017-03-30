@@ -96,6 +96,8 @@ script.tilt_ned:
   hidden: true
 script.tilt_opp:
   hidden: true
+script.garage:
+  icon: mdi:garage
 
 ###############################
 ##  Sensors
