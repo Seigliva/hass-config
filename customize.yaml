@@ -70,7 +70,7 @@ input_boolean.test_automation:
 script.tts:
   hidden: true
   icon: mdi:wrench
-script.restart_ha:
+script.restart:
   icon: mdi:restart 
 script.webradio_start:
   hidden: true
