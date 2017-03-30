@@ -42,6 +42,8 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
+device_tracker.pi_e6653:
+  friendly_name: 'Øyvind'
 ###############################
 ##  Groups
 ###############################
