@@ -54,10 +54,10 @@ switch.w02:
   icon: mdi:washing-machine
 device_tracker.pi_e6653:
   friendly_name: 'Øyvind'
-device_tracker.hosthome
+device_tracker.hosthome:
   friendly_name: 'TheFlash'
   icon: mdi:windows
-device_tracker.hostspace
+device_tracker.hostspace:
   friendly_name: 'WWW'
   icon: mdi:wifi
 ###############################
