@@ -49,24 +49,28 @@ switch.rf06:
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
-device_tracker.iphone
-sensor.phone_to_home
-device_tracker.theosiphone
-device_tracker.theosipad
-  icon: mdi:
-device_tracker.noahsinipad
-  icon: mdi:
-device_tracker.superlangbeinsair2
-  icon: mdi:
-device_tracker.superlangbeinsipro
-  icon: mdi:
-device_tracker.yvindsmacmini
-  icon: mdi:
+device_tracker.iphone:
+  icon: mdi:cellphone-iphone
+sensor.phone_to_home:
+  icon: mdi:crosshairs:gps
+device_tracker.theosiphone:
+  icon: mdi:cellphone-iphone
+device_tracker.theosipad:
+  icon: mdi:tablet-ipad
+device_tracker.noahsinipad:
+  icon: mdi:tablet-ipad
+device_tracker.superlangbeinsair2:
+  icon: mdi:tablet-ipad
+device_tracker.superlangbeinsipro:
+  icon: mdi:tablet-ipad
+device_tracker.yvindsmacmini:
+  icon: mdi:desktop-mac
+device_tracker.pi_e6653:
+  friendly_name: 'Sheriff'
+  icon: mdi:cellphone-android
 switch.w02:
   friendly_name: 'Tørketrommel'
   icon: mdi:washing-machine
-device_tracker.pi_e6653:
-  friendly_name: 'Øyvind'
 device_tracker.hosthome:
   friendly_name: 'TheFlash'
   icon: mdi:windows
