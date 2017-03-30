@@ -19,7 +19,7 @@ sensor:
     sensors:
       garage_status:
         value_template: '{%- if is_state("switch.garasjeport_status","on") %}opp{% elif is_state("switch.garasjeport_status","off") %}ned{%else%}error_reading_state{%- endif %}'
-        icon_template: '{%- if is_state("switch.garasjeport_status", "on") %}mdi:garage-open{%- elif is_state_attr("switch.garasjeport_status", "off") %}mdi:garage{%else%}{%- endif %}'
+        icon_template: '{%- if is_state("switch.garasjeport_status", "on") %}mdi:garage-open{%else%}{%- elif is_state_attr("switch.garasjeport_status", "off") %}mdi:garage{%- endif %}'
 
 automation:
   - alias: Garage Get state from sensor
