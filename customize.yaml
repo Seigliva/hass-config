@@ -30,6 +30,10 @@ light.stua:
   hidden: true
 light.h01:
   friendly_name: Stuebord
+light.h02:
+  friendly_name: Barnerom
+light.h03:
+  friendly_name: Soverom
 switch.rf01:
   hidden: true
 switch.rf02:
@@ -42,6 +46,12 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
+switch.w01:
+  friendly_name: 'Vaskemaskin'
+  icon: mdi:washing-machine
+switch.w02:
+  friendly_name: 'Tørketrommel'
+  icon: mdi:washing-machine
 device_tracker.pi_e6653:
   friendly_name: 'Øyvind'
 ###############################
