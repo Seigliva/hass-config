@@ -49,6 +49,14 @@ switch.rf06:
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
+device_tracker.iphone
+sensor.phone_to_home
+device_tracker.theosiphone
+device_tracker.theosipad
+device_tracker.noahsinipad
+device_tracker.superlangbeinsair2
+device_tracker.superlangbeinsipro
+device_tracker.yvindsmacmini.
 switch.w02:
   friendly_name: 'Tørketrommel'
   icon: mdi:washing-machine
