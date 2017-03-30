@@ -51,8 +51,6 @@ switch.w01:
   icon: mdi:washing-machine
 device_tracker.iphone:
   icon: mdi:cellphone-iphone
-sensor.phone_to_home:
-  icon: mdi:crosshairs:gps
 device_tracker.theosiphone:
   icon: mdi:cellphone-iphone
 device_tracker.theosipad:
@@ -130,6 +128,7 @@ sensor.speedtest_upload:
   icon: mdi:upload
 sensor.phone_to_home:
   friendly_name: Tid til hjemme
+  icon: mdi:crosshairs:gps
 sensor.mqttcover:
   hidden: true
 sensor.garage_status:
