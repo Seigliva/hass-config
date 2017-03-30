@@ -52,8 +52,6 @@ switch.w01:
 switch.w02:
   friendly_name: 'Tørketrommel'
   icon: mdi:washing-machine
-switch.garasjeport_status:
-  icon_template: '{%- if is_state("switch.garasjeport_status", "on") %}mdi:garage-open{%- elif is_state_attr("switch.garasjeport_status", "off") %}mdi:garage{%- endif %}'
 device_tracker.pi_e6653:
   friendly_name: 'Øyvind'
 device_tracker.hosthome:
