@@ -53,10 +53,15 @@ device_tracker.iphone
 sensor.phone_to_home
 device_tracker.theosiphone
 device_tracker.theosipad
+  icon: mdi:
 device_tracker.noahsinipad
+  icon: mdi:
 device_tracker.superlangbeinsair2
+  icon: mdi:
 device_tracker.superlangbeinsipro
-device_tracker.yvindsmacmini.
+  icon: mdi:
+device_tracker.yvindsmacmini
+  icon: mdi:
 switch.w02:
   friendly_name: 'Tørketrommel'
   icon: mdi:washing-machine
