@@ -1,6 +1,4 @@
 entities:
-  - cover.persienner
-  - cover.perienner_tilt
   - input_boolean.allestuelys
   - light.h01
   - input_boolean.rf02
