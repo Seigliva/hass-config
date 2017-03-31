@@ -1,7 +1,11 @@
 control: hidden
 view: yes
-icon: mdi:sofa
+icon: mdi:home
 entities:
   - group.stue
-  - media_player.atv_stua
-  - media_player.bigscreen
+  - group.garage
+  - group.all_lights
+  - input_select.radio
+  - sensor.netatmo_ute_temperature
+  - sensor.netatmo_stue_temperature
+  - sensor.netatmo_kjellerstue_temperature
