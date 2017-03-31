@@ -1,8 +1,0 @@
-
-control: hidden
-entities:
-  - script.restart
-  - light.h02
-  - light.h03
-  - input_boolean.rf06
-  - input_boolean.rf01
