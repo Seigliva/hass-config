@@ -5,4 +5,5 @@ entities:
   - group.stue
   - group.garage
   - group.all_lights
+  - group.netatmo_light
   - input_select.radio
