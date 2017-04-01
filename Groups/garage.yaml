@@ -1,4 +1,3 @@
 control: hidden
 entities:
   - cover.garasjeport
-  - script.garage 
