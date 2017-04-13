@@ -77,12 +77,12 @@ cover:
 ########################################################################################################################
 # Device tracker
 ########################################################################################################################
-device_tracker:
-  - platform: icloud
-    username: !secret ios-user
-    password: !secret ios-password
+#device_tracker:
+  #- platform: icloud
+   # username: !secret ios-user
+    #password: !secret ios-password
     
-  - platform: owntracks
+  #- platform: owntracks
     
   - platform: ping
     hosts:
