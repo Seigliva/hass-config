@@ -3,5 +3,6 @@ view: yes
 icon: mdi:sofa
 entities:
   - group.stue
+  - group.persienner
   - media_player.atv_stua
   - media_player.bigscreen
