@@ -71,6 +71,10 @@ device_tracker.pi_e6653:
   friendly_name: 'Sheriff'
   icon: mdi:cellphone-android
   hidden: true
+device_tracker.pi_ios7378:
+  friendly_name: 'Ludeeus'
+  icon: mdi:cellphone-android
+  hidden: true
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
@@ -141,6 +145,10 @@ sensor.mqttcover:
 sensor.garage_status:
   hidden: true
 sensor.mqtt_garage_sensor:
+  hidden: true
+sensor.phone_to_home:
+  friendly_name: Tid til hjemme
+  icon: mdi:crosshairs:gps
   hidden: true
   
 ###############################
