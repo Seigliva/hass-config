@@ -46,6 +46,31 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
+device_tracker.iphone:
+  icon: mdi:cellphone-iphone
+    hidden: true
+device_tracker.theosiphone:
+  icon: mdi:cellphone-iphone
+    hidden: true
+device_tracker.theosipad:
+  icon: mdi:tablet-ipad
+    hidden: true
+device_tracker.noahsinipad:
+  icon: mdi:tablet-ipad
+    hidden: true
+device_tracker.superlangbeinsair2:
+  icon: mdi:tablet-ipad
+    hidden: true
+device_tracker.superlangbeinsipro:
+  icon: mdi:tablet-ipad
+    hidden: true
+device_tracker.yvindsmacmini:
+  icon: mdi:desktop-mac
+    hidden: true
+device_tracker.pi_e6653:
+  friendly_name: 'Sheriff'
+  icon: mdi:cellphone-android
+    hidden: true
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
