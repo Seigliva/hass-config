@@ -1,8 +1,8 @@
 alias: Automation for when 'Jarvis' starts
 initial_state: 'on'
 trigger:
-  - platform: event
-    event_type: homeassistant_start
+  - platform: homeassistant
+    event: start
 action:
   - service: notify.pushbullet
     data:
