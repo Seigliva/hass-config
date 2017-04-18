@@ -50,6 +50,13 @@ device_tracker.pi_e6653:
   friendly_name: 'Sheriff'
   icon: mdi:cellphone-android
   hidden: false
+device_tracker.superlangbeins_ipro:
+  hidden: false
+  icon: mdi:tablet-ipad
+sensor.superlangbeins_ipro_battery_level:
+  hidden: true
+sensor.superlangbeins_ipro_battery_state:
+  hidden: true
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
