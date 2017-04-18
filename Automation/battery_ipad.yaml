@@ -5,7 +5,7 @@ trigger:
     entity_id: sensor.superlangbeins_ipro_battery_level
     below: 20
 action:
-  - service: notify.all
+  - service: notify.alle
     data:
       title: 'Jarvis'
       message: 'iPad Pro battery is low, you need to charge.'
