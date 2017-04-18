@@ -188,14 +188,16 @@ notify:
   - name: pushbullet
     platform: pushbullet
     api_key: !secret pushbullet-apikey
-  - name: pushbulletludeeus
+  - name: pushbullet2
     platform: pushbullet
-    api_key: !secret pushbullet-apikey2    
+    api_key: !secret pushbullet-apikey2
     
-  - name: facebook
-    platform: facebook
-    page_access_token: !secret facebook
-
+  - name: Alle
+    platform: group
+    services:
+      - service: pushbullet
+      - service: pushbullet2
+    
 ########################################################################################################################
 # Panel iframe, this wil add stuff to the menu on the left side of the website
 ########################################################################################################################
