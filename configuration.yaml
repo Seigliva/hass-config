@@ -188,6 +188,9 @@ notify:
   - name: pushbullet
     platform: pushbullet
     api_key: !secret pushbullet-apikey
+  - name: pushbulletludeeus
+    platform: pushbullet
+    api_key: !secret pushbullet-apikey2    
     
   - name: facebook
     platform: facebook
