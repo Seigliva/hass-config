@@ -1,0 +1,12 @@
+
+alias: 'Battery Alert for iPad'
+initial_state: 'on'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.superlangbeins_ipro_battery_level
+    below: 20
+action:
+  - service: notify.all
+    data:
+      title: 'Jarvis'
+      message: 'iPad Pro battery is low, you need to charge.'
