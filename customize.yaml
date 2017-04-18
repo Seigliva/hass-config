@@ -51,26 +51,26 @@ device_tracker.iphone:
   hidden: true
 device_tracker.theosiphone:
   icon: mdi:cellphone-iphone
-  hidden: true
+  hidden: false
 device_tracker.theosipad:
   icon: mdi:tablet-ipad
-  hidden: true
+  hidden: false
 device_tracker.noahsinipad:
   icon: mdi:tablet-ipad
-  hidden: true
+  hidden: false
 device_tracker.superlangbeinsair2:
   icon: mdi:tablet-ipad
-  hidden: true
+  hidden: false
 device_tracker.superlangbeinsipro:
   icon: mdi:tablet-ipad
-  hidden: true
+  hidden: false
 device_tracker.yvindsmacmini:
   icon: mdi:desktop-mac
-  hidden: true
+  hidden: false
 device_tracker.pi_e6653:
   friendly_name: 'Sheriff'
   icon: mdi:cellphone-android
-  hidden: true
+  hidden: false
 device_tracker.pi_ios7378:
   friendly_name: 'Ludeeus'
   icon: mdi:cellphone-android
