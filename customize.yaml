@@ -46,35 +46,10 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
-device_tracker.iphone:
-  icon: mdi:cellphone-iphone
-  hidden: true
-device_tracker.theosiphone:
-  icon: mdi:cellphone-iphone
-  hidden: false
-device_tracker.theosipad:
-  icon: mdi:tablet-ipad
-  hidden: false
-device_tracker.noahsinipad:
-  icon: mdi:tablet-ipad
-  hidden: false
-device_tracker.superlangbeinsair2:
-  icon: mdi:tablet-ipad
-  hidden: false
-device_tracker.superlangbeinsipro:
-  icon: mdi:tablet-ipad
-  hidden: false
-device_tracker.yvindsmacmini:
-  icon: mdi:desktop-mac
-  hidden: false
 device_tracker.pi_e6653:
   friendly_name: 'Sheriff'
   icon: mdi:cellphone-android
   hidden: false
-device_tracker.pi_ios7378:
-  friendly_name: 'Ludeeus'
-  icon: mdi:cellphone-android
-  hidden: true
 switch.w01:
   friendly_name: 'Vaskemaskin'
   icon: mdi:washing-machine
@@ -145,10 +120,6 @@ sensor.mqttcover:
 sensor.garage_status:
   hidden: true
 sensor.mqtt_garage_sensor:
-  hidden: true
-sensor.phone_to_home:
-  friendly_name: Tid til hjemme
-  icon: mdi:crosshairs:gps
   hidden: true
   
 ###############################
