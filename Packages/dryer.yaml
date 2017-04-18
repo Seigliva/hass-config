@@ -2,7 +2,12 @@ binary_sensor:
   - platform: template
     sensors:
       torketrommel:
-        value_template: '{{ states.switch.w02.attributes.current_power_w > 0.4}}'
+        value_template: >-
+          {%- if states.switch.w02.attributes.current_power_w %}
+              {{ states.switch.w02.attributes.current_power_w > 0.4}}
+          {%  else %}
+              0
+          {%- endif %}
         friendly_name: 'Tørketrommel'
 
 automation:
@@ -14,7 +19,7 @@ automation:
     from: "on"
     to: "off"
   action:
-    - service: notify.pushbullet
+    - service: notify.alle
       data:
         title: 'Jarvis'
         message: 'Tørketrommelen er ferdig.'
