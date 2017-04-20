@@ -11,5 +11,5 @@ action:
       payload: 'ned'
   - service: notify.alle
     data:
-      title: 'Jarvis'
-      message: 'Synes det er varmt og lukker nå persienner'
+      title: 'HelleBOT'
+      message: 'Det er varmt inne, lukker nå persiennene'
