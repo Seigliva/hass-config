@@ -21,5 +21,5 @@ automation:
   action:
     - service: notify.alle
       data:
-        title: 'Jarvis'
+        title: 'HelleBOT'
         message: 'Tørketrommelen er ferdig.'
