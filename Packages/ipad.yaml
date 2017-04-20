@@ -1,0 +1,28 @@
+#######################################################################################################################################
+##  Devices / iPad Pro
+#######################################################################################################################################
+homeassistant:
+  customize:
+    sensor.superlangbeins_ipro_battery_level:
+      hidden: true
+    sensor.superlangbeins_ipro_battery_state:
+      hidden: true
+    device_tracker.superlangbeins_ipro:
+      hidden: true
+    sensor.phone_to_home_superlangbeins_ipro:
+      hidden: true
+#######################################################################################################################################
+sensor:
+  - platform: template
+    sensors:
+      template_iphone:
+        friendly_name: Superlangbeins iPro
+        value_template: '{%if (states.device_tracker.superlangbeins_ipro.state) != "not_home" %}{{states.device_tracker.superlangbeins_ipro.state}}{%- elif is_state("sensor.phone_to_home_superlangbeins_ipro", "unknown")%}Error getting location{%- else -%}{{states.sensor.phone_to_home_superlangbeins_ipro.state}} Minutes to home{%- endif %}'
+        icon_template: '{{states.sensor.superlangbeins_ipro_battery_level.attributes.icon}}'
+#######################################################################################################################################
+  - platform: google_travel_time
+    name: Phone To Home Superlangbeins iPro
+    api_key: !secret googleapi
+    origin: device_tracker.superlangbeins_ipro
+    destination: zone.home
+#######################################################################################################################################
