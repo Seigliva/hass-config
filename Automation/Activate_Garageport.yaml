@@ -1,5 +1,5 @@
 
-alias: 'Activate Garageport'
+alias: 'Aktiver garasjeport'
 initial_state: 'on'
 trigger:
   platform: time
