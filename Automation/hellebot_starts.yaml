@@ -1,4 +1,4 @@
-alias: Automation for when 'Jarvis' starts
+alias: Automation for when 'HelleBOT' starts
 initial_state: 'on'
 trigger:
   - platform: homeassistant
@@ -6,8 +6,8 @@ trigger:
 action:
   - service: notify.pushbullet
     data:
-      title: 'Jarvis'
-      message: 'Jarvis started successfully.'
+      title: 'HelleBOT'
+      message: 'HelleBOT er klar til tjeneste'
   - service: mqtt.publish
     data:
       topic: HA/cover
