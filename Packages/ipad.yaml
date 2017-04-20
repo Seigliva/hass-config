@@ -15,7 +15,7 @@ homeassistant:
 sensor:
   - platform: template
     sensors:
-      template_iphone:
+      template_superlangbeins_ipro:
         friendly_name: Superlangbeins iPro
         value_template: '{%if (states.device_tracker.superlangbeins_ipro.state) != "not_home" %}{{states.device_tracker.superlangbeins_ipro.state}}{%- elif is_state("sensor.phone_to_home_superlangbeins_ipro", "unknown")%}Error getting location{%- else -%}{{states.sensor.phone_to_home_superlangbeins_ipro.state}} Minutes to home{%- endif %}'
         icon_template: '{{states.sensor.superlangbeins_ipro_battery_level.attributes.icon}}'
