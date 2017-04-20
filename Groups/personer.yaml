@@ -1,4 +1,4 @@
 control: hidden
 entities:
-  - device_tracker.superlangbeins_ipro
   - device_tracker.pi_e6653
+  - sensor.template_superlangbeins_ipro
