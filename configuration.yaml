@@ -4,7 +4,7 @@
 # Default config elements
 ########################################################################################################################
 homeassistant:
-  name: Home
+  name: HelleBOT
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: 184
