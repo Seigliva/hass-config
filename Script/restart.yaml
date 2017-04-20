@@ -1,4 +1,4 @@
-alias: 'Restart Jarvis'
+alias: 'Restart HelleBOT'
 sequence:
   - service: script.tts
     data:
