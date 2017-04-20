@@ -3,5 +3,5 @@ sequence:
   - service: shell_command.garage
   - service: notify.alle
     data:
-      title: 'Jarvis'
-      message: 'Garageport activated.'
+      title: 'HelleBOT'
+      message: 'Jeg har ordnet garasjeporten for deg'
