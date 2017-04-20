@@ -16,6 +16,7 @@ condition:
       - thu
       - fri
 action:
-  - service: notify.pushbullet
+  - service: notify.alle
     data:
+      title: 'HelleBOT'
       message: 'Det er kaldt! {{ states.sensor.netatmo_ute_temperature.state }} grader, lurt å holde seg inne i dag :)'
