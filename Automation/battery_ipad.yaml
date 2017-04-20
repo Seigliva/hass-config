@@ -1,4 +1,4 @@
-alias: 'Battery Alert for iPad'
+alias: 'Batteri Alarm for iPad'
 initial_state: 'on'
 trigger:
   - platform: numeric_state
@@ -7,5 +7,5 @@ trigger:
 action:
   - service: notify.alle
     data:
-      title: 'Jarvis'
-      message: 'iPad Pro battery is low, you need to charge.'
+      title: 'HelleBOT'
+      message: 'iPad Pro batteriet er lavt, koble til lader'
