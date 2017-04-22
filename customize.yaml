@@ -132,3 +132,7 @@ sensor.mqtt_garage_sensor:
 ###############################
 ##  Netatmo
 ###############################
+sensor.netatmo_kjellersoverom_min_temp:
+  hidden: true
+sensor.netatmo_kjellersoverom_max_temp:
+  hidden: true
