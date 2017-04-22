@@ -2,6 +2,6 @@ control: hidden
 view: yes
 icon: mdi:garage
 entities:
-  - group.garage
+  - group.garasje
   - camera.utekamera
   - automation.activate_garageport
