@@ -7,7 +7,7 @@ action:
   - service: notify.pushbullet
     data:
       title: 'HelleBOT'
-      message: 'HelleBOT er klar til tjeneste'
+      message: 'Klar til tjeneste'
   - service: mqtt.publish
     data:
       topic: HA/cover
