@@ -4,7 +4,7 @@ binary_sensor:
       torketrommel:
         value_template: >-
           {%- if states.switch.w02.attributes.current_power_w %}
-              {{ states.switch.w02.attributes.current_power_w > 0.4}}
+              {{ states.switch.w02.attributes.current_power_w > 0.8}}
           {%  else %}
               0
           {%- endif %}
