@@ -1,5 +1,5 @@
 ########################################################################################################################
-# Home-assistant config v.2
+# Home-assistant config v.2.2
 ########################################################################################################################
 # Default config elements
 ########################################################################################################################
@@ -314,13 +314,13 @@ switch:
   - platform: mqtt
     name: "Switch1"
     state_topic: "esp1/Switch1/Control/"
-    command_topic: "esp1/gpio/13/"
+    command_topic: "esp1/gpio/15/"
     payload_on: "1"
     payload_off: "0"
     optimistic: false
     qos: 0
-    retain: true
-    value_template: '{{ value.x }}'
+    #retain: true
+    #value_template: '{{ value.x }}'
     
   #- platform: rest
   #  resource: http://192.168.1.61/control?cmd=Pulse,13,1,500
