@@ -313,14 +313,12 @@ switch:
 
   - platform: mqtt
     name: "Switch1"
-    state_topic: "esp1/gpio/13/state"
-    command_topic: "esp1/gpio/13/set"
+    state_topic: "esp1/Switch1/Control/"
+    command_topic: "esp1/gpio/13/"
     payload_on: "1"
     payload_off: "0"
     optimistic: false
     qos: 0
-    retain: true
-    value_template: '{{ value.x }}'
         
 ########################################################################################################################
 # TTS - Text To Speach
