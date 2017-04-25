@@ -319,6 +319,8 @@ switch:
     payload_off: "0"
     optimistic: false
     qos: 0
+    retain: true
+    value_template: '{{ value.x }}'
         
 ########################################################################################################################
 # TTS - Text To Speach
