@@ -322,8 +322,8 @@ switch:
     retain: true
     value_template: '{{ value.x }}'
     
-  - platform: rest
-    resource: http://192.168.1.61/control?cmd=Pulse,13,1,500
+  #- platform: rest
+  #  resource: http://192.168.1.61/control?cmd=Pulse,13,1,500
         
 ########################################################################################################################
 # TTS - Text To Speach
