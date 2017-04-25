@@ -310,6 +310,16 @@ switch:
       0b110000013346760a000070:
         name: Garasjeport status
         
+
+  - platform: mqtt
+    name: "Switch1"
+    state_topic: "esp1/gpio/13/state"
+    command_topic: "esp1/gpio/13/set"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: false
+    qos: 0
+        
 ########################################################################################################################
 # TTS - Text To Speach
 ########################################################################################################################
