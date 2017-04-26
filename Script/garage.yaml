@@ -1,6 +1,9 @@
 alias: Garasjeport
 sequence:
-  - service: shell_command.garage
+  - service: switch.turn_on
+    entity_id: switch.garasjeport
+  - service: switch.turn_off
+    entity_id: switch.garasjeport
   - service: notify.alle
     data:
       title: 'HelleBOT'
