@@ -312,7 +312,7 @@ switch:
         
 
   - platform: mqtt
-    name: "Switch1"
+    name: "Garasjeport"
     state_topic: "esp1/gpio/15"
     command_topic: "esp1/gpio/15"
     payload_on: "1"
