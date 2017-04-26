@@ -313,11 +313,11 @@ switch:
 
   - platform: mqtt
     name: "Switch1"
-    state_topic: "esp1/switch1"
-    command_topic: "esp1/switch1"
+    state_topic: "esp1/gpio/15"
+    command_topic: "esp1/gpio/15"
     payload_on: "1"
     payload_off: "0"
-    optimistic: false
+    optimistic: true
     qos: 0
     retain: true
     
