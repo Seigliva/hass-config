@@ -47,7 +47,8 @@ switch:
     qos: 0
     retain: true
 script:
-  - alias: Garasjeport
+  garage:
+    alias: Garasjeport
     sequence:
       - service: switch.turn_on
         entity_id: switch.garasjeport
