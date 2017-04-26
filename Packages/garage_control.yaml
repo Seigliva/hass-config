@@ -36,3 +36,14 @@ automation:
     action:
       service: script.turn_on
       entity_id: script.garage
+      
+ switch:
+  - platform: mqtt
+    name: "Garasjeport"
+    state_topic: "esp1/gpio/15"
+    command_topic: "esp1/gpio/15"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: true
+    qos: 0
+    retain: true
