@@ -35,8 +35,7 @@ automation:
       entity_id: sensor.mqtt_garage_sensor
     action:
       service: script.turn_on
-      entity_id: script.garage
-      
+      entity_id: script.garage 
  switch:
   - platform: mqtt
     name: "Garasjeport"
@@ -47,3 +46,16 @@ automation:
     optimistic: true
     qos: 0
     retain: true
+script:
+  - alias: Garasjeport
+    sequence:
+      - service: switch.turn_on
+        entity_id: switch.garasjeport
+      - delay:
+          milliseconds: 500
+      - service: switch.turn_off
+        entity_id: switch.garasjeport
+      - service: notify.alle
+        data:
+          title: 'HelleBOT'
+          message: 'Jeg har ordnet garasjeporten for deg'
