@@ -309,21 +309,7 @@ switch:
         name: rf06
       0b110000013346760a000070:
         name: Garasjeport status
-        
-
-  - platform: mqtt
-    name: "Garasjeport"
-    state_topic: "esp1/gpio/15"
-    command_topic: "esp1/gpio/15"
-    payload_on: "1"
-    payload_off: "0"
-    optimistic: true
-    qos: 0
-    retain: true
-    
-  #- platform: rest
-  #  resource: http://192.168.1.61/control?cmd=Pulse,13,1,500
-        
+               
 ########################################################################################################################
 # TTS - Text To Speach
 ########################################################################################################################
