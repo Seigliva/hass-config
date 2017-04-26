@@ -2,6 +2,8 @@ alias: Garasjeport
 sequence:
   - service: switch.turn_on
     entity_id: switch.garasjeport
+  - delay:
+      milliseconds: 500
   - service: switch.turn_off
     entity_id: switch.garasjeport
   - service: notify.alle
