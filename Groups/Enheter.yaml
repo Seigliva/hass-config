@@ -1,4 +1,5 @@
 control: hidden
 entities:
   - device_tracker.pi_e6653
+  - sensor.template_theos_iphone
   - sensor.template_superlangbeins_ipro
