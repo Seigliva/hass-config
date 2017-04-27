@@ -11,6 +11,14 @@ homeassistant:
       hidden: true
     sensor.phone_to_home_superlangbeins_ipro:
       hidden: true
+    sensor.theos_iphone_battery_level:
+      hidden: true
+    sensor.theos_iphone_battery_state:
+      hidden: true
+    device_tracker.theos_iphone:
+      hidden: true
+    sensor.phone_to_home_theos_iphone:
+      hidden: true
 #######################################################################################################################################
 sensor:
   - platform: template
@@ -19,10 +27,21 @@ sensor:
         friendly_name: Superlangbeins iPro
         value_template: '{%if (states.device_tracker.superlangbeins_ipro.state) != "not_home" %}{{states.device_tracker.superlangbeins_ipro.state}}{%- elif is_state("sensor.phone_to_home_superlangbeins_ipro", "unknown")%}Error getting location{%- else -%}{{states.sensor.phone_to_home_superlangbeins_ipro.state}} Minutes to home{%- endif %}'
         icon_template: '{{states.sensor.superlangbeins_ipro_battery_level.attributes.icon}}'
+        
+      template_theos_iphone:
+        friendly_name: Theos iPhone
+        value_template: '{%if (states.device_tracker.theos_iphone.state) != "not_home" %}{{states.device_tracker.theos_iphone.state}}{%- elif is_state("sensor.phone_to_home_theos_iphone", "unknown")%}Error getting location{%- else -%}{{states.sensor.phone_to_home_theos_iphone.state}} Minutes to home{%- endif %}'
+        icon_template: '{{states.sensor.theos_iphone_battery_level.attributes.icon}}'
 #######################################################################################################################################
   - platform: google_travel_time
     name: Phone To Home Superlangbeins iPro
     api_key: !secret googleapi
     origin: device_tracker.superlangbeins_ipro
+    destination: zone.home
+    
+  - platform: google_travel_time
+    name: Phone To Home Theos iPhone
+    api_key: !secret googleapi
+    origin: device_tracker.theos_iphone
     destination: zone.home
 #######################################################################################################################################
