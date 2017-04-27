@@ -5,4 +5,5 @@ entities:
   - light.h03
   - input_boolean.rf06
   - input_boolean.rf01
+  - switch.lyslenke:
   - script.restart
