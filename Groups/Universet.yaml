@@ -1,4 +1,5 @@
 control: hidden
 entities:
-  - sun.sun
+  - sensor.yr.symbol
   - sensor.moon
+  - sun.sun
