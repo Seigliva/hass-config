@@ -128,6 +128,8 @@ sensor.garage_status:
   hidden: true
 sensor.mqtt_garage_sensor:
   hidden: true
+sun.sun:
+    hidden: true
   
 ###############################
 ##  Netatmo
