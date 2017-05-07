@@ -1,5 +1,6 @@
 control: hidden
 entities:
+  - sensor.date__time
   - sensor.yr_symbol
   - sensor.moon
   - sun.sun
