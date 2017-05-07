@@ -287,6 +287,10 @@ sensor:
   - platform: yr
     monitored_conditions:
       - symbol
+      
+  - platform: time_date
+    display_options:
+      - 'date_time'
     
 ########################################################################################################################
 # Shell command
