@@ -19,6 +19,7 @@ updater:
 conversation:
 history:
 logbook:
+sun:
 recorder:
   purge_days: 3
 logger:
