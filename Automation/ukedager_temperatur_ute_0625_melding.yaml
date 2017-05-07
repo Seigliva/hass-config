@@ -1,0 +1,21 @@
+alias: 'Temperaturen ute, hjemme'
+initial_state: True
+hide_entity: false
+trigger:
+  - platform: time
+    after: '06:25:00'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.netatmo_ute_temperature
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+action:
+  - service: notify.alle
+    data:
+      title: 'HelleBOT'
+      message: 'Gradestokken viser {{ states.sensor.netatmo_ute_temperature.state }} grader, ha en fin dag :)'
