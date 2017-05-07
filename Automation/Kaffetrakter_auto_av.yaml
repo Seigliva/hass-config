@@ -1,0 +1,15 @@
+alias: Slå av kaffetrakter etter to timer
+initial_state: 'on'
+trigger:
+  - platform: state
+    entity_id: switch.rf06
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: input_boolean.privacy_mode
+    state: 'off'
+action:
+  - delay:
+      minutes: 120
+  - service: switch.turn_off
+    entity_id: switch.rf06
