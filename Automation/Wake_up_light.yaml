@@ -1,4 +1,4 @@
-alias: Wake up light
+  alias: Wake up light
   trigger:
     platform: time
     after: "06:30:00"
