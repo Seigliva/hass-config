@@ -163,6 +163,8 @@ media_player:
   #Stua
   - platform: cast
     host: 192.168.1.45
+  - platform: cast
+    host: 192.168.1.179
   #Lyd
   - platform: cast
     host: 192.168.1.46
