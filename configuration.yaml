@@ -163,7 +163,7 @@ media_player:
   #Stua
   - platform: cast
     host: 192.168.1.45
-  - platform: lg_netcast
+  - platform: webostv
     host: 192.168.1.179
     name: LG lyd
   #Lyd
