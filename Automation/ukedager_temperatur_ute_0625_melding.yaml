@@ -7,6 +7,7 @@ trigger:
 condition:
   - condition: numeric_state
     entity_id: sensor.netatmo_ute_temperature
+    above: 0
   - condition: time
     weekday:
       - mon
