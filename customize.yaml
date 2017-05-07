@@ -1,7 +1,7 @@
 ###############################
 ##  Automations
 ###############################
-automation.ukedager_home_0700_radio:
+automation.morgen_radio:
   icon: mdi:radio
 automation.varsling_lav_temp_ukedager_0703_hjemme:
   icon: mdi:snowflake
