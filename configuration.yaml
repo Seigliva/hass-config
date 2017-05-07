@@ -283,6 +283,10 @@ sensor:
     automatic_add: True
     
   - platform: moon
+  
+  - platform: yr
+    monitored_conditions:
+      - symbol
     
 ########################################################################################################################
 # Shell command
