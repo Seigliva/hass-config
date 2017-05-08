@@ -49,7 +49,7 @@ switch.rf06:
 device_tracker.frusheriff:
   icon: mdi:cellphone-android
   hidden: false
-device_tracker.sheriff:
+device_tracker.sheriffen:
   icon: mdi:cellphone-android
   hidden: false
 device_tracker.superlangbeins_ipro:
