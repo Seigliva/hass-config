@@ -4,7 +4,8 @@ trigger:
   - platform: state
     entity_id:
       - device_tracker.theos_iphone
-      - device_tracker.pi_e6653
+      - device_tracker.sheriffen
+      - device_tracker.frusheriff
     to: 'home'
     for: '00:02:00'
 action:
