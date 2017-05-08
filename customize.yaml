@@ -46,7 +46,10 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
-device_tracker.pappa:
+device_tracker.frusheriff:
+  icon: mdi:cellphone-android
+  hidden: false
+device_tracker.sheriff:
   icon: mdi:cellphone-android
   hidden: false
 device_tracker.superlangbeins_ipro:
