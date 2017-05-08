@@ -46,8 +46,7 @@ switch.rf05:
   hidden: true
 switch.rf06:
   hidden: true
-device_tracker.pi_e6653:
-  friendly_name: 'Sheriff'
+device_tracker.pappa:
   icon: mdi:cellphone-android
   hidden: false
 device_tracker.superlangbeins_ipro:
