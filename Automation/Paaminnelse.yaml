@@ -1,0 +1,10 @@
+  - alias: Send påminnelse på angitt tid
+    trigger:
+      platform: time
+      hours: 11
+      minutes: 00
+      seconds: 0
+    action:
+      service: notify.alle
+      data:
+        message: 'Tid for lunsj'
