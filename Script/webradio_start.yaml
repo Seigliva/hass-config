@@ -10,6 +10,8 @@ sequence:
           http://tx-bauerno.sharp-stream.com/http_live.php?i=radionorge_no_mp3
         {%-elif is_state("input_select.radio", "Solør Radio") %}
           http://109.169.96.11:8000/solor.mp3
+        {%-elif is_state("input_select.radio", "NRK P3") %}
+          https://radio.nrk.no/direkte/p3
         {% else %}
         {% endif %}
       media_content_type: 'audio/mp4'
