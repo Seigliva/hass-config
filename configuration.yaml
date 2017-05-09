@@ -131,6 +131,7 @@ input_select:
     options:
       - "Stopp"
       - "P4"
+      - "NRK P3"
       - "Radio Norge"
       - "Solør Radio"
     initial: "Stopp"
