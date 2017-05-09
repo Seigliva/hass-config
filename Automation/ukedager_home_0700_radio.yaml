@@ -12,7 +12,7 @@ condition:
       - thu
       - fri
   - condition: state
-    entity_id: device_tracker.iphone
+    entity_id: device_tracker.sheriffen
     state: 'home'
 action:
   - service: input_select.select_option
