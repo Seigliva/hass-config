@@ -11,7 +11,7 @@ sequence:
         {%-elif is_state("input_select.radio", "Solør Radio") %}
           http://109.169.96.11:8000/solor.mp3
         {%-elif is_state("input_select.radio", "NRK P3") %}
-          https://radio.nrk.no/direkte/p3
+          http://lyd.nrk.no/nrk_radio_p3_mp3_h
         {% else %}
         {% endif %}
       media_content_type: 'audio/mp4'
