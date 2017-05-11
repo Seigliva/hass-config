@@ -98,7 +98,6 @@ ifttt:
 input_boolean:
   privacy_mode:
     name: Privacy Mode
-    initial: off
     icon: mdi:volume-off
   rf01:
     name: Kjellerlys
