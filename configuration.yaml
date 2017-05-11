@@ -349,6 +349,12 @@ zone 3:
   longitude: !secret z3lo
   radius: 80
   icon: mdi:account-multiple
+zone 4:
+  name: Jobb
+  latitude: !secret z4la
+  longitude: !secret z4lo
+  radius: 80
+  icon: mdi:account-multiple
 
 ########################################################################################################################
 # End of config file
