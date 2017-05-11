@@ -2,10 +2,10 @@ alias: Slå av kaffetrakter etter to timer
 initial_state: 'on'
 trigger:
   - platform: state
-    entity_id: input.boolean.rf06
+    entity_id: input_boolean.rf06
     to: 'on'
 action:
   - delay:
       minutes: 120
-  - service: switch.turn_off
-    entity_id: switch.rf06
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.rf06
