@@ -1,0 +1,15 @@
+tts:
+  - platform: google
+    language: 'no'
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300
+
+script:
+  tts:
+    alias: TTS
+    sequence:
+      - service: tts.google_say
+        data_template:
+          entity_id: media_player.ca01
+          message: "{{message}}"

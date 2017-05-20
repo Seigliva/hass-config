@@ -1,0 +1,47 @@
+###############################
+##  Automations
+###############################
+
+###############################
+##  Devices
+###############################
+light.alle:
+  hidden: true
+
+###############################
+##  Groups
+###############################
+group.all_automations:
+  control: hidden
+  hidden: false
+  friendly_name: Automations
+
+group.all_scripts:
+  control: hidden
+  hidden: true
+  friendly_name: Script
+
+###############################
+##  Inputs
+###############################
+input_boolean.test_automation:
+  hidden: false
+  icon: mdi:wrench
+
+###############################
+##  Scripts
+###############################
+script.tts:
+  hidden: true
+  icon: mdi:wrench
+script.restart:
+  icon: mdi:restart 
+
+###############################
+##  Sensors
+###############################
+
+###############################
+##  Netatmo
+###############################
+

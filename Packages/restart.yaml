@@ -1,0 +1,8 @@
+#script:
+#  restart:
+#    alias: "Restart HelleBOT"
+#    sequence:
+#      - service: script.tts
+#        data:
+#          message: restarter hellebot
+#      - service: homeassistant.restart

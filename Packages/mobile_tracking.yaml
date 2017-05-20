@@ -1,0 +1,47 @@
+#######################################################################################################################################
+##  Mobil lokasjon:
+#######################################################################################################################################
+homeassistant:
+  customize:
+    device_tracker.frusheriff:
+      icon: mdi:cellphone-android
+      hidden: false
+    device_tracker.sheriffen:
+      icon: mdi:cellphone-android
+      hidden: false
+    device_tracker.superlangbeins_ipro:
+      hidden: false
+      icon: mdi:tablet-ipad
+    group.enheter:
+      friendly_name: "Enheter"
+      hidden: false
+    sensor.superlangbeins_ipro_battery_level:
+      hidden: true
+    sensor.superlangbeins_ipro_battery_state:
+      hidden: true
+
+group:
+  enheter:
+    control: hidden
+    entities:
+      - device_tracker.frusheriff
+      - device_tracker.sheriffen
+      - sensor.template_theos_iphone
+      - sensor.template_noah_sin_ipad
+      - sensor.template_superlangbeins_ipro
+
+zone:
+  - name: Jobb
+    latitude: !secret z3la
+    longitude: !secret z3lo
+    radius: 80
+    icon: mdi:account-multiple
+
+  - name: Jobben
+    latitude: !secret z4la
+    longitude: !secret z4lo
+    radius: 80
+    icon: mdi:account-multiple
+    
+#device_tracker:
+ # - platform: owntracks

@@ -1,0 +1,53 @@
+#######################################################################################################################################
+##  Nettverk: ping, dns
+#######################################################################################################################################
+homeassistant:
+  customize:
+    device_tracker.hosthome:
+      friendly_name: "TheFlash"
+      icon: mdi:windows
+    device_tracker.hostspace:
+      friendly_name: "WWW"
+      icon: mdi:wifi
+    group.network:
+      friendly_name: "Nettverk"
+      hidden: false
+    sensor.speedtest_ping:
+      friendly_name: Ping
+      icon: mdi:signal-variant
+    sensor.speedtest_download:
+      friendly_name: Download
+      icon: mdi:download
+    sensor.speedtest_upload:
+      friendly_name: Upload
+      icon: mdi:upload
+    
+group:
+  network:
+    control: hidden
+    entities:
+      - device_tracker.hosthome
+      - device_tracker.hostspace
+      - sensor.speedtest_ping
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.pihole_ads_blocked_today
+      - sensor.pihole_ads_percentage_blocked_today
+      - sensor.pihole_dns_queries_today
+
+device_tracker:
+  - platform: ping
+    hosts:
+      hosthome: 192.168.1.25
+      hostspace: 8.8.4.4
+sensor:
+  - platform: speedtest
+    minute:
+      - 0
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+  - platform: pi_hole
+    

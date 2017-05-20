@@ -1,0 +1,116 @@
+#######################################################################################################################################
+##  Garasje: Garasjeport - opp/ned - auto opp 0700 - varsel
+#######################################################################################################################################
+homeassistant:
+  customize:
+    cover.garasjeport:
+      device_class: garage
+    group.garage:
+      friendly_name: "Garasje"
+      hidden: false
+    script.garage:
+      icon: mdi:garage
+      hidden: true
+    sensor.garage_status:
+      hidden: true
+    sensor.mqtt_garage_sensor:
+      hidden: true
+    switch.garasjeport:
+      hidden: true
+
+group:
+  garage:
+    control: hidden
+    entities:
+      - cover.garasjeport
+  view_garge:
+    control: hidden
+    view: yes
+    icon: mdi:garage
+    entities:
+      - group.garage
+      - camera.utekamera
+      - automation.activate_garageport
+cover:
+  - platform: mqtt
+    state_topic: "HA/garage"
+    command_topic: "HA/garage"
+    name: "Garasjeport"
+    qos: 0
+    retain: true
+    payload_open: "opp"
+    payload_close: "ned"
+    state_open: "opp"
+    state_closed: "ned"
+    optimistic: false
+sensor:
+  - platform: mqtt
+    name: "MQTT garage sensor"
+    state_topic: "HA/garage"
+  - platform: template
+    sensors:
+      garage_status:
+        value_template: "{%- if is_state('switch.garasjeport_status','on') %}opp{% elif is_state('switch.garasjeport_status','off') %}ned{%else%}error_reading_state{%- endif %}"
+automation:
+  - alias: Garage Get state from sensor
+    trigger:
+      platform: state
+      entity_id: sensor.garage_status
+    action:
+      service: mqtt.publish
+      data_template:
+        topic: "HA/garage/state"
+        payload_template: "{{trigger.to_state.state}}"
+  - alias: Garage move door
+    trigger:
+      platform: state
+      entity_id: sensor.mqtt_garage_sensor
+    action:
+      service: script.turn_on
+      entity_id: script.garage 
+  - alias: "Aktiver garasjeport"
+    initial_state: "on"
+    trigger:
+      platform: time
+      after: "07:00:00"
+    condition:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+    action:
+      - service: script.turn_on
+        entity_id: script.garage
+
+switch:
+  - platform: mqtt
+    name: "Garasjeport"
+    state_topic: "esp1/gpio/15"
+    command_topic: "esp1/gpio/15"
+    payload_on: "1"
+    payload_off: "0"
+    optimistic: true
+    qos: 0
+    retain: true
+  - platform: rfxtrx
+    devices:
+      0b110000013346760a000070:
+        name: Garasjeport status
+               
+script:
+  garage:
+    alias: Garasjeport
+    sequence:
+      - service: switch.turn_on
+        entity_id: switch.garasjeport
+      - delay:
+          milliseconds: 500
+      - service: switch.turn_off
+        entity_id: switch.garasjeport
+      - service: notify.alle
+        data:
+          title: "HelleBOT"
+          message: "Jeg har ordnet garasjeporten for deg"

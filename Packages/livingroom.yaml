@@ -1,0 +1,164 @@
+#######################################################################################################################################
+##  Stua: Styring av det meste i stua
+#######################################################################################################################################
+homeassistant:
+  customize:
+    automation.rf02:
+      hidden: true
+    automation.rf03:
+      hidden: true
+    automation.rf04:
+      hidden: true
+    automation.rf05:
+      hidden: true
+    group.stue:
+      friendly_name: "Stua"
+      hidden: false
+    light.h01:
+      friendly_name: "Stuebord"
+    light.stua:
+      hidden: true
+    switch.rf02:
+      hidden: true
+    switch.rf03:
+      hidden: true
+    switch.rf04:
+      hidden: true
+    switch.rf05:
+      hidden: true
+
+group:
+  stue:
+    entities:
+      - input_boolean.allestuelys
+      - light.h01
+      - input_boolean.rf02
+      - input_boolean.rf03
+      - input_boolean.rf04
+      - input_boolean.rf05
+  view_stue:
+    control: hidden
+    view: yes
+    icon: mdi:sofa
+    entities:
+      - group.stue
+      - group.persienner
+      - media_player.atv_stua
+      - media_player.bigscreen
+      - group.radio
+
+automation:
+  - alias: "Morgen lys"
+    initial_state: "on"
+    trigger:
+      platform: time
+      after: "06:30:00"
+    condition:
+      - condition: state
+        entity_id: input_boolean.workday_tomorrow
+        state: "on"
+    action:
+      - service: input_boolean.turn_on
+        entity_id: input_boolean.rf04 
+        
+  - alias: "Slå av alle stuelys"
+    initial_state: "on"
+    trigger:
+      platform: state
+      entity_id: input_boolean.allestuelys
+    action:
+      - service_template: "switch.turn_{{trigger.to_state.state}}"
+        data:
+          entity_id: switch.rf04,switch.rf02,switch.rf03,switch.rf05
+      - service_template: "light.turn_{{trigger.to_state.state}}"
+        data:
+          entity_id: light.h01
+      
+      
+  - alias: "Fjern Dimming av lys når TV ikke viser noe"
+    initial_state: "on"
+    trigger:
+      platform: state
+      entity_id: media_player.atv_stua
+      from: "playing"
+      to: "paused"
+      for: "00:00:20"
+    condition:
+      - condition: time
+        after: "18:00:00"
+        before: "21:30:00"
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.h01
+          brightness: 180
+          
+  - alias: "Dim lys når TV viser noe"
+    initial_state: "on"
+    trigger:
+      platform: state
+      entity_id: media_player.atv_stua
+      from: "paused"
+      to: "playing"
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.h01
+          brightness: 80
+     
+input_boolean:
+  rf02:
+    name: Stua - vegglys
+    icon: mdi:lightbulb
+  rf03:
+    name: Stua - vegglys2
+    icon: mdi:lightbulb
+  rf04:
+    name: Stue - spisebord
+    icon: mdi:lightbulb
+  rf05:
+    name: Stue - ekstralys
+    icon: mdi:lightbulb
+  allestuelys:
+    name: Alle stuelys
+    icon: mdi:lightbulb
+
+media_player:
+  - platform: apple_tv
+    host: 192.168.1.41
+    login_id: 00000000-4fd8-172c-a545-33f73f0a4715
+    name: ATV Stua
+  - platform: cast
+    host: 192.168.1.45
+#lyd
+  - platform: cast
+    host: 192.168.1.46
+
+sensor:
+  - platform: netatmo
+    station: Søbakkvegen
+    modules:
+      Ute:
+        - temperature
+        - humidity
+        - min_temp
+        - max_temp
+        - battery_vp
+      Stue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+switch:
+  - platform: rfxtrx
+    devices:
+      0b11000000c02e1a02010f70:
+        name: rf02
+      0b11000000c02e1a03010f70:
+        name: rf03
+      0b11000203f70bf210010f70:
+        name: rf04
+      0b11000003f70bf20f010f70:
+        name: rf05
+        

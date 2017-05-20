@@ -1,0 +1,63 @@
+#######################################################################################################################################
+##  Kjeller: Temeratur, lys og vaskerom
+#######################################################################################################################################
+homeassistant:
+  customize:
+    group.vaskerom:
+      friendly_name: "Vaskerommet"
+      hidden: false
+    switch.w01:
+      friendly_name: "Vaskemaskin"
+      icon: mdi:washing-machine
+    switch.w02:
+      friendly_name: "Tørketrommel"
+      icon: mdi:washing-machine
+    automation.rf01:
+      hidden: true
+    switch.rf01:
+      hidden: true
+    sensor.netatmo_kjellersoverom_min_temp:
+      hidden: true
+    sensor.netatmo_kjellersoverom_max_temp:
+      hidden: true
+
+group:
+  vaskerom:
+    control: hidden
+    entities:
+      - binary_sensor.torketrommel
+      - binary_sensor.vaskemaskin
+  
+input_boolean:
+  rf01:
+    name: Kjellerlys
+    icon: mdi:lightbulb
+sensor:
+  - platform: netatmo
+    station: Kjellerstue
+    modules:
+      Kjellersoverom:
+        - temperature
+        - humidity
+        - min_temp
+        - max_temp
+        - battery_vp
+      Kjellerstue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+switch:
+  - platform: wake_on_lan
+    name: Flash
+    mac_address: "2C-56-DC-DC-3E-E9"
+  - platform: rfxtrx
+    automatic_add: True
+    devices:
+      0b11000000c02e1a01010f70:
+        name: rf01
+wemo:
+  static:
+    - 192.168.1.48
+    - 192.168.1.49

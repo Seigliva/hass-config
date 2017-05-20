@@ -1,0 +1,39 @@
+homeassistant:
+  name: HelleBOT
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 184
+  unit_system: metric
+  time_zone: Europe/Oslo
+  customize: !include customize.yaml
+  packages: !include_dir_named Packages
+
+frontend:
+config:
+updater:
+hassio:
+conversation:
+history:
+logbook:
+sun:
+tts:
+  platform: google
+recorder:
+  purge_days: 3
+logger:
+  default: warn
+  logs:
+    homeassistant.components.camera: critical
+http:
+  api_password: !secret http-password
+  trusted_networks:
+    - 127.0.0.1
+    - 172.17.0.0/24
+    - 192.168.1.0/24
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+  
+########################################################################################################################
+# IOS app
+########################################################################################################################
+ios:

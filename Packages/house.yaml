@@ -1,0 +1,34 @@
+#######################################################################################################################################
+##  Huset: Samling med nyttige spaker i huset
+#######################################################################################################################################
+homeassistant:
+  customize:
+    group.house:
+      friendly_name: "Huset"
+      hidden: false
+
+group:
+  house:  
+    control: hidden
+    entities:
+      - light.h02
+      - light.h03
+      - switch.lyslenke
+      - input_boolean.rf01
+      - input_boolean.rf06
+      - script.restart
+      - input_boolean.privacy_mode
+  view_home_light:
+    control: hidden
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.stue
+      - group.house
+      - group.garage
+      - group.all_lights
+      - group.netatmo_easy
+      - input_select.radio
+      - group.persienner
+      - group.radio
+

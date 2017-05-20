@@ -1,0 +1,28 @@
+#######################################################################################################################################
+##  Universet: Vær, sol, måne og tid 
+#######################################################################################################################################
+homeassistant:
+  customize:
+    sun.sun:
+      hidden: false
+  
+group:
+  Universet:
+    control: hidden
+    entities:
+      - sensor.date__time
+      - sensor.yr_symbol
+      - sensor.moon
+      - sun.sun
+sensor:
+  
+  - platform: moon
+  
+  - platform: yr
+    monitored_conditions:
+      - symbol
+      
+  - platform: time_date
+    display_options:
+      - 'date_time'
+    
