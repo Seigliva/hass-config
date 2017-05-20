@@ -1,8 +1,0 @@
-alias: Send påminnelse på angitt tid
-trigger:
-  platform: time
-  after: '11:30:00'
-action:
-  service: notify.alle
-  data:
-    message: 'Tid for lunsj'
