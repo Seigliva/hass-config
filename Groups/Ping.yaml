@@ -1,4 +1,0 @@
-control: hidden
-entities:
-  - device_tracker.hosthome
-  - device_tracker.hostspace
