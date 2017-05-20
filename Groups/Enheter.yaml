@@ -1,7 +1,0 @@
-control: hidden
-entities:
-  - device_tracker.frusheriff
-  - device_tracker.sheriffen
-  - sensor.template_theos_iphone
-  - sensor.template_noah_sin_ipad
-  - sensor.template_superlangbeins_ipro
