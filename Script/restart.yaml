@@ -1,7 +1,0 @@
-alias: 'Restart HelleBOT'
-sequence:
-  - service: script.tts
-    data:
-      message: restarter hellebot
-  - service: shell_command.updatefromgit
-  - service: homeassistant.restart
