@@ -1,4 +1,0 @@
-control: hidden
-entities:
-  - binary_sensor.torketrommel
-  - binary_sensor.vaskemaskin
