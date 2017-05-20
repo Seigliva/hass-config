@@ -1,8 +1,0 @@
-emulated_hue:
-  type: alexa
-  expose_by_default: false
-homeassistant:
-  customize:
-    input_boolean.rf01:
-      emulated_hue: true
-      emulated_hue_name: "basement"
