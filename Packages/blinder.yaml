@@ -58,26 +58,3 @@ sensor:
   - platform: mqtt
     name: mqttcover
     state_topic: "HA/cover"
-automation:
-  - alias: "Persienner tilt MQTT"
-    trigger:
-      platform: state
-      entity_id: sensor.mqttcover
-    action:
-      service: script.turn_on
-      data_template:
-        entity_id: "script.tilt_{{trigger.to_state.state}}"
-        
-  - alias: "Lukk persienner ved høy temp"
-    initial_state: "on"
-    trigger:
-      - platform: numeric_state
-        entity_id: sensor.netatmo_stue_temperature
-        above: 25
-    action:
-      - service: cover.close_cover
-        entity_id: cover.persienner
-      - service: notify.alle
-        data:
-          title: "HelleBOT"
-          message: "Det er varmt inne, lukker nå persiennene"

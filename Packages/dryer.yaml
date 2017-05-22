@@ -9,17 +9,3 @@ binary_sensor:
               0
           {%- endif %}
         friendly_name: "Tørketrommel"
-
-automation:
-  alias: "Alert when dryer is done"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: binary_sensor.torketrommel
-    from: "on"
-    to: "off"
-  action:
-    - service: notify.alle
-      data:
-        title: "HelleBOT"
-        message: "Tørketrommelen er ferdig"

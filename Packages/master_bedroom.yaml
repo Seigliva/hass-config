@@ -7,24 +7,3 @@ homeassistant:
       hidden: true
     light.h03:
       friendly_name: Soverom
-
-automation:
-  alias: "Wake up light"
-  trigger:
-    platform: time
-    after: "06:30:00"
-  condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-  action:
-    service: light.turn_on
-    entity_id: light.h03
-    data:
-      # 900 seconds = 15 minutes
-      brightness: 180
-      transition: 900

@@ -16,7 +16,7 @@ homeassistant:
     sensor.mqtt_garage_sensor:
       hidden: true
     switch.garasjeport:
-      hidden: true
+      hidden: false
 
 group:
   garage:
@@ -51,39 +51,6 @@ sensor:
     sensors:
       garage_status:
         value_template: "{%- if is_state('switch.garasjeport_status','on') %}opp{% elif is_state('switch.garasjeport_status','off') %}ned{%else%}error_reading_state{%- endif %}"
-automation:
-  - alias: Garage Get state from sensor
-    trigger:
-      platform: state
-      entity_id: sensor.garage_status
-    action:
-      service: mqtt.publish
-      data_template:
-        topic: "HA/garage/state"
-        payload_template: "{{trigger.to_state.state}}"
-  - alias: Garage move door
-    trigger:
-      platform: state
-      entity_id: sensor.mqtt_garage_sensor
-    action:
-      service: script.turn_on
-      entity_id: script.garage 
-  - alias: "Aktiver garasjeport"
-    initial_state: "on"
-    trigger:
-      platform: time
-      after: "07:00:00"
-    condition:
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-    action:
-      - service: script.turn_on
-        entity_id: script.garage
 
 switch:
   - platform: mqtt
