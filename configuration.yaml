@@ -7,6 +7,8 @@ homeassistant:
   time_zone: Europe/Oslo
   customize: !include customize.yaml
   packages: !include_dir_named Packages
+  
+automation: !include automations.yaml
 
 frontend:
 config:
@@ -32,8 +34,4 @@ http:
     - 192.168.1.0/24
   ip_ban_enabled: True
   login_attempts_threshold: 5
-  
-########################################################################################################################
-# IOS app
-########################################################################################################################
 ios:

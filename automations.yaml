@@ -1,0 +1,382 @@
+- action:
+  - alias: Varsel ankommet jobb
+    service: notify.pushbullet
+  alias: Varsel 'Ankommet jobb'
+  id: '1495404740793'
+  trigger:
+  - entity_id: device.tracker_sheriffen
+    from: home
+    platform: state
+    to: jobb
+- action:
+  - alias: '"Varsel ''Ankommet hjem'''
+    data: {}
+    service: notify.pushbullet
+  alias: Varsel 'Ankommet hjem'
+  id: '1495405038256'
+  trigger:
+  - entity_id: device.tracker_sheriffen
+    from: jobb
+    platform: state
+    to: home
+- id: persienner_tilt_mqtt
+  alias: "Persienner tilt MQTT"
+  trigger:
+    platform: state
+    entity_id: sensor.mqttcover
+  action:
+    service: script.turn_on
+    data_template:
+      entity_id: "script.tilt_{{trigger.to_state.state}}"
+- id: lukk_persienner_ved_hoy_temp        
+  alias: "Lukk persienner ved høy temp"
+  initial_state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.netatmo_stue_temperature
+      above: 25
+  action:
+    - service: cover.close_cover
+      entity_id: cover.persienner
+    - service: notify.alle
+      data:
+        title: "HelleBOT"
+        message: "Det er varmt inne, lukker nå persiennene"
+- id: varsel_torketrommel_ferdig
+  alias: "Varsel tørketrommel ferdig"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.torketrommel
+    from: "on"
+    to: "off"
+  action:
+    - service: notify.alle
+      data:
+        title: "HelleBOT"
+        message: "Tørketrommelen er ferdig"
+- id: garasjeport_status_fra_sensor
+  alias: "Garasjeport status fra sensor"
+  trigger:
+    platform: state
+    entity_id: sensor.garage_status
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "HA/garage/state"
+      payload_template: "{{trigger.to_state.state}}"     
+- id: garasjeport_aktiveres
+  alias: "Garasjeport aktiveres"
+  trigger:
+    platform: state
+    entity_id: sensor.mqtt_garage_sensor
+  action:
+    service: script.turn_on
+    entity_id: script.garage     
+- id: aktiver_garasjeport_0700
+  alias: "Aktiver garasjeport 0700"
+  initial_state: "on"
+  trigger:
+    platform: time
+    after: "07:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: script.turn_on
+      entity_id: script.garage     
+- id: varsel_når_HelleBOT_starter
+  alias: "Varsel når 'HelleBOT' starter"
+  initial_state: "on"
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "HelleBOT"
+        message: "Klar til tjeneste"
+    - service: mqtt.publish
+      data:
+        topic: HA/cover
+        payload: "-"     
+- id: rf_stikkkontakt_styring      
+  alias: "RF stikkontakt styring"
+  initial_state: "on"
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: input_boolean.rf01,input_boolean.rf02,input_boolean.rf03,input_boolean.rf04,input_boolean.rf05,input_boolean.rf06
+    - platform: state
+      entity_id: switch.rf01,switch.rf02,switch.rf03,switch.rf04,switch.rf05,switch.rf06
+  action:
+    - service_template: "input_boolean.turn_{{trigger.to_state.state}}"
+      data_template:
+        entity_id: "input_boolean.{{trigger.entity_id.split('.')[1]}}"
+    - service_template: "switch.turn_{{trigger.to_state.state}}"
+      data_template:
+        entity_id: "switch.{{trigger.entity_id.split('.')[1]}}"        
+- id: kaffetrakter_av_etter_2_timer
+  alias: "Slå av kaffetrakter etter to timer"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.rf06
+      to: "on"
+  action:
+    - delay:
+        minutes: 120
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.rf06      
+- id: morgen_lys
+  alias: "Morgen lys"
+  initial_state: "on"
+  trigger:
+    platform: time
+    after: "06:30:00"
+  condition:
+    - condition: state
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.rf04       
+- id: alle_stuelys_av
+  alias: "Slå av alle stuelys"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: input_boolean.allestuelys
+  action:
+    - service_template: "switch.turn_{{trigger.to_state.state}}"
+      data:
+        entity_id: switch.rf04,switch.rf02,switch.rf03,switch.rf05
+    - service_template: "light.turn_{{trigger.to_state.state}}"
+      data:
+        entity_id: light.h01   
+- id: dim_opp_lys_når_appletv_pauses    
+  alias: "Dim opp lys når AppleTV pauses"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: media_player.atv_stua
+    from: "playing"
+    to: "paused"
+    for: "00:00:20"
+  condition:
+    - condition: time
+      after: "18:00:00"
+      before: "21:30:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.h01
+        brightness: 180       
+- id: dim_lys_når_appletv_viser_noe
+  alias: "Dim lys når AppleTV viser noe"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: media_player.atv_stua
+    from: "paused"
+    to: "playing"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.h01
+        brightness: 80        
+- id: wake_up_light
+  alias: "Wake up light"
+  trigger:
+    platform: time
+    after: "06:30:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    service: light.turn_on
+    entity_id: light.h03
+    data:
+      brightness: 180
+      transition: 900   
+- id: varsel_om_lunsj
+  alias: "Varsel om lunsj"
+  trigger:
+    platform: time
+    after: "11:30:00"
+  action:
+    service: notify.alle
+    data:
+      message: "Tid for lunsj"
+- id: varsel_velkommen_hjem      
+  alias: "Varsel velkommen hjem"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.theos_iphone
+        - device_tracker.sheriffen
+        - device_tracker.frusheriff
+      to: "home"
+      for: "00:02:00"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.ca01
+      data_template:
+        language: "no"
+        message: >
+          {% set person = trigger.to_state.attributes.friendly_name%}
+          {%- macro greeting_sentence(person) -%}
+          {{ [
+          "Velkommen hjem! " ~ person,
+          "Gjett hvem som er hjemme? "  ~ person +" er!",
+          "Alle sammen: " ~ person + " er hjemme igjen.",
+          "Velkommen hjem " ~ person + ".  Vi har savnet deg. eller i hvertfall Skybert gjorde.",
+          "Godt å komme hjem nå, Sett deg ned, hvil hode og strekk på beina! Velkommen tilbake " ~ person,
+          "Du kan bli her så lenge du vil, du er velkommen hjem " ~ person,
+          "Heisann " ~ person + " Velkommen hjem!",
+          person ~ "! Du er hjemme!"
+          ] | random }}
+          {%- endmacro -%}
+          "{{greeting_sentence(person)}}"
+- id: varsel_ipad_pro_batteri_lavt          
+  alias: "Varsel iPad pro batteri lavt"
+  initial_state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.superlangbeins_ipro_battery_level
+      below: 20
+  action:
+    - service: notify.alle
+      data:
+        title: "HelleBOT"
+        message: "iPad Pro batteriet er lavt, koble til lader"
+- id: varsel_ute_temp_ukedager        
+  alias: "Varsel ute temp ukedager"
+  initial_state: True
+  hide_entity: false
+  trigger:
+    - platform: time
+      after: "07:03:00"
+  condition:
+    - condition: state
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
+  action:
+    - service: notify.alle
+      data_template:
+        title: "HelleBOT"
+        message: "{%- if  states.sensor.netatmo_ute_temperature.state| float < 3 -%}Det er kaldt! {{ states.sensor.netatmo_ute_temperature.state }} grader, lurt å holde seg inne i dag :){%- else -%}Gradestokken viser {{ states.sensor.netatmo_ute_temperature.state }} grader, ha en fin dag :){%- endif %}"
+- id: aktiver_privacy_mode
+  alias: "Aktiver 'Privacy mode'"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.privacy_mode
+      to: "on"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.ca01
+      data:
+        volume_level: 0
+- id: deaktiver_privacy_mode
+  alias: "Deaktiver 'Privacy mode'"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.privacy_mode
+      to: "off"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.ca01
+      data:
+        volume_level: 0.5
+- id: radio_i_stua
+  alias: "Radio i stua"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: input_select.radio
+  action:
+    - service_template: script.turn_on
+      data_template:
+        entity_id: "{%if is_state('input_select.radio','Stopp')%}script.webradio_stop{%else%}script.webradio_start{%endif%}"       
+- id: morgen_radio
+  alias: "Morgen radio"
+  initial_state: "on"
+  trigger:
+    platform: time
+    after: "06:45:00"
+  condition:
+    - condition: state
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
+    - condition: state
+      entity_id: device_tracker.sheriffen
+      state: "home"
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio
+        option: "NRK P3"      
+- id: varsel_vaskemaskin_ferdig
+  alias: "Varsel vaskemaskin ferdig"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.vaskemaskin
+    from: "on"
+    to: "off"
+  action:
+    - service: notify.alle
+      data:
+        title: "HelleBOT"
+        message: "Vaskemaskinen er ferdig."
+- id: aktiver_arbeidsuke
+  alias: "Aktiver 'Arbeidsuke'"
+  initial_state: "on"
+  trigger:
+    platform: time
+    after: "20:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: "off"
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.workday_tomorrow 
+- id: deaktiver_arbeidsuke      
+  alias: "Deaktiver 'Arbeidsuke'"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      after: "20:00:00"
+    - platform: state
+      entity_id: input_boolean.vacation_mode
+      to: "on"
+  condition:
+    - condition: time
+      weekday:
+        - fri
+        - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.workday_tomorrow
