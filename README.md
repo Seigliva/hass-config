@@ -10,6 +10,7 @@ My [Home Assistant](https://home-assistant.io) Config
 * 433mhz RF Outlets 
 * Wemo
 * Philips Hue
+* Netatmo
 * IP cam
 * Chrome Cast x2
 * Chrome Cast Audio
