@@ -12,7 +12,7 @@ My [Home Assistant](https://home-assistant.io) Config
 * Philips Hue
 * Netatmo
 * IP cam
-* Chrome Cast x2
+* Chrome Cast
 * Chrome Cast Audio
 * Android device
 * Apple TV 4.gen
