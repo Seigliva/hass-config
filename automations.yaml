@@ -215,6 +215,10 @@
   trigger:
     platform: time
     after: "11:30:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.workday_tomorrow
+    state: "on"
   action:
     service: notify.alle
     data:
