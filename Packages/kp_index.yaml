@@ -1,0 +1,17 @@
+sensor:
+  # https://hastebin.com/uyoqajosat.bash
+  - platform: command_line
+    name: KP Index
+    unit_of_measurement: KP
+    command: "curl http://www.nordlysvarsel.com/en/aurora-forecast-nordlysvarsel-2/ | grep '>KP' | awk -F'<' '{print $5}' |awk -F'>' '{print $2}'  | awk -F'-' '{print $2}'"
+
+automation:
+  alias: KP Varsling
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kp_index
+    above: 4
+  action:
+    service: notify.pushbullet
+    data_template:
+      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"
