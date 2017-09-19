@@ -16,6 +16,7 @@ input_select:
   theme:
     name: Velg tema
     options:
+      - "DarkOrange"
       - "Lucky"
       - "Dark"
       - "Happy"
@@ -25,6 +26,7 @@ input_select:
       - "NightSky"
       - "Tokyo"
       - "Tokyo2"
+      - "Pink"
       - "Default"
     initial: "Default"
     icon: mdi:palette
