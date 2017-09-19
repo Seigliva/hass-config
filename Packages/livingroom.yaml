@@ -18,6 +18,18 @@ homeassistant:
       friendly_name: "Stuebord"
     light.stua:
       hidden: true
+    light.stue: #Tradfri gruppe spisebord
+      hidden: true
+    light.tradfri_bulb_e27_ws_opal_980lm:
+      friendly_name: "Spisebord"
+    light.stuegang:
+      friendly_name: "Stuegang"
+    light.tradfri_bulb_gu10_ws_400lm:
+      hidden: true
+    light.tradfri_bulb_gu10_ws_400lm_2:
+      hidden: true
+    light.tradfri_bulb_gu10_ws_400lm_3:
+      hidden: true
     switch.rf02:
       hidden: true
     switch.rf03:
@@ -32,10 +44,13 @@ group:
     entities:
       - input_boolean.allestuelys
       - light.h01
+      - light.tradfri_bulb_e27_ws_opal_980lm
+      - light.stuegang
       - input_boolean.rf02
       - input_boolean.rf03
       - input_boolean.rf04
       - input_boolean.rf05
+      
   view_stue:
     control: hidden
     view: yes
@@ -55,10 +70,10 @@ input_boolean:
     name: Stua - vegglys2
     icon: mdi:lightbulb
   rf04:
-    name: Stue - spisebord
+    name: Stue - ekstralys
     icon: mdi:lightbulb
   rf05:
-    name: Stue - ekstralys
+    name: Stue - ekstralys2
     icon: mdi:lightbulb
   allestuelys:
     name: Alle stuelys
@@ -69,8 +84,8 @@ media_player:
     host: 192.168.1.41
     login_id: 00000000-4fd8-172c-a545-33f73f0a4715
     name: ATV Stua
-  - platform: cast
-    host: 192.168.1.45
+  #- platform: cast
+  #  host: 192.168.1.45
 #lyd
   - platform: cast
     host: 192.168.1.46

@@ -34,7 +34,10 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.netatmo_stue_temperature
-      above: 25
+      above: 23
+  condition:
+    - condition: time
+      before: "17:30:00"
   action:
     - service: cover.close_cover
       entity_id: cover.persienner
@@ -78,7 +81,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    after: "07:00:00"
+    at: "07:00:00"
   condition:
     - condition: time
       weekday:
@@ -139,7 +142,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    after: "06:30:00"
+    at: "06:30:00"
   condition:
     - condition: state
       entity_id: input_boolean.workday_tomorrow
@@ -195,7 +198,7 @@
   alias: "Wake up light"
   trigger:
     platform: time
-    after: "06:30:00"
+    at: "06:30:00"
   condition:
     - condition: time
       weekday:
@@ -214,19 +217,24 @@
   alias: "Varsel om lunsj"
   trigger:
     platform: time
-    after: "11:30:00"
+    at: "11:30:00"
+  condition:
+    condition: state
+    entity_id: input_boolean.workday_tomorrow
+    state: "on"
   action:
     service: notify.alle
     data:
       message: "Tid for lunsj"
 - id: varsel_velkommen_hjem      
   alias: "Varsel velkommen hjem"
-  initial_state: "on"
+  initial_state: "off"
   trigger:
     - platform: state
       entity_id:
         - device_tracker.theos_iphone
         - device_tracker.sheriffen
+        - device_tracker.ac5f3edd3981
         - device_tracker.frusheriff
       to: "home"
       for: "00:02:00"
@@ -268,7 +276,7 @@
   hide_entity: false
   trigger:
     - platform: time
-      after: "07:03:00"
+      at: "07:03:00"
   condition:
     - condition: state
       entity_id: input_boolean.workday_tomorrow
@@ -317,7 +325,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    after: "06:45:00"
+    at: "06:45:00"
   condition:
     - condition: state
       entity_id: input_boolean.workday_tomorrow
@@ -348,7 +356,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    after: "20:00:00"
+    at: "20:00:00"
   condition:
     - condition: time
       weekday:
@@ -368,7 +376,7 @@
   initial_state: "on"
   trigger:
     - platform: time
-      after: "20:00:00"
+      at: "20:00:00"
     - platform: state
       entity_id: input_boolean.vacation_mode
       to: "on"
@@ -380,3 +388,24 @@
   action:
     - service: homeassistant.turn_off
       entity_id: input_boolean.workday_tomorrow
+- id: velg_tema
+  alias: "Velg Tema"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: input_select.theme
+  action:
+    - service_template: frontend.set_theme
+      data_template:
+        name: "{{states.input_select.theme.state|lower}}"     
+- id: Nordlys varsling
+  alias: "KP Varsling"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kp_index
+    above: 4
+  action:
+    service: notify.pushbullet
+    data_template:
+      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"        
+        

@@ -8,6 +8,50 @@ homeassistant:
       hidden: false
     group.netatmo_easy:
       friendly_name: "Netatmo Easy"
+    sensor.netatmo_stue_temperature:
+      friendly_name: "Stue temperature"
+    sensor.netatmo_stue_co2:
+      friendly_name: "Stue co2"
+    sensor.netatmo_stue_humidity:
+      friendly_name: "Stue humidity"
+    sensor.netatmo_stue_noise:
+      friendly_name: "Stue noise"
+    sensor.netatmo_stue_pressure:
+      friendly_name: "Stue pressure"
+    sensor.netatmo_stue_wifi:
+      friendly_name: "Stue wifi"
+    sensor.netatmo_ute_temperature:
+      friendly_name: "Ute temperature"
+    sensor.netatmo_ute_max_temp:
+      friendly_name: "Ute max temp"
+    sensor.netatmo_ute_min_temp:
+      friendly_name: "Ute min temp"
+    sensor.netatmo_ute_humidity:
+      friendly_name: "Ute humidity"
+    sensor.netatmo_ute_battery:
+      friendly_name: "Ute battery"
+    sensor.netatmo_ute_radio:
+      friendly_name: "Ute radio"
+    sensor.netatmo_kjellerstue_temperature:
+      friendly_name: "Kjellerstue temperature"
+    sensor.netatmo_kjellerstue_co2:
+      friendly_name: "Kjellerstue co2"
+    sensor.netatmo_kjellerstue_humidity:
+      friendly_name: "Kjellerstue humidity"
+    sensor.netatmo_kjellerstue_noise:
+      friendly_name: "Kjellerstue noise"
+    sensor.netatmo_kjellerstue_pressure:
+      friendly_name: "Kjellerstue pressure"
+    sensor.netatmo_kjellerstue_wifi:
+      friendly_name: "Kjellerstue wifi"
+    sensor.netatmo_kjellersoverom_temperature:
+      friendly_name: "Kjellersoverom temperature"
+    sensor.netatmo_kjellersoverom_humidity:
+      friendly_name: "Kjellersoverom humidity"
+    sensor.netatmo_kjellersoverom_battery:
+      friendly_name: "Kjellersoverom battery"
+    sensor.netatmo_kjellersoverom_radio:
+      friendly_name: "Kjellersoverom"
 
 netatmo:
   api_key: !secret netatmo-apikey
@@ -23,19 +67,23 @@ group:
       - sensor.netatmo_stue_humidity
       - sensor.netatmo_stue_noise
       - sensor.netatmo_stue_pressure
+      - sensor.netatmo_stue_wifi
       - sensor.netatmo_ute_temperature
       - sensor.netatmo_ute_max_temp
       - sensor.netatmo_ute_min_temp
       - sensor.netatmo_ute_humidity
       - sensor.netatmo_ute_battery
+      - sensor.netatmo_ute_radio
       - sensor.netatmo_kjellerstue_temperature
       - sensor.netatmo_kjellerstue_co2
       - sensor.netatmo_kjellerstue_humidity
       - sensor.netatmo_kjellerstue_noise
       - sensor.netatmo_kjellerstue_pressure
+      - sensor.netatmo_kjellerstue_wifi
       - sensor.netatmo_kjellersoverom_temperature
       - sensor.netatmo_kjellersoverom_humidity
       - sensor.netatmo_kjellersoverom_battery
+      - sensor.netatmo_kjellersoverom_radio
       - binary_sensor.home_someone_known
       - binary_sensor.home_motion
       - binary_sensor.home_someone_unknown

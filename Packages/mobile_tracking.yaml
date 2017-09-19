@@ -6,9 +6,13 @@ homeassistant:
     device_tracker.frusheriff:
       icon: mdi:cellphone-android
       hidden: false
-    device_tracker.sheriffen:
+    device_tracker.ac5f3edd3981: #Samsung S7
       icon: mdi:cellphone-android
       hidden: false
+      friendly_name: Sheriffen
+    device_tracker.sheriffen:
+      icon: mdi:cellphone-android
+      hidden: true
     device_tracker.superlangbeins_ipro:
       hidden: false
       icon: mdi:tablet-ipad
@@ -19,13 +23,21 @@ homeassistant:
       hidden: true
     sensor.superlangbeins_ipro_battery_state:
       hidden: true
+    sensor.superlangbein_battery_level:
+      hidden: true
+    sensor.superlangbein_battery_state:
+      hidden: true
+    sensor.yvind_sin_iphone_battery_level:
+      hidden: true
+    sensor.yvind_sin_iphone_battery_state:
+      hidden: true
 
 group:
   enheter:
     control: hidden
     entities:
       - device_tracker.frusheriff
-      - device_tracker.sheriffen
+      - device_tracker.ac5f3edd3981
       - sensor.template_theos_iphone
       - sensor.template_noah_sin_ipad
       - sensor.template_superlangbeins_ipro
@@ -43,5 +55,9 @@ zone:
     radius: 80
     icon: mdi:account-multiple
     
-#device_tracker:
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.1/24
  # - platform: owntracks
+
+ 

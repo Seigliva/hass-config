@@ -10,10 +10,11 @@ group:
   Universet:
     control: hidden
     entities:
-      - sensor.date__time
+#      - sensor.date__time
       - sensor.yr_symbol
       - sensor.moon
       - sun.sun
+      - sensor.kp_index
 sensor:
   
   - platform: moon
@@ -21,8 +22,17 @@ sensor:
   - platform: yr
     monitored_conditions:
       - symbol
-      
-  - platform: time_date
-    display_options:
-      - 'date_time'
-    
+       
+  #- platform: time_date
+  #  display_options:
+  #    - 'date_time'
+  
+  - platform: command_line
+    name: KP Index
+    unit_of_measurement: KP
+    command: "curl http://www.nordlysvarsel.com/en/aurora-forecast-nordlysvarsel-2/ | grep '>KP' | awk -F'<' '{print $5}' |awk -F'>' '{print $2}'  | awk -F'-' '{print $2}'"
+
+camera:
+  - platform: generic
+    name: 'Nordlys'
+    still_image_url: http://kho.unis.no/Quicklooks/SvalTrackII/bossekop.jpg

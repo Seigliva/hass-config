@@ -1,5 +1,5 @@
 homeassistant:
-  name: HelleBOT
+  name: IQ
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: 184
@@ -7,14 +7,19 @@ homeassistant:
   time_zone: Europe/Oslo
   customize: !include customize.yaml
   packages: !include_dir_named Packages
-  
+###############################
+##  Yhe Flash Open HW Monitor
+###############################
+#  customize_glob:
+#    "*sensor.theflash*":
+#      hidden: true
+        
 automation: !include automations.yaml
 
-frontend:
 config:
 updater:
-hassio:
 conversation:
+#discovery:
 history:
 logbook:
 sun:

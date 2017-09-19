@@ -6,6 +6,10 @@ homeassistant:
     group.house:
       friendly_name: "Huset"
       hidden: false
+    light.kjeller: #Tradfri gruppe Kjellerkrok
+      hidden: true
+    light.tradfri_bulb_e27_opal_1000lm:
+      friendly_name: "Kjellerkrok"
 
 group:
   house:  
@@ -15,9 +19,11 @@ group:
       - light.h03
       - switch.lyslenke
       - input_boolean.rf01
+      - light.tradfri_bulb_e27_opal_1000lm
       - input_boolean.rf06
       - script.restart
       - input_boolean.privacy_mode
+      
   view_home_light:
     control: hidden
     view: yes

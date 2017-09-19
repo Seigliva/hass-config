@@ -9,4 +9,7 @@ camera:
     password: !secret synology-password
     verify_ssl: False
     
+  # - platform: ffmpeg
+    # name: 'Hallway'
+    # input: http://192.168.1.44/1a416dd52f1f4f4c219a0c3c2d2a2952/live/files/high/index.m3u8
   - platform: netatmo

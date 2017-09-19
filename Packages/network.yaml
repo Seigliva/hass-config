@@ -21,7 +21,18 @@ homeassistant:
     sensor.speedtest_upload:
       friendly_name: Upload
       icon: mdi:upload
-    
+    sensor.pihole_ads_percentage_blocked_today:
+      hidden: true
+    sensor.pihole_dns_queries_today:
+      hidden: true
+    sensor.pihole_domains_blocked:
+      hidden: true
+    sensor.pihole_dns_unique_domains:
+      hidden: true
+    sensor.pihole_dns_queries_forwarded:
+      hidden: true
+    sensor.pihole_dns_queries_cached:
+      hidden: true
 group:
   network:
     control: hidden
@@ -32,8 +43,8 @@ group:
       - sensor.speedtest_download
       - sensor.speedtest_upload
       - sensor.pihole_ads_blocked_today
-      - sensor.pihole_ads_percentage_blocked_today
-      - sensor.pihole_dns_queries_today
+      - sensor.pihole_dns_unique_clients
+      
 
 device_tracker:
   - platform: ping
@@ -49,5 +60,8 @@ sensor:
       - ping
       - download
       - upload
-  - platform: pi_hole
+  #- platform: pi_hole
+  #  host: 192.168.1.225
+  - platform: openhardwaremonitor
+    host: 192.168.1.25
     
