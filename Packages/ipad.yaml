@@ -46,17 +46,17 @@ sensor:
         value_template: "{%if (states.device_tracker.noah_sin_ipad.state) != 'not_home' %}{{states.device_tracker.noah_sin_ipad.state}}{%- elif is_state('sensor.phone_to_home_noah_sin_ipad', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_noah_sin_ipad.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.noah_sin_ipad_battery_level.attributes.icon}}"
 #######################################################################################################################################
-  - platform: google_travel_time
-    name: Phone To Home Superlangbeins iPro
-    api_key: !secret googleapi
-    origin: device_tracker.superlangbeins_ipro
-    destination: zone.home
+  #- platform: google_travel_time
+  #  name: Phone To Home Superlangbeins iPro
+  #  api_key: !secret googleapi
+  #  origin: device_tracker.superlangbeins_ipro
+  #  destination: zone.home
     
-  - platform: google_travel_time
-    name: Phone To Home Theos iPhone
-    api_key: !secret googleapi
-    origin: device_tracker.theos_iphone
-    destination: zone.home
+  #- platform: google_travel_time
+  #  name: Phone To Home Theos iPhone
+  #  api_key: !secret googleapi
+  #  origin: device_tracker.theos_iphone
+  #  destination: zone.home
     
   - platform: google_travel_time
     name: Phone To Home Noah sin iPad
