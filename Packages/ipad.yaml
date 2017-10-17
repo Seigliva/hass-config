@@ -33,6 +33,8 @@ homeassistant:
       hidden: true
     sensor.phone_to_home_noah_sin_ipad:
       hidden: true
+    sensor.phone_to_home_superlangbeins_2017:
+      hidden: true
 #######################################################################################################################################
 sensor:
   - platform: template
