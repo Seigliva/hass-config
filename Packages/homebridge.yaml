@@ -7,4 +7,6 @@ homeassistant:
       homebridge_visible: true
     switch:
       homebridge_visible: true
+    cover:
+      homebridge_visible: true
 ############################################################################
