@@ -35,6 +35,7 @@ group:
       - sensor.template_theos_iphone
       - sensor.template_noah_sin_ipad
       - sensor.template_superlangbeins_ipro
+      - sensor.template_superlangbeins_2017
 
 zone:
   - name: Jobb
