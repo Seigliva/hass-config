@@ -30,7 +30,7 @@ sensor:
   - platform: command_line
     name: KP Index
     unit_of_measurement: KP
-    command: " curl -s http://www.aurora-service.org/aurora-forecast/ | grep ' <span style="color: #0000ff;"> Kp' |awk '{print $15}'|awk -F '.' '{print $1}'"
+    command: "curl http://www.nordlysvarsel.com/en/aurora-forecast-nordlysvarsel-2/ | grep '>KP' | awk -F'<' '{print $5}' |awk -F'>' '{print $2}'  | awk -F'-' '{print $2}'"
 
 camera:
   - platform: generic
