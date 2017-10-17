@@ -3,16 +3,12 @@
 #######################################################################################################################################
 homeassistant:
   customize:
-    device_tracker.frusheriff:
+    device_tracker.ec9bf3b218e4: #Samsung S6 FruSheriff
       icon: mdi:cellphone-android
       hidden: false
-    device_tracker.ac5f3edd3981: #Samsung S7
+    device_tracker.ac5f3edd3981: #Samsung S7 Sheriff
       icon: mdi:cellphone-android
       hidden: false
-      friendly_name: Sheriffen
-    device_tracker.sheriffen:
-      icon: mdi:cellphone-android
-      hidden: true
     device_tracker.superlangbeins_ipro:
       hidden: false
       icon: mdi:tablet-ipad
@@ -36,7 +32,7 @@ group:
   enheter:
     control: hidden
     entities:
-      - device_tracker.frusheriff
+      - device_tracker.ec9bf3b218e4
       - device_tracker.ac5f3edd3981
       - sensor.template_theos_iphone
       - sensor.template_noah_sin_ipad
