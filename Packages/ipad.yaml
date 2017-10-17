@@ -5,7 +5,9 @@ homeassistant:
   customize:
     sensor.superlangbeins_2017_battery_level:
       hidden: true
-    sensor.superlangbeins_2017_battery_level:
+    sensor.superlangbeins_ipro_battery_level:
+      hidden: true
+    sensor.superlangbeins_2017_battery_state:
       hidden: true
     sensor.superlangbeins_ipro_battery_state:
       hidden: true
