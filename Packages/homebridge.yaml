@@ -2,13 +2,6 @@
 ## Homebridge
 ############################################################################
 homeassistant:
-  customize:
-    cover.perienner_tilt:
-      homebridge_cover_type: rollershutter
-    cover.persienner:
-      homebridge_cover_type: rollershutter
-    cover.garasjeport:
-      homebridge_cover_type: garage_door
   customize_domain:
     light:
       homebridge_visible: true
@@ -16,6 +9,7 @@ homeassistant:
       homebridge_visible: true
     cover:
       homebridge_visible: true
+      homebridge_cover_type: rollershutter
     input_boolean:
       homebridge_visible: true
   customize_glob:
