@@ -9,4 +9,9 @@ homeassistant:
       homebridge_visible: true
     cover:
       homebridge_visible: true
+    input_boolean:
+      homebridge_visible: true
+  customize_glob:
+    "switch.rf*":
+      homebridge_visible: false
 ############################################################################
