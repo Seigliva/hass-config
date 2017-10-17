@@ -39,17 +39,17 @@ sensor:
         friendly_name: Superlangbeins iPro
         value_template: "{%if (states.device_tracker.superlangbeins_ipro.state) != 'not_home' %}{{states.device_tracker.superlangbeins_ipro.state}}{%- elif is_state('sensor.phone_to_home_superlangbeins_ipro', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_superlangbeins_ipro.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.superlangbeins_ipro_battery_level.attributes.icon}}"
-        
+
       template_superlangbeins_2017:
         friendly_name: Superlangbeins 2017
         value_template: "{%if (states.device_tracker.superlangbeins_2017.state) != 'not_home' %}{{states.device_tracker.superlangbeins_2017.state}}{%- elif is_state('sensor.phone_to_home_superlangbeins_2017', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_superlangbeins_2017.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.superlangbeins_2017_battery_level.attributes.icon}}"  
-        
+
       template_theos_iphone:
         friendly_name: Theos iPhone
         value_template: "{%if (states.device_tracker.theos_iphone.state) != 'not_home' %}{{states.device_tracker.theos_iphone.state}}{%- elif is_state('sensor.phone_to_home_theos_iphone', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_theos_iphone.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.theos_iphone_battery_level.attributes.icon}}"
-        
+
       template_noah_sin_ipad:
         friendly_name: Noah sin iPad
         value_template: "{%if (states.device_tracker.noah_sin_ipad.state) != 'not_home' %}{{states.device_tracker.noah_sin_ipad.state}}{%- elif is_state('sensor.phone_to_home_noah_sin_ipad', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_noah_sin_ipad.state}} Minutes to home{%- endif %}"
@@ -61,7 +61,7 @@ sensor:
     origin: device_tracker.superlangbeins_ipro
     destination: zone.home
  
-   - platform: google_travel_time
+  - platform: google_travel_time
     name: Phone To Home Superlangbeins 2017
     api_key: !secret googleapi
     origin: device_tracker.superlangbeins_2017
