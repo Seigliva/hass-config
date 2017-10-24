@@ -17,7 +17,7 @@ homeassistant:
       hidden: true
     sensor.flash_generic_hard_disk_load_used_space:
       hidden: true
-    sensor.flash_generic_hard_disk_load_used_space_2
+    sensor.flash_generic_hard_disk_load_used_space_2:
       hidden: true
     sensor.flash_generic_memory_data_available_memory:
       hidden: true
