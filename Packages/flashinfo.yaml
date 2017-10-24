@@ -3,109 +3,109 @@
 #######################################################################################################################################
 homeassistant:
   customize:
-    sensor.theflash_corsair_force_gt_data_controller_writes_to_nand:
+    sensor.flash_corsair_force_gt_data_controller_writes_to_nand:
       hidden: true
-    sensor.theflash_corsair_force_gt_data_host_reads:
+    sensor.flash_corsair_force_gt_data_host_reads:
       hidden: true
-    sensor.theflash_corsair_force_gt_data_host_writes_to_controller:
+    sensor.flash_corsair_force_gt_data_host_writes_to_controller:
       hidden: true
-    sensor.theflash_corsair_force_gt_levels_remaining_life:
+    sensor.flash_corsair_force_gt_levels_remaining_life:
       hidden: true
-    sensor.theflash_corsair_force_gt_load_used_space:
+    sensor.flash_corsair_force_gt_load_used_space:
       hidden: true
-    sensor.theflash_corsair_force_gt_temperatures_temperature:
+    sensor.flash_corsair_force_gt_temperatures_temperature:
       hidden: true
-    sensor.theflash_generic_hard_disk_load_used_space:
+    sensor.flash_generic_hard_disk_load_used_space:
       hidden: true
-    sensor.theflash_generic_memory_data_available_memory:
+    sensor.flash_generic_memory_data_available_memory:
       hidden: true
-    sensor.theflash_generic_memory_data_used_memory:
+    sensor.flash_generic_memory_data_used_memory:
       hidden: true
-    sensor.theflash_generic_memory_load_memory:
+    sensor.flash_generic_memory_load_memory:
       hidden: false
       friendly_name: Minne bruk
-    sensor.theflash_intel_core_i56600k_clocks_bus_speed:
+    sensor.flash_intel_core_i56600k_clocks_bus_speed:
       hidden: true
-    sensor.theflash_intel_core_i56600k_clocks_cpu_core_1:
+    sensor.flash_intel_core_i56600k_clocks_cpu_core_1:
       hidden: true
-    sensor.theflash_intel_core_i56600k_clocks_cpu_core_2:
+    sensor.flash_intel_core_i56600k_clocks_cpu_core_2:
       hidden: true
-    sensor.theflash_intel_core_i56600k_clocks_cpu_core_3:
+    sensor.flash_intel_core_i56600k_clocks_cpu_core_3:
       hidden: true
-    sensor.theflash_intel_core_i56600k_clocks_cpu_core_4:
+    sensor.flash_intel_core_i56600k_clocks_cpu_core_4:
       hidden: true
-    sensor.theflash_intel_core_i56600k_load_cpu_core_1:
+    sensor.flash_intel_core_i56600k_load_cpu_core_1:
       hidden: true
-    sensor.theflash_intel_core_i56600k_load_cpu_core_2:
+    sensor.flash_intel_core_i56600k_load_cpu_core_2:
       hidden: true
-    sensor.theflash_intel_core_i56600k_load_cpu_core_3:
+    sensor.flash_intel_core_i56600k_load_cpu_core_3:
       hidden: true
-    sensor.theflash_intel_core_i56600k_load_cpu_core_4:
+    sensor.flash_intel_core_i56600k_load_cpu_core_4:
       hidden: true
-    sensor.theflash_intel_core_i56600k_load_cpu_total:
+    sensor.flash_intel_core_i56600k_load_cpu_total:
       hidden: false
       friendly_name: CPU bruk
-    sensor.theflash_intel_core_i56600k_powers_cpu_cores:
+    sensor.flash_intel_core_i56600k_powers_cpu_cores:
       hidden: true
-    sensor.theflash_intel_core_i56600k_powers_cpu_dram:
+    sensor.flash_intel_core_i56600k_powers_cpu_dram:
       hidden: true
-    sensor.theflash_intel_core_i56600k_powers_cpu_graphics:
+    sensor.flash_intel_core_i56600k_powers_cpu_graphics:
       hidden: true
-    sensor.theflash_intel_core_i56600k_powers_cpu_package:
+    sensor.flash_intel_core_i56600k_powers_cpu_package:
       hidden: true
-    sensor.theflash_intel_core_i56600k_temperatures_cpu_core_1:
+    sensor.flash_intel_core_i56600k_temperatures_cpu_core_1:
       hidden: true
-    sensor.theflash_intel_core_i56600k_temperatures_cpu_core_2:
+    sensor.flash_intel_core_i56600k_temperatures_cpu_core_2:
       hidden: true
-    sensor.theflash_intel_core_i56600k_temperatures_cpu_core_3:
+    sensor.flash_intel_core_i56600k_temperatures_cpu_core_3:
       hidden: true
-    sensor.theflash_intel_core_i56600k_temperatures_cpu_core_4:
+    sensor.flash_intel_core_i56600k_temperatures_cpu_core_4:
       hidden: true
-    sensor.theflash_intel_core_i56600k_temperatures_cpu_package:
+    sensor.flash_intel_core_i56600k_temperatures_cpu_package:
       hidden: false
       friendly_name: CPU temperatur
-    sensor.theflash_nvidia_geforce_gtx_970_clocks_gpu_core:
+    sensor.flash_nvidia_geforce_gtx_970_clocks_gpu_core:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_clocks_gpu_memory:
+    sensor.flash_nvidia_geforce_gtx_970_clocks_gpu_memory:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_clocks_gpu_shader:
+    sensor.flash_nvidia_geforce_gtx_970_clocks_gpu_shader:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_controls_gpu_fan:
+    sensor.flash_nvidia_geforce_gtx_970_controls_gpu_fan:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_data_gpu_memory_free:
+    sensor.flash_nvidia_geforce_gtx_970_data_gpu_memory_free:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_data_gpu_memory_total:
+    sensor.flash_nvidia_geforce_gtx_970_data_gpu_memory_total:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_data_gpu_memory_used:
+    sensor.flash_nvidia_geforce_gtx_970_data_gpu_memory_used:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_fans_gpu:
+    sensor.flash_nvidia_geforce_gtx_970_fans_gpu:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_load_gpu_core:
+    sensor.flash_nvidia_geforce_gtx_970_load_gpu_core:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_load_gpu_memory:
+    sensor.flash_nvidia_geforce_gtx_970_load_gpu_memory:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_load_gpu_memory_controller:
+    sensor.flash_nvidia_geforce_gtx_970_load_gpu_memory_controller:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_load_gpu_video_engine:
+    sensor.flash_nvidia_geforce_gtx_970_load_gpu_video_engine:
       hidden: true
-    sensor.theflash_nvidia_geforce_gtx_970_temperatures_gpu_core:
+    sensor.flash_nvidia_geforce_gtx_970_temperatures_gpu_core:
       hidden: false
       friendly_name: Skjermkort temperatur
-    sensor.theflash_wdc_wd30ezrx00dc0b0_load_used_space:
+    sensor.flash_wdc_wd30ezrx00dc0b0_load_used_space:
       hidden: true
-    sensor.theflash_wdc_wd30ezrx00dc0b0_load_used_space_2:
+    sensor.flash_wdc_wd30ezrx00dc0b0_load_used_space_2:
       hidden: true
-    sensor.theflash_wdc_wd30ezrx00dc0b0_temperatures_temperature:
+    sensor.flash_wdc_wd30ezrx00dc0b0_temperatures_temperature:
       hidden: true
-    sensor.theflash_wdc_wd30ezrx00dc0b0_temperatures_temperature_2:
+    sensor.flash_wdc_wd30ezrx00dc0b0_temperatures_temperature_2:
       hidden: true
-    group.theflash:
+    group.flash:
       friendly_name: Flash
 group:
-  theflash:
+  flash:
     control: hidden
     entities:
-      - sensor.theflash_intel_core_i56600k_load_cpu_total
-      - sensor.theflash_intel_core_i56600k_temperatures_cpu_package
-      - sensor.theflash_generic_memory_load_memory
-      - sensor.theflash_nvidia_geforce_gtx_970_temperatures_gpu_core
+      - sensor.flash_intel_core_i56600k_load_cpu_total
+      - sensor.flash_intel_core_i56600k_temperatures_cpu_package
+      - sensor.flash_generic_memory_load_memory
+      - sensor.flash_nvidia_geforce_gtx_970_temperatures_gpu_core
