@@ -19,7 +19,7 @@ automation: !include automations.yaml
 config:
 updater:
 conversation:
-discovery:
+#discovery:
 history:
 logbook:
 sun:
