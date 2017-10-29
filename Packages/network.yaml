@@ -64,4 +64,6 @@ sensor:
     host: 192.168.1.160
   - platform: openhardwaremonitor
     host: 192.168.1.25
+  - platform: uptime
+    name: HA Uptime
     
