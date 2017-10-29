@@ -168,7 +168,7 @@
   initial_state: "on"
   trigger:
     platform: state
-    entity_id: media_player.atv_stua
+    entity_id: media_player.stua
     from: "playing"
     to: "paused"
     for: "00:00:20"
@@ -186,7 +186,7 @@
   initial_state: "on"
   trigger:
     platform: state
-    entity_id: media_player.atv_stua
+    entity_id: media_player.stua
     from: "paused"
     to: "playing"
   action:
