@@ -44,6 +44,7 @@ group:
       - sensor.speedtest_upload
       - sensor.pihole_ads_blocked_today
       - sensor.pihole_dns_unique_clients
+      - sensor.ha_uptime
       
 
 device_tracker:
