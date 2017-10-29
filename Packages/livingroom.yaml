@@ -80,10 +80,10 @@ input_boolean:
     icon: mdi:lightbulb
 
 media_player:
-  - platform: apple_tv
-    host: 192.168.1.41
-    login_id: 00000000-4fd8-172c-a545-33f73f0a4715
-    credentials: F01C0076792FE72F:EC26846E8F82F5169A813E264AB9FD2979282069D9E7CB0EAADEB1538A544AF0
+  #- platform: apple_tv
+    #host: 192.168.1.41
+    #login_id: 00000000-4fd8-172c-a545-33f73f0a4715
+    #credentials: F01C0076792FE72F:EC26846E8F82F5169A813E264AB9FD2979282069D9E7CB0EAADEB1538A544AF0
     #name: ATV Stua
   - platform: cast
     host: 192.168.1.45
