@@ -58,7 +58,7 @@ group:
     entities:
       - group.stue
       - group.persienner
-      - media_player.atv_stua
+      - media_player_stua
       - media_player.bigscreen
       - group.radio
 
