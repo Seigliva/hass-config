@@ -100,4 +100,11 @@ group:
       - sensor.netatmo_kjellerstue_co2
       - sensor.netatmo_stue_humidity
       - sensor.netatmo_kjellerstue_humidity
-
+    netatmo_stue:
+      control: hidden
+      entities:
+      - sensor.netatmo_stue_temperature
+    netatmo_ute:
+      control: hidden
+      entities:
+      - sensor.netatmo_ute_temperature
