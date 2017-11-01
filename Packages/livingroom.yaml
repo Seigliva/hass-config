@@ -61,6 +61,7 @@ group:
       - media_player.stua
       - media_player.bigscreen
       - group.radio
+      - sensor.netatmo_stue_temperature
 
 input_boolean:
   rf02:
