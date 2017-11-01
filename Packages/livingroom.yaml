@@ -90,6 +90,7 @@ media_player:
     host: 192.168.1.45
   - platform: cast #lyd
     host: 192.168.1.46
+  - platform: plex
 
 sensor:
   - platform: netatmo
