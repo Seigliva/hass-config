@@ -31,7 +31,7 @@ group:
       - group.garage
       - camera.utekamera
       - automation.activate_garageport
-      - sensor.netatmo_ute_temperature
+      - - group.netatmo_ute
 cover:
   - platform: mqtt
     state_topic: "HA/garage"
