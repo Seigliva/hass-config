@@ -9,9 +9,9 @@ homeassistant:
     group.netatmo_easy:
       friendly_name: "Netatmo Easy"
     group.netatmo_stue:
-      friendly_name: ""
+      friendly_name: "Stue temperatur"
     group.netatmo_ute:
-      friendly_name: ""
+      friendly_name: "Ute temperatur"
     sensor.netatmo_stue_temperature:
       friendly_name: "Stue temperature"
     sensor.netatmo_stue_co2:
