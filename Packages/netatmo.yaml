@@ -8,6 +8,10 @@ homeassistant:
       hidden: false
     group.netatmo_easy:
       friendly_name: "Netatmo Easy"
+    group.netatmo_stue:
+      friendly_name: ""
+    group.netatmo_ute:
+      friendly_name: ""
     sensor.netatmo_stue_temperature:
       friendly_name: "Stue temperature"
     sensor.netatmo_stue_co2:
@@ -100,11 +104,11 @@ group:
       - sensor.netatmo_kjellerstue_co2
       - sensor.netatmo_stue_humidity
       - sensor.netatmo_kjellerstue_humidity
-    netatmo_stue:
-      control: hidden
-      entities:
+  netatmo_stue:
+    control: hidden
+    entities:
       - sensor.netatmo_stue_temperature
-    netatmo_ute:
-      control: hidden
-      entities:
+  netatmo_ute:
+    control: hidden
+    entities:
       - sensor.netatmo_ute_temperature
