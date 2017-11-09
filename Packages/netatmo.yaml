@@ -60,7 +60,7 @@ homeassistant:
 netatmo:
   api_key: !secret netatmo-apikey
   secret_key: !secret netatmo-secretkey
-  username: !secret mail
+  username: !secret netatmo-mail
   password: !secret netatmo-password
 group:
   netatmo:
