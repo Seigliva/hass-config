@@ -22,6 +22,7 @@ group:
       - light.h02
       - light.h03
       - switch.lyslenke
+      - switch.lyslenke2
       - input_boolean.rf01
       - light.tradfri_bulb_e27_w_opal_1000lm_2
       - light.tradfri_bulb_e27_opal_1000lm
