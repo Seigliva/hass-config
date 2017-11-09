@@ -1,6 +1,6 @@
 switch:
   - platform: mqtt
-    name: "Lyslenke"
+    name: "Lyslenke2"
     state_topic: "esp3/gpio/13"
     command_topic: "esp3/gpio/13"
     payload_on: "1"
