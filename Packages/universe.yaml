@@ -5,7 +5,12 @@ homeassistant:
   customize:
     sun.sun:
       hidden: false
-  
+    sensor.moon_fase_percent:
+      hidden: true
+    sensor.moon_fase:
+      hidden: true
+    sensor.moon_fase_template:
+      entity_picture: /local/moon_face.png  
 group:
   Universet:
     control: hidden
@@ -15,8 +20,8 @@ group:
       - sensor.moon
       - sun.sun
       - sensor.kp_index
+      - sensor.moon_fase_template
 sensor:
-  
   - platform: moon
   
   - platform: yr
@@ -32,6 +37,18 @@ sensor:
     unit_of_measurement: KP
     command: "curl -s http://www.aurora-service.org/aurora-forecast/ | grep '> Kp' |awk '{print $15}'|awk -F '<' '{print $1}'"
 
+  - platform: command_line
+    name: "Moon fase" 
+    command: "curl -s https://www.timeanddate.no/astronomi/maanefaser/norge/elverum | grep 'cur-moon-percent' | awk '{print $33}' | awk -F'<p>' '{print $2}'"
+  - platform: command_line
+    name: "Moon fase percent"
+    command: "curl -s https://www.timeanddate.no/astronomi/maanefaser/norge/elverum | grep 'cur-moon-percent' | awk '{print $33}' | awk -F'>' '{print$2}' | awk -F'%' '{print $1}'"
+    unit_of_measurement: '%'
+  - platform: template
+    sensors:
+      moon_fase_template:
+        friendly_name: "Måne fase"
+        value_template: "{{ states.sensor.moon_fase_percent.state }}% - {{ states.sensor.moon_fase.state |capitalize }}"
 camera:
   - platform: generic
     name: 'Nordlys'
