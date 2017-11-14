@@ -29,6 +29,8 @@ group:
       - input_boolean.rf06
       - script.restart
       - input_boolean.privacy_mode
+      - group.netatmo_ute
+      - group.netatmo_stue
       
   view_home_light:
     control: hidden
