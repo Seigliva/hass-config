@@ -30,7 +30,7 @@ group:
     control: hidden
     entities:
       - device_tracker.ec9bf3b218e4
-      - device_tracker.ac5f3edd3981
+      - device_tracker.30074d89e3ef
       - sensor.template_theos_iphone
       - sensor.template_noah_sin_ipad
       - sensor.template_superlangbeins_ipro
