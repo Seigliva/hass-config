@@ -24,7 +24,6 @@ script:
           packet: 
             - "JgCMAJaQFTQVNRQ1FRAUERQQFRAVEBQ1FTUVNBQRFBAVEBQRFBEUEBU1FBAVEBUQFRAUEBUQFDUWDxU0FTUUNRU0FTUUNRYABgKVkRQ1FTUUNRQRFBAVEBQRFBEUNRQ1FTUUEBUQFBEUERQQFRAUNRUQFBEUEBUQFRAUERQ1FBEUNRU0FTUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA=="
 #---------------------------------------------------------------------------
-script:
   tv_volume_up:
     alias: 'TV - Volum opp'
     sequence:
@@ -33,7 +32,6 @@ script:
           packet: 
             - "JgBuAJKUFRAUERM2FTQVEBQ1FREUDxQRExITNhU0FRAUNRUQExISNxU0FjQUEBQ2FQ8UERQREhITEhQRFDUVEBU0FTQVNRUABfqTlBQ1FQAMSJKUFTQVAAxIkpQVNBUADEiSlBU1FQAMRZWTFTUVAA0FAAAAAAAAAAAAAA=="
 #---------------------------------------------------------------------------
-script:
   tv_volume_down:
     alias: 'TV - Volum ned'
     sequence:
