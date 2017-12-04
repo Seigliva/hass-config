@@ -12,8 +12,8 @@ group:
     name: 'IR Enheter'
     entities:
       - script.tv_power
-      - script.tv_volume_up
-      - script.tv_volume_down
+      - script.soundbar_up
+      - script.soundbar_down
 ############################################################################
 script:
   tv_power:
@@ -24,16 +24,16 @@ script:
           packet: 
             - "JgCMAJaQFTQVNRQ1FRAUERQQFRAVEBQ1FTUVNBQRFBAVEBQRFBEUEBU1FBAVEBUQFRAUEBUQFDUWDxU0FTUUNRU0FTUUNRYABgKVkRQ1FTUUNRQRFBAVEBQRFBEUNRQ1FTUUEBUQFBEUERQQFRAUNRUQFBEUEBUQFRAUERQ1FBEUNRU0FTUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA=="
 #---------------------------------------------------------------------------
-  tv_volume_up:
-    alias: 'TV - Volum opp'
+  soundbar_up:
+    alias: 'Lydplanke Volum opp'
     sequence:
       - service: broadlink.send_packet_192_168_1_191
         data:
           packet: 
             - "JgBuAJKUFRAUERM2FTQVEBQ1FREUDxQRExITNhU0FRAUNRUQExISNxU0FjQUEBQ2FQ8UERQREhITEhQRFDUVEBU0FTQVNRUABfqTlBQ1FQAMSJKUFTQVAAxIkpQVNBUADEiSlBU1FQAMRZWTFTUVAA0FAAAAAAAAAAAAAA=="
 #---------------------------------------------------------------------------
-  tv_volume_down:
-    alias: 'TV - Volum ned'
+  soundbar_down:
+    alias: 'Lydplanke Volum ned'
     sequence:
       - service: broadlink.send_packet_192_168_1_191
         data:
