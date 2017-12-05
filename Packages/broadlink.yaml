@@ -15,6 +15,7 @@ group:
       - script.soundbar_up
       - script.soundbar_down
       - script.hdmiswitch_3
+      - script.hdmiswitch_next
 ############################################################################
 script:
   tv_power:
@@ -48,3 +49,11 @@ script:
         data:
           packet: 
             - "JgBgAOwGM5oREhMRERQXDhMRFBITEhMSEzcTNhM4EzcTNhQ2EzcTNxQ2FBEUNhQ2EzcUERQ2FBISEBY2FBISEhMSFDYTEhM3EwAFHwABKkgTAAxYAAEpRxUADFcAASlEGAANBQAAAAAAAAAA"
+            
+  hdmiswitch_next:
+    alias: 'HDMI switch - neste'
+    sequence:
+      - service: broadlink.send_packet_192_168_1_191
+        data:
+          packet: 
+            - "JgB4AAABKZMUERQRFBETEhkMExITEhMSFDYTNxM3EzcTNxI4EjcTNxQRExITNxM3GDAWERM3FBETNxQ2FBEUERMSEzcTEhQ2EwAFHwABKUkTAAxXAAEpSRQADFYAASpJEwAMVgABKkgUAAxXAAEpSRQADFYAASpFFwANBQ=="
