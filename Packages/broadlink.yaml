@@ -14,6 +14,7 @@ group:
       - script.tv_power
       - script.soundbar_up
       - script.soundbar_down
+      - script.hdmiswitch_3
 ############################################################################
 script:
   tv_power:
@@ -40,7 +41,7 @@ script:
           packet: 
             - "JgB2AJaRFRATERQ1FzMVDxQ2FQ8UERMSEhIUNhU0FRATNhUQFQ8UERQ1FTUVDxM3FRAUEBMSEzYVEBUPFDYVDxM3FTQVNBUABfuSlBU0FQAMSJOTFDYVAAxHk5QVNBUADEiSlBU0FQAMSJKUFTQVAAxIk5MVNRUADQUAAA=="
 #---------------------------------------------------------------------------
-  hdmiswitch_next:
+  hdmiswitch_3:
     alias: 'HDMI switch - 3'
     sequence:
       - service: broadlink.send_packet_192_168_1_191
