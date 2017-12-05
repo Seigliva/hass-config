@@ -41,9 +41,9 @@ script:
             - "JgB2AJaRFRATERQ1FzMVDxQ2FQ8UERMSEhIUNhU0FRATNhUQFQ8UERQ1FTUVDxM3FRAUEBMSEzYVEBUPFDYVDxM3FTQVNBUABfuSlBU0FQAMSJOTFDYVAAxHk5QVNBUADEiSlBU0FQAMSJKUFTQVAAxIk5MVNRUADQUAAA=="
 #---------------------------------------------------------------------------
   hdmiswitch_next:
-    alias: 'HDMI switch - neste'
+    alias: 'HDMI switch - 3'
     sequence:
       - service: broadlink.send_packet_192_168_1_191
         data:
           packet: 
-            - "AAAAAAAAAAAAAAAA=="
+            - "JgBgAOwGM5oREhMRERQXDhMRFBITEhMSEzcTNhM4EzcTNhQ2EzcTNxQ2FBEUNhQ2EzcUERQ2FBISEBY2FBISEhMSFDYTEhM3EwAFHwABKkgTAAxYAAEpRxUADFcAASlEGAANBQAAAAAAAAAA=="
