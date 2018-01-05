@@ -1,0 +1,11 @@
+customize:
+  master_bedroom_light:
+    google_assistant: true
+    google_assistant_name: bedroom light
+  bedroom_blinds:
+    aliases:
+      - bedroom shades
+      - bedroom covers
+  hallway_ceiling_switch:
+    google_assistant: true
+    google_assistant_type: light
