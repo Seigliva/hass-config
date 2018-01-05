@@ -16,6 +16,7 @@ homeassistant:
       google_assistant: true
     cover:
       google_assistant: true
+      google_assistant_name: livingroom blinds
     input_boolean:
       google_assistant: true
   customize_glob:
