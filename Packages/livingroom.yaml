@@ -62,6 +62,7 @@ group:
       - media_player.bigscreen
       - group.radio
       - group.netatmo_stue
+      - group.ir_devices
       
 input_boolean:
   rf02:
