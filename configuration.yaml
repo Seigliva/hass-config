@@ -31,14 +31,14 @@ logger:
   logs:
     homeassistant.components.camera: critical
 http:
-  base_url: https://hellebo.duckdns.org
+  base_url: !secret base_ur
   api_password: !secret http-password
   trusted_networks:
     - 127.0.0.1
     - 172.17.0.0/24
     - 192.168.1.0/24
-  ssl_certificate: /home/pi/dehydrated/certs/hellebo.duckdns.org/fullchain.pem
-  ssl_key: /home/pi/dehydrated/certs/hellebo.duckdns.org/privkey.pem
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
   ip_ban_enabled: True
   login_attempts_threshold: 5
 ios:
