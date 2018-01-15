@@ -31,7 +31,7 @@ logger:
   logs:
     homeassistant.components.camera: critical
 http:
-  base_url: !secret base_ur
+  base_url: !secret base_url
   api_password: !secret http-password
   trusted_networks:
     - 127.0.0.1
