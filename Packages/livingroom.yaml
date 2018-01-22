@@ -93,22 +93,22 @@ media_player:
     host: 192.168.1.46
   - platform: plex
 
-#sensor:
-#  - platform: netatmo
-#    station: Søbakkvegen
-#    modules:
-#      Ute:
-#        - temperature
-#        - humidity
-#        - min_temp
-#        - max_temp
-#        - battery_vp
-#      Stue:
-#        - temperature
-#        - co2
-#        - pressure
-#        - noise
-#        - humidity
+sensor:
+  - platform: netatmo
+    station: Søbakkvegen
+    modules:
+      Ute:
+        - temperature
+        - humidity
+        - min_temp
+        - max_temp
+        - battery_vp
+      Stue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
 switch:
   - platform: rfxtrx
     devices:
