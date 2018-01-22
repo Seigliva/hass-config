@@ -34,7 +34,7 @@ input_boolean:
     icon: mdi:lightbulb
 sensor:
   - platform: netatmo
-    station: Kjellerstue
+    station: Kjeller
     modules:
       Kjellersoverom:
         - temperature
