@@ -27,10 +27,9 @@ tts:
   platform: google
 recorder:
 logger:
-  default: critical
+  default: error
   logs:
     homeassistant.components.camera: critical
-    homeassistant.components.sensor: debug
 http:
   base_url: !secret base_url
   api_password: !secret http-password
