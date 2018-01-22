@@ -62,6 +62,7 @@ netatmo:
   secret_key: !secret netatmo-secretkey
   username: !secret netatmo-mail
   password: !secret netatmo-password
+  discovery: false
 group:
   netatmo:
     control: hidden
