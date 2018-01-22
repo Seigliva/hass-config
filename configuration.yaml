@@ -27,9 +27,10 @@ tts:
   platform: google
 recorder:
 logger:
-  default: warn
+  default: critical
   logs:
     homeassistant.components.camera: critical
+    homeassistant.components.sensor.netatmo: debug
 http:
   base_url: !secret base_url
   api_password: !secret http-password
