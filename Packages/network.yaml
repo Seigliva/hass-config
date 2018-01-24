@@ -62,7 +62,7 @@ sensor:
       - download
       - upload
   - platform: pi_hole
-    host: 192.168.1.160
+    host: 192.168.1.165
   - platform: openhardwaremonitor
     host: 192.168.1.25
   - platform: uptime
