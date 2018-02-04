@@ -11,6 +11,6 @@ camera:
     
   - platform: ffmpeg
     name: 'Scam'
-    input: tcp://192.168.1.163:2222
+    input: tcp/h264://192.168.1.163:2222
 #  username: !secret rpiu
 #  password: !secret rpip
