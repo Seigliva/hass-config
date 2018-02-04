@@ -12,6 +12,9 @@ homeassistant:
     switch.w02:
       friendly_name: "Tørketrommel"
       icon: mdi:washing-machine
+    switch.w03:
+      friendly_name: "Kupevarmer"
+      icon: mdi:washing-machine
     automation.rf01:
       hidden: true
     switch.rf01:
