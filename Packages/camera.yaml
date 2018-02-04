@@ -10,7 +10,7 @@ camera:
     verify_ssl: True
     
   - platform: ffmpeg		
-    name: 'heee'		
-    input: http://192.168.1.163:2222/
+    name: 'Scam'		
+    input: tcp://192.168.1.163:2222
 #  username: !secret rpiu
 #  password: !secret rpip
