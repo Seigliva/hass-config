@@ -9,11 +9,8 @@ camera:
     password: !secret synology-password
     verify_ssl: True
     
-  - platform: netatmo
-  
-  #- platform: rpi_camera
-  
-#- platform: generic
-#  still_image_url: http://192.168.1.163:5004/cam.jpg
+  - platform: ffmpeg		
+    name: 'heee'		
+    input: http://192.168.1.163:2222/
 #  username: !secret rpiu
 #  password: !secret rpip
