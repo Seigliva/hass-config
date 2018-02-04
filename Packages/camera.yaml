@@ -13,7 +13,7 @@ camera:
   
   #- platform: rpi_camera
   
-- platform: generic
-  still_image_url: http://192.168.1.163:5004/cam.jpg
-  username: !secret rpiu
-  password: !secret rpip
+#- platform: generic
+#  still_image_url: http://192.168.1.163:5004/cam.jpg
+#  username: !secret rpiu
+#  password: !secret rpip
