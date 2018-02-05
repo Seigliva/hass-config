@@ -331,7 +331,7 @@
       entity_id: input_boolean.workday_tomorrow
       state: "on"
     - condition: state
-      entity_id: device_tracker.sheriffen
+      entity_id: device_tracker.30074d89e3ef
       state: "home"
   action:
     - service: input_select.select_option
