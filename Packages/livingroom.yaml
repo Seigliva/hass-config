@@ -42,7 +42,7 @@ homeassistant:
       friendly_name: "Yttergang"
     light.tradfri_bulb_gu10_w_400lm:
       hidden: true
-    light.tradfri_bulb_gu10_w_400lm_2	:
+    light.tradfri_bulb_gu10_w_400lm_2:
       hidden: true
     light.tradfri_bulb_gu10_w_400lm_3:
       hidden: true
