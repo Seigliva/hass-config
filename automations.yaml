@@ -414,7 +414,7 @@
 - id: Bevegelse registrert
   alias: "Motion detected"
   trigger:
-    platform: binary_state
+    platform: state
     entity_id: binary_sensor.home_motion
     from: "off"
     to: "on"
@@ -423,7 +423,7 @@
     entity_id: light.stuegang
     data:
       brightness: 255
-      rgb_color: [255, 180, 71]
+ #     rgb_color: [255, 180, 71]
 ##################
 
 
