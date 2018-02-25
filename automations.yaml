@@ -420,7 +420,7 @@
     to: "on"
   action:
     service: light.turn_on
-    entity_id: light.stuegang
+    entity_id: light.stuegang, light.gangen
     #data:
     #  brightness: 254
     #  rgb_color: [255, 180, 71]
