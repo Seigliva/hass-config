@@ -87,10 +87,8 @@ homeassistant:
     sensor.netatmo_ute_battery_2:
       hidden: true
     sensor.netatmo_ute_humidity_2:
-      hidde: true
-    sensor.netatmo_ute_temperature_2:
       hidden: true
-    sensor.netatmo_ute_humidity_2:
+    sensor.netatmo_ute_temperature_2:
       hidden: true
 ##################################################
 
