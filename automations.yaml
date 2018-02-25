@@ -421,9 +421,9 @@
   action:
     service: light.turn_on
     entity_id: light.stuegang
-    data:
-      brightness: 254
- #     rgb_color: [255, 180, 71]
+    #data:
+    #  brightness: 254
+    #  rgb_color: [255, 180, 71]
 ##################
 
 
