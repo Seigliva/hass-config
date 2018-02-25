@@ -409,3 +409,23 @@
     data_template:
       message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"        
         
+################
+#test
+- id: Bevegelse registrert
+  alias: "Motion detected"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.home_motion
+    from: "off"
+    to: "on"
+  action:
+    service: light.turn_on
+    entity_id: light.stuegang
+    data:
+      brightness: 255
+      rgb_color: [255, 180, 71]
+##################
+
+
+
+
