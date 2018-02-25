@@ -73,7 +73,23 @@ homeassistant:
     sensor.netatmo_kjellerstue_pressure_2:
       hidden: true
     sensor.netatmo_kjellerstue_temperature_2:
-      hidden: true     
+      hidden: true
+    sensor.netatmo_stue_co2_2:
+      hidden: true
+    sensor.netatmo_stue_humidity_2:
+      hidden: true
+    sensor.netatmo_stue_noise_2:
+      hidden: true
+    sensor.netatmo_stue_pressure_2:
+      hidden: true
+    sensor.netatmo_stue_temperature_2:
+      hidden: true
+    sensor.netatmo_ute_battery_2:
+      hidden: true
+    sensor.netatmo_ute_humidity_2:
+      hidde: true
+    sensor.netatmo_ute_temperature_2:
+      hidden: true
 ##################################################
 
 netatmo:
