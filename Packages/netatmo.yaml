@@ -90,7 +90,7 @@ homeassistant:
       hidde: true
     sensor.netatmo_ute_temperature_2:
       hidden: true
-    sensor.netatmo_ute_humidity_2
+    sensor.netatmo_ute_humidity_2:
       hidden: true
 ##################################################
 
