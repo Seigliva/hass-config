@@ -27,7 +27,7 @@ script:
 group:
   view_goodnight:
     view: yes
-    icon: mdi:moon
+    icon: mdi:weather-night
     entities:
       - script.good_night
 
