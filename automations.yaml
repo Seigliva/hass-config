@@ -415,7 +415,7 @@
   alias: "Motion detected"
   trigger:
     platform: state
-    entity_id: binary_sensor.home_motion
+    entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
     from: "off"
     to: "on"
   action:
