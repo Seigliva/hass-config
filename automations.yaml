@@ -414,7 +414,7 @@
 - id: Bevegelse registrert
   alias: "Motion detected"
   trigger:
-    platform: state
+    platform: binary_state
     entity_id: binary_sensor.home_motion
     from: "off"
     to: "on"
