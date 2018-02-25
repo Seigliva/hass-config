@@ -460,7 +460,7 @@
         - tue
         - wed
         - thu
-        - fre
+        - fri
     - condition: state
       entity_id: input_boolean.vacation_mode
       state: "off"
