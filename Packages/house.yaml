@@ -6,10 +6,6 @@ homeassistant:
     group.house:
       friendly_name: "Huset"
       hidden: false
-    light.kjeller: #Tradfri gruppe Kjellerkrok
-      hidden: true
-    light.tradfri_bulb_e27_opal_1000lm:
-      friendly_name: "Kjellerkrok"
       
 group:
   house:  
