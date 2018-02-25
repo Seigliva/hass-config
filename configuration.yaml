@@ -1,5 +1,5 @@
 homeassistant:
-  name: IQ
+  name: HelleBot
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: 184
