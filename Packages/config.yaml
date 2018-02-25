@@ -17,7 +17,8 @@ sensor:
 ############################################################################
 ##  Default View
 ############################################################################
-group:
-  default_view:
-    view: yes
-    icon: mdi:home
+#group:
+#  default_view:
+#    view: yes
+#    icon: mdi:home
+#    entities:
