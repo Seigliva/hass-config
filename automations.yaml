@@ -443,11 +443,11 @@
     - condition: state
       entity_id: light.h01
       state: "on"
-    action:
-      - service: light.turn_on
-        entity_id: light.h01
-        data:
-          flash: "long"
+  action:
+    - service: light.turn_on
+      entity_id: light.h01
+      data:
+        flash: "long"
 ##################
 
 
