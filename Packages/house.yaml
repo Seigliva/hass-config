@@ -10,11 +10,7 @@ homeassistant:
       hidden: true
     light.tradfri_bulb_e27_opal_1000lm:
       friendly_name: "Kjellerkrok"
-    light.soverom_gutten: #Tradfri gruppe
-      hidden: true
-    light.tradfri_bulb_e27_w_opal_1000lm_2:
-      friendly_name: "Barnerom2"
-
+      
 group:
   house:  
     control: hidden
