@@ -60,19 +60,19 @@ homeassistant:
 #Midlertidig fiks på dobbel netatmo tempinfo
     sensor.netatmo_kjellersoverom_battery_2:
       hidden: true
-    sensor.netatmo_kjellersoverom_humidity_2
+    sensor.netatmo_kjellersoverom_humidity_2:
       hidden: true
-    sensor.netatmo_kjellersoverom_temperature_2
+    sensor.netatmo_kjellersoverom_temperature_2:
       hidden: true
-    sensor.netatmo_kjellerstue_co2_2
+    sensor.netatmo_kjellerstue_co2_2:
       hidden: true
-    sensor.netatmo_kjellerstue_humidity_2
+    sensor.netatmo_kjellerstue_humidity_2:
       hidden: true
-    sensor.netatmo_kjellerstue_noise_2
+    sensor.netatmo_kjellerstue_noise_2:
       hidden: true
-    sensor.netatmo_kjellerstue_pressure_2
+    sensor.netatmo_kjellerstue_pressure_2:
       hidden: true
-    sensor.netatmo_kjellerstue_temperature_2
+    sensor.netatmo_kjellerstue_temperature_2:
       hidden: true     
 ##################################################
 
