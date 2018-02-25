@@ -1,0 +1,34 @@
+############################################################################
+## Good Night Sequence
+############################################################################
+script:
+  good_night:
+    alias: God natt
+    sequence:
+      - service: homeassistant.turn_off
+        data:
+          entity_id: group.stue, group.all_lights
+#      - delay: '00:00:05'
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.bathroom, light.hallway
+#      - delay: '00:00:10'
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.living_room
+#      - delay: '00:00:10'
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.kitchen
+#      - delay: '00:04:00'
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.bedroom
+group:
+  view_goodnight:
+    view: yes
+    icon: mdi:moon
+    entities:
+      - script.good_night
+
+############################################################################
