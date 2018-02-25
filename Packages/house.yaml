@@ -13,18 +13,18 @@ homeassistant:
     light.soverom_gutten: #Tradfri gruppe
       hidden: true
     light.tradfri_bulb_e27_w_opal_1000lm_2:
-      friendly_name: "Soverom gutten"
+      friendly_name: "Barnerom2"
 
 group:
   house:  
     control: hidden
     entities:
       - light.h02
+      - light.tradfri_bulb_e27_w_opal_1000lm_2
       - light.h03
       - switch.lyslenke
       - switch.lyslenke2
       - input_boolean.rf01
-      - light.tradfri_bulb_e27_w_opal_1000lm_2
       - light.tradfri_bulb_e27_opal_1000lm
       - input_boolean.rf06
       - script.restart
