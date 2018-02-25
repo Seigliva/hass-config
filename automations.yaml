@@ -448,6 +448,25 @@
       entity_id: light.h01
       data:
         flash: "long"
+- id: Lys av halv ni
+  alias: "Lys av automagisk 0830"
+  trigger:
+    platform: time
+    at: "08:30:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fre
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: "off"
+  action:
+    - service: script.turn_on
+      entity_id: script.good_night
 ##################
 
 
