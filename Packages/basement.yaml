@@ -23,6 +23,10 @@ homeassistant:
       hidden: true
     sensor.netatmo_kjellersoverom_max_temp:
       hidden: true
+    light.kjeller: #Tradfri gruppe Kjellerkrok
+      hidden: true
+    light.tradfri_bulb_e27_opal_1000lm:
+      friendly_name: "Kjellerkrok"
 
 group:
   vaskerom:
