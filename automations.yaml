@@ -474,11 +474,11 @@
     at: "15:00:00"
   condition:
     - condition: time
-    weekday:
+      weekday:
       -fri
     - condition: state
-    entity_id: input_boolean.workday_tomorrow
-    state: "on"
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
   action:
     service: notify.alle
     data:
