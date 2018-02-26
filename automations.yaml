@@ -475,14 +475,14 @@
   condition:
     - condition: time
       weekday:
-      -fri
+        -fri
     - condition: state
       entity_id: input_boolean.workday_tomorrow
       state: "on"
   action:
-    service: notify.alle
-    data:
-      message: "Fredag!! På tide og runde av og komme seg hjem :D"  
+    - service: notify.alle
+      data:
+        message: "Fredag!! På tide og runde av og komme seg hjem :D"  
 ##################
 
 
