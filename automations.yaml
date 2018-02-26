@@ -225,6 +225,7 @@
   action:
     service: notify.alle
     data:
+      title: "HelleBOT"
       message: "Tid for lunsj"
 - id: varsel_velkommen_hjem      
   alias: "Varsel velkommen hjem"
@@ -407,6 +408,7 @@
   action:
     service: notify.pushbullet
     data_template:
+      title: "HelleBOT"
       message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"        
         
 ################
@@ -482,6 +484,7 @@
   action:
     - service: notify.pushbullet
       data:
+        title: "HelleBOT"
         message: "Fredag!! På tide å logge av og komme seg hjem :D"  
 ##################
 
