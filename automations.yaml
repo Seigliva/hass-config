@@ -473,10 +473,10 @@
     platform: time
     at: "15:00:00"
   condition:
-    condition: time
+    - condition: time
     weekday:
       -fri
-    condition: state
+    - condition: state
     entity_id: input_boolean.workday_tomorrow
     state: "on"
   action:
