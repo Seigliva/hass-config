@@ -38,6 +38,7 @@ group:
     control: hidden
     entities:
       - device_tracker.hosthome
+      - device_tracker.c8f733eddd2f
       - device_tracker.hostspace
       - sensor.speedtest_ping
       - sensor.speedtest_download
