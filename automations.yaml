@@ -467,6 +467,22 @@
   action:
     - service: script.turn_on
       entity_id: script.good_night
+- id: varsel_om_fredag
+  alias: "Varsel om fredag"
+  trigger:
+    platform: time
+    at: "15:00:00"
+  condition:
+    condition: time
+    weekday:
+      -fri
+    condition: state
+    entity_id: input_boolean.workday_tomorrow
+    state: "on"
+  action:
+    service: notify.alle
+    data:
+      message: "Fredag!! På tide og runde av og komme seg hjem :D"  
 ##################
 
 
