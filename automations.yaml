@@ -480,7 +480,7 @@
       entity_id: input_boolean.workday_tomorrow
       state: "on"
   action:
-    - service: notify.alle
+    - service: notify.pushbullet
       data:
         message: "Fredag!! På tide og runde av og komme seg hjem :D"  
 ##################
