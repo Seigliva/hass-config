@@ -475,7 +475,7 @@
   condition:
     - condition: time
       weekday:
-        -fri
+        - fri
     - condition: state
       entity_id: input_boolean.workday_tomorrow
       state: "on"
