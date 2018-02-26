@@ -412,7 +412,7 @@
 ################
 #test
 - id: Bevegelse registrert
-  alias: "Motion detected"
+  alias: "Bevegelse yttergang lys på"
   trigger:
     platform: state
     entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
