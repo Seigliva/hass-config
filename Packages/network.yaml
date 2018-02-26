@@ -6,6 +6,8 @@ homeassistant:
     device_tracker.hosthome:
       friendly_name: "Flash"
       icon: mdi:windows
+    device_tracker.c8f733eddd2f:
+      icon: mdi:ubuntu
     device_tracker.hostspace:
       friendly_name: "WWW"
       icon: mdi:wifi
