@@ -482,7 +482,7 @@
   action:
     - service: notify.pushbullet
       data:
-        message: "Fredag!! På tide og runde av og komme seg hjem :D"  
+        message: "Fredag!! På tide å logge av og komme seg hjem :D"  
 ##################
 
 
