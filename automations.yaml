@@ -493,7 +493,7 @@
     at: "07:00:00"
   condition:
     - condition: template
-      value_template: "{{ now().date() | string == "2018-02-14" }}"
+      value_template: '{{ now().date() | string == "2018-02-14" }}'
   action:
     - service: notify.pushbullet
       data:
