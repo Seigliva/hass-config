@@ -508,6 +508,18 @@
     data:
       title: "Hellebot"
       message: 'Nå er den her, ny Home Assistant oppdatering.'
+- id: Varsel når Flash ikke svarer på ping
+  alias: "Varsel Flash nede"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.hosthome
+      from: 'home'
+      to: 'not_home'
+  action:
+    service: notify.pushbullet
+    data:
+      title: "Hellebot"
+      message: 'Flash svarer ikke på ping, hva skjer!!'
 ########################################################
 #Reminders, yes I know calender :P
 ########################################################
