@@ -409,20 +409,30 @@
     service: notify.pushbullet
     data_template:
       title: "HelleBOT"
-      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"        
-- id: Bevegelse registrert
-  alias: "Bevegelse yttergang lys på"
+      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"     
+################
+- id: Lys PÅ i yttergang og stuegang ved bevegelse registrert
+  alias: "Lys PÅ ved bevegelse yttergang"
   trigger:
     platform: state
     entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
-    from: "off"
     to: "on"
   action:
     service: light.turn_on
     entity_id: light.stuegang, light.gangen
-    #data:
-    #  brightness: 254
-    #  rgb_color: [255, 180, 71]
+#############
+- id: Lys AV i yttergang og stuegang etter 10 min uten bevegelse registrert
+  alias: "Lys AV uten bevegelse yttergang etter 10 min"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
+    to: "off"
+    for:
+      minutes: 10
+  action:
+    service: light.turn_off
+    entity_id: light.stuegang, light.gangen
+#############
 - id: Blinklys
   alias: "Blinklys stua"
   trigger:
@@ -447,6 +457,7 @@
       entity_id: light.h01
       data:
         flash: "long"
+###############
 - id: Lys av halv ni
   alias: "Lys av automagisk 0830"
   trigger:
