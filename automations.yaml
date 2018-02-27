@@ -410,7 +410,9 @@
     data_template:
       title: "HelleBOT"
       message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"     
-################
+#######################
+# Lights
+#######################
 - id: Lys PÅ i yttergang og stuegang ved bevegelse registrert
   alias: "Lys PÅ ved bevegelse yttergang"
   trigger:
@@ -433,7 +435,7 @@
     service: light.turn_off
     entity_id: light.stuegang, light.gangen
 #############
-- id: Blinklys
+- id: Blinklys stua 23:00
   alias: "Blinklys stua"
   trigger:
     platform: time
@@ -456,6 +458,32 @@
     - service: light.turn_on
       entity_id: light.h01
       data:
+        flash: "long"
+###############
+- id: Blinklys soverom og stua 06:55
+  alias: "Blinklys soverom og stua 6:55"
+  trigger:
+    platform: time
+    at: "06:55:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: "off"
+#    - condition: state
+#      entity_id: light.xxxxx
+#      state: "on"
+  action:
+    - service: light.turn_on
+      entity_id: light.h01, light.h02, light.h03
+      data:
+        brightness: 250
         flash: "long"
 ###############
 - id: Lys av halv ni
@@ -519,6 +547,9 @@
     data:
       title: "Hellebot"
       message: 'Nå er den her, ny Home Assistant oppdatering.'
+########################
+# Ping notify
+#######################
 - id: Varsel når Flash ikke svarer på ping
   alias: "Varsel Flash nede"
   trigger:
@@ -531,6 +562,19 @@
     data:
       title: "Hellebot"
       message: 'Flash svarer ikke på ping, hva skjer!!'
+########
+- id: Varsel når ControlBOX ikke svarer på ping
+  alias: "Varsel ControlBOX nede"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.c8f733eddd2f
+      from: 'home'
+      to: 'not_home'
+  action:
+    service: notify.pushbullet
+    data:
+      title: "Hellebot"
+      message: 'ControlBOX svarer ikke på ping, hva skjer!!'
 ########################################################
 #Reminders, yes I know calender :P
 ########################################################
