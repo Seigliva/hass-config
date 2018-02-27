@@ -486,6 +486,21 @@
       data:
         title: "HelleBOT"
         message: "Fredag!! På tide å logge av og komme seg hjem :D"  
+- id: Regn i dag
+  alias: 'Varsel om regn'
+  trigger:
+    - platform: state
+      entity_id: sensor.yr_symbol
+      to: '10'
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '23:00:00'
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "HelleBOT"
+        message: "Nå kommer regnet!! Paraply eller inne som gjelder."  
 ########################################################
 #Reminders, yes I know calender :P
 ########################################################
