@@ -486,6 +486,19 @@
       data:
         title: "HelleBOT"
         message: "Fredag!! På tide å logge av og komme seg hjem :D"  
+- id: varsel_om_valentinesday
+  alias: "Varsel om Valentines day"
+  trigger:
+    platform: time
+    at: "07:00:00"
+  condition:
+    - condition: template
+      value_template: {{ now().date() | string == "2018-02-14" }}
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "HelleBOT"
+        message: "Husk Valentines Day! ;)"  
 ##################
 
 
