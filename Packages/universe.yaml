@@ -17,7 +17,7 @@ group:
     entities:
 #      - sensor.date__time
       - sensor.yr_symbol
-      - sensor.yr_windSpeed
+      - sensor.yr_wind_Speed
       - sensor.yr_temperature
       - sensor.yr_precipitation
       - sensor.moon
