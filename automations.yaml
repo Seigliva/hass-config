@@ -410,9 +410,6 @@
     data_template:
       title: "HelleBOT"
       message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"        
-        
-################
-#test
 - id: Bevegelse registrert
   alias: "Bevegelse yttergang lys på"
   trigger:
@@ -486,7 +483,7 @@
       data:
         title: "HelleBOT"
         message: "Fredag!! På tide å logge av og komme seg hjem :D"  
-- id: Regn i dag
+- id: Varsel regn i dag
   alias: 'Varsel om regn'
   trigger:
     - platform: state
@@ -501,6 +498,16 @@
       data:
         title: "HelleBOT"
         message: "Nå kommer regnet!! Paraply eller inne som gjelder."  
+- id: Varsel HA oppdatering
+  alias: "Varsel HA oppdatering"
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    service: notify.pushbullet
+    data:
+      title: "Hellebot"
+      message: 'Nå er den her, ny Home Assistant oppdatering.'
 ########################################################
 #Reminders, yes I know calender :P
 ########################################################
