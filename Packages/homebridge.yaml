@@ -1,20 +1,20 @@
 ############################################################################
 ## Homebridge
 ############################################################################
-homeassistant:
-  customize_domain:
-    light:
-      homebridge_visible: true
-    switch:
-      homebridge_visible: true
-    cover:
-      homebridge_visible: true
-      homebridge_cover_type: rollershutter
-    input_boolean:
-      homebridge_visible: true
-  customize_glob:
-    "switch.rf*":
-      homebridge_visible: false
+#homeassistant:
+#  customize_domain:
+#    light:
+#      homebridge_visible: true
+#    switch:
+#      homebridge_visible: true
+#    cover:
+#      homebridge_visible: true
+#      homebridge_cover_type: rollershutter
+#    input_boolean:
+#      homebridge_visible: true
+#  customize_glob:
+#    "switch.rf*":
+#      homebridge_visible: false
 ############################################################################
 homekit:
   pincode: !secret homekit
