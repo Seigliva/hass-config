@@ -16,5 +16,5 @@ homeassistant:
     "switch.rf*":
       homebridge_visible: false
 ############################################################################
-#homekit:
-#  pincode: !secret homekit
+homekit:
+  pincode: !secret homekit
