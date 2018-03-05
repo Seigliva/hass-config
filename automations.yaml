@@ -546,10 +546,10 @@
     - platform: state
       entity_id: sensor.pypi_ha_version
   action:
-    - service: notify.pushbullet # source: https://github.com/ludeeus/Home-Assistant-Config/blob/master/packages/notify_template.yaml
-      data_template:
-        title: "Hellebot"
-        message: "Home Assistant  {{ states.sensor.pypi_ha_version.state }}  er nå tilgjengelig!!"
+    service: notify.pushbullet # source: https://github.com/ludeeus/Home-Assistant-Config/blob/master/packages/notify_template.yaml
+    data_template:
+      title: "Hellebot"
+      message: "Home Assistant  {{ states.sensor.pypi_ha_version.state }}  er nå tilgjengelig!!"
 sensor:
   - platform: command_line
     name: 'PyPi HA Version'
