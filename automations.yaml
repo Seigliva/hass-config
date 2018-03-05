@@ -28,7 +28,7 @@
     service: script.turn_on
     data_template:
       entity_id: "script.tilt_{{trigger.to_state.state}}"
-- id: lukk_persienner_ved_hoy_temp        
+- id: lukk_persienner_ved_hoy_temp
   alias: "Lukk persienner ved høy temp"
   initial_state: "on"
   trigger:
@@ -67,7 +67,7 @@
     service: mqtt.publish
     data_template:
       topic: "HA/garage/state"
-      payload_template: "{{trigger.to_state.state}}"     
+      payload_template: "{{trigger.to_state.state}}"
 - id: garasjeport_aktiveres
   alias: "Garasjeport aktiveres"
   trigger:
@@ -75,7 +75,7 @@
     entity_id: sensor.mqtt_garage_sensor
   action:
     service: script.turn_on
-    entity_id: script.garage     
+    entity_id: script.garage
 - id: aktiver_garasjeport_0700
   alias: "Aktiver garasjeport 0700"
   initial_state: "on"
@@ -92,7 +92,7 @@
         - fri
   action:
     - service: script.turn_on
-      entity_id: script.garage     
+      entity_id: script.garage
 - id: varsel_når_HelleBOT_starter
   alias: "Varsel når 'HelleBOT' starter"
   initial_state: "on"
@@ -107,8 +107,8 @@
     - service: mqtt.publish
       data:
         topic: HA/cover
-        payload: "-"     
-- id: rf_stikkkontakt_styring      
+        payload: "-"
+- id: rf_stikkkontakt_styring
   alias: "RF stikkontakt styring"
   initial_state: "on"
   trigger:
@@ -124,7 +124,7 @@
         entity_id: "input_boolean.{{trigger.entity_id.split('.')[1]}}"
     - service_template: "switch.turn_{{trigger.to_state.state}}"
       data_template:
-        entity_id: "switch.{{trigger.entity_id.split('.')[1]}}"        
+        entity_id: "switch.{{trigger.entity_id.split('.')[1]}}"
 - id: kaffetrakter_av_etter_2_timer
   alias: "Slå av kaffetrakter etter to timer"
   initial_state: "on"
@@ -136,7 +136,7 @@
     - delay:
         minutes: 120
     - service: input_boolean.turn_off
-      entity_id: input_boolean.rf06      
+      entity_id: input_boolean.rf06
 - id: morgen_lys
   alias: "Morgen lys"
   initial_state: "on"
@@ -149,7 +149,7 @@
       state: "on"
   action:
     - service: input_boolean.turn_on
-      entity_id: input_boolean.rf04       
+      entity_id: input_boolean.rf04
 - id: alle_stuelys_av
   alias: "Slå av alle stuelys"
   initial_state: "on"
@@ -162,8 +162,8 @@
         entity_id: switch.rf04,switch.rf02,switch.rf03,switch.rf05
     - service_template: "light.turn_{{trigger.to_state.state}}"
       data:
-        entity_id: light.h01   
-- id: dim_opp_lys_når_appletv_pauses    
+        entity_id: light.h01
+- id: dim_opp_lys_når_appletv_pauses
   alias: "Dim opp lys når AppleTV pauses"
   initial_state: "on"
   trigger:
@@ -180,7 +180,7 @@
     - service: light.turn_on
       data:
         entity_id: light.h01
-        brightness: 180       
+        brightness: 180
 - id: dim_lys_når_appletv_viser_noe
   alias: "Dim lys når AppleTV viser noe"
   initial_state: "on"
@@ -193,7 +193,7 @@
     - service: light.turn_on
       data:
         entity_id: light.h01
-        brightness: 80        
+        brightness: 80
 - id: wake_up_light
   alias: "Wake up light"
   trigger:
@@ -212,7 +212,7 @@
     entity_id: light.h03
     data:
       brightness: 180
-      transition: 900   
+      transition: 900
 - id: varsel_om_lunsj
   alias: "Varsel om lunsj"
   trigger:
@@ -227,7 +227,7 @@
     data:
       title: "HelleBOT"
       message: "Tid for lunsj"
-- id: varsel_velkommen_hjem      
+- id: varsel_velkommen_hjem
   alias: "Varsel velkommen hjem"
   initial_state: "off"
   trigger:
@@ -259,7 +259,7 @@
           ] | random }}
           {%- endmacro -%}
           "{{greeting_sentence(person)}}"
-- id: varsel_ipad_pro_batteri_lavt          
+- id: varsel_ipad_pro_batteri_lavt
   alias: "Varsel iPad pro batteri lavt"
   initial_state: "on"
   trigger:
@@ -271,7 +271,7 @@
       data:
         title: "HelleBOT"
         message: "iPad Pro batteriet er lavt, koble til lader"
-- id: varsel_ute_temp_ukedager        
+- id: varsel_ute_temp_ukedager
   alias: "Varsel ute temp ukedager"
   initial_state: True
   hide_entity: false
@@ -320,7 +320,7 @@
   action:
     - service_template: script.turn_on
       data_template:
-        entity_id: "{%if is_state('input_select.radio','Stopp')%}script.webradio_stop{%else%}script.webradio_start{%endif%}"       
+        entity_id: "{%if is_state('input_select.radio','Stopp')%}script.webradio_stop{%else%}script.webradio_start{%endif%}"
 - id: morgen_radio
   alias: "Morgen radio"
   initial_state: "on"
@@ -338,7 +338,7 @@
     - service: input_select.select_option
       data:
         entity_id: input_select.radio
-        option: "NRK P3"      
+        option: "NRK P3"
 - id: varsel_vaskemaskin_ferdig
   alias: "Varsel vaskemaskin ferdig"
   initial_state: "on"
@@ -371,8 +371,8 @@
       state: "off"
   action:
     - service: homeassistant.turn_on
-      entity_id: input_boolean.workday_tomorrow 
-- id: deaktiver_arbeidsuke      
+      entity_id: input_boolean.workday_tomorrow
+- id: deaktiver_arbeidsuke
   alias: "Deaktiver 'Arbeidsuke'"
   initial_state: "on"
   trigger:
@@ -398,7 +398,7 @@
   action:
     - service_template: frontend.set_theme
       data_template:
-        name: "{{states.input_select.theme.state|lower}}"     
+        name: "{{states.input_select.theme.state|lower}}"
 - id: Nordlys varsling
   alias: "KP Varsling"
   trigger:
@@ -409,7 +409,7 @@
     service: notify.pushbullet
     data_template:
       title: "HelleBOT"
-      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"     
+      message: "KP Indeksen er nå på: KP-{{ states.sensor.kp_index.state }}, kanskje du skulle tatt deg en tur ut? :)"
 #######################
 # Lights
 #######################
@@ -521,7 +521,7 @@
     - service: notify.pushbullet
       data:
         title: "HelleBOT"
-        message: "Fredag!! På tide å logge av og komme seg hjem :D"  
+        message: "Fredag!! På tide å logge av og komme seg hjem :D"
 - id: Varsel regn i dag
   alias: 'Varsel om regn'
   trigger:
@@ -536,7 +536,7 @@
     - service: notify.pushbullet
       data:
         title: "HelleBOT"
-        message: "Nå kommer regnet!! Paraply eller inne som gjelder."  
+        message: "Nå kommer regnet!! Paraply eller inne som gjelder."
 ############################################################################
 ##  Version Control
 ############################################################################
@@ -550,10 +550,6 @@
     data_template:
       title: "Hellebot"
       message: "Home Assistant  {{ states.sensor.pypi_ha_version.state }}  er nå tilgjengelig!!"
-  sensor:
-    - platform: command_line
-      name: 'PyPi HA Version'
-      command: curl -s https://pypi.python.org/pypi/homeassistant/json | grep '"version":' | awk -F'"' '{print $4}'
 ########################
 # Ping notify
 #######################
@@ -597,9 +593,5 @@
     - service: notify.pushbullet
       data:
         title: "HelleBOT"
-        message: "Husk Valentines Day! ;)"  
+        message: "Husk Valentines Day! ;)"
 ##################
-
-
-
-
