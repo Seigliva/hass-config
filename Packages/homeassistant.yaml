@@ -1,0 +1,7 @@
+############################################################################
+## Home Assistant info
+############################################################################
+sensor:
+  - platform: command_line
+    name: 'PyPi HA Version'
+    command: curl -s https://pypi.python.org/pypi/homeassistant/json | grep '"version":' | awk -F'"' '{print $4}'
