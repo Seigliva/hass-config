@@ -537,16 +537,23 @@
       data:
         title: "HelleBOT"
         message: "Nå kommer regnet!! Paraply eller inne som gjelder."  
+############################################################################
+##  Version Control
+############################################################################
 - id: Varsel HA oppdatering
   alias: "Varsel HA oppdatering"
   trigger:
     - platform: state
-      entity_id: updater.updater
+      entity_id: sensor.pypi_ha_version
   action:
-    service: notify.pushbullet
-    data:
-      title: "Hellebot"
-      message: 'Nå er den her, ny Home Assistant oppdatering.'
+    - service: notify.pushbullet # source: https://github.com/ludeeus/Home-Assistant-Config/blob/master/packages/notify_template.yaml
+      data_template:
+        title: "Hellebot"
+        message: "Home Assistant  {{ states.sensor.pypi_ha_version.state }}  er nå tilgjengelig!!"
+sensor:
+  - platform: command_line
+    name: 'PyPi HA Version'
+    command: curl -s https://pypi.python.org/pypi/homeassistant/json | grep '"version":' | awk -F'"' '{print $4}'
 ########################
 # Ping notify
 #######################
