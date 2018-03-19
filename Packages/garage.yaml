@@ -56,11 +56,10 @@ sensor:
 switch:
   - platform: mqtt
     name: "Garasjeport"
-    state_topic: "esp1/gpio/15"
-    command_topic: "esp1/gpio/15"
+    state_topic: "esp4/gpio/15"
+    command_topic: "esp4/gpio/15"
     payload_on: "1"
     payload_off: "0"
-    optimistic: true
     qos: 0
     retain: true
   - platform: rfxtrx
@@ -74,11 +73,10 @@ script:
     sequence:
       - service: switch.turn_on
         entity_id: switch.garasjeport
-      - delay:
-          milliseconds: 500
+      - delay: '00:00:01'
       - service: switch.turn_off
         entity_id: switch.garasjeport
-      - service: notify.alle
+      - service: notify.pushbullet
         data:
           title: "HelleBOT"
           message: "Jeg har ordnet garasjeporten for deg"
