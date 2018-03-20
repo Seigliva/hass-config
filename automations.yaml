@@ -418,7 +418,7 @@
   trigger:
     platform: state
     #entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown #bruker ny, spares tilfelle behov
-	entity_id: binary_sensor.pir_hallway
+    entity_id: binary_sensor.pir_hallway
     to: "on"
   action:
     service: light.turn_on
@@ -429,7 +429,7 @@
   trigger:
     platform: state
     #entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
-	entity_id: binary_sensor.pir_hallway
+		entity_id: binary_sensor.pir_hallway
     to: "off"
     for:
       minutes: 10
