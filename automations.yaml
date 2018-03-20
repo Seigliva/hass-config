@@ -428,7 +428,7 @@
   alias: "Lys AV uten bevegelse yttergang etter 10 min"
   trigger:
     platform: state
-    #entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
+    ##entity_id: binary_sensor.home_motion, binary_sensor.home_someone_known, binary_sensor.home_someone_unknown
 		entity_id: binary_sensor.pir_hallway
     to: "off"
     for:
