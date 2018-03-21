@@ -53,7 +53,7 @@ script:
       - service: switch.broadlink_send_packet_192_168_1_191
         data:
           packet: 
-            - "JgBeABMLdJQVERFcEjcTEhY6DBkJFBITExISNxM2EBUVQAcSExISEhM3FjQSNhM3EhITEhMSB0ITExEZDBIUERI3EzYTNQ0ABgQeDiANJgwIlBI3DAAMUVsMH6ATNhMADQUAAAAAAAAAAAAA"
+            - "JgBWAJKUFw4SEhI4FDUTEhI3FBESEhMSExITNhcyExITNhQRExISEhI4EjcTNhQ2EhITEhMSEzYUERISFBETEhQ1EjcUNhcABfiTlBM2EgAMS5KUFDUSAA0FAAA="
 #---------------------------------------------------------------------------
   soundbar_function:
     alias: 'Lydplanke Kilde'
@@ -61,7 +61,7 @@ script:
       - service: switch.broadlink_send_packet_192_168_1_191
         data:
           packet: 
-            - "JgCqAAcAAVkGAAEsBAABXAUAASsHAAFaBgABKwYAAVsFAAEtBgABWQUAAS0FAAFbBQABLQUAAVsEAAEtBQABWwYAASwFAAFaBQABLAgAAVkFAAEtBgABWgYAAvxlEReZExISEhM3Cz8VWBMSERMTEhYSDzwIPBMSEzYSOAcdDkYIEhI4EhITEhYREzgHPhMSEzYTWw1ECzcTEhIABf6TlAo+EwAMSpOTDzsSAA0FAAAAAAAAAAAAAAAAAAA="
+            - "JgBQAFsGJp8TERITEjgSNxMREjgPFhISExISExI3EzYTEhI3ExITERMSEzYRFBM3EhITEhMSEjcTNhMSEjcTEglAEzcSNxISEwAF/ZOTEzcTAA0FAAAAAAAAAAA="
 #---------------------------------------------------------------------------
   hdmiswitch_next:
     alias: 'HDMI switch - neste'
