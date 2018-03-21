@@ -12,6 +12,8 @@ group:
     name: 'IR Enheter'
     entities:
       - script.tv_power
+      - script.soundbar_on_off
+      - script.soundbar_function
       - script.soundbar_up
       - script.soundbar_down
       - script.hdmiswitch_next
@@ -44,6 +46,22 @@ script:
         data:
           packet: 
             - "JgCMAJSTEzYUNRQ2FBAUEBMSEhIUEBQ1EzcUNRMRFBETERQQFBAUNhI3FBAUNhMRExEUEBMSEhITERQ1FBEUNRQ1FDYUNRQABkKVkhQ1FDYTNhMRFBAUERMRFBAUNRM3FDUUEBQRExEUEBMREzcSNxQQFDYUEBQQFBAUERISFBAUNhMRFDUUNhM2FDUUAA0FAAAAAAAAAAAAAAAA"
+#---------------------------------------------------------------------------
+  soundbar_on_off:
+    alias: 'Lydplanke AV/PÅ'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_1_191
+        data:
+          packet: 
+            - "JgBeABMLdJQVERFcEjcTEhY6DBkJFBITExISNxM2EBUVQAcSExISEhM3FjQSNhM3EhITEhMSB0ITExEZDBIUERI3EzYTNQ0ABgQeDiANJgwIlBI3DAAMUVsMH6ATNhMADQUAAAAAAAAAAAAA"
+#---------------------------------------------------------------------------
+  soundbar_function:
+    alias: 'Lydplanke Kilde'
+    sequence:
+      - service: switch.broadlink_send_packet_192_168_1_191
+        data:
+          packet: 
+            - "JgCqAAcAAVkGAAEsBAABXAUAASsHAAFaBgABKwYAAVsFAAEtBgABWQUAAS0FAAFbBQABLQUAAVsEAAEtBQABWwYAASwFAAFaBQABLAgAAVkFAAEtBgABWgYAAvxlEReZExISEhM3Cz8VWBMSERMTEhYSDzwIPBMSEzYSOAcdDkYIEhI4EhITEhYREzgHPhMSEzYTWw1ECzcTEhIABf6TlAo+EwAMSpOTDzsSAA0FAAAAAAAAAAAAAAAAAAA="
 #---------------------------------------------------------------------------
   hdmiswitch_next:
     alias: 'HDMI switch - neste'
