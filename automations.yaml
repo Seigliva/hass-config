@@ -367,7 +367,7 @@
         - wed
         - thu
     - condition: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.vacation
       state: "off"
   action:
     - service: homeassistant.turn_on
@@ -379,7 +379,7 @@
     - platform: time
       at: "20:00:00"
     - platform: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.vacation
       to: "on"
   condition:
     - condition: time
@@ -451,7 +451,7 @@
         - wed
         - thu
     - condition: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.vacation
       state: "off"
     - condition: state
       entity_id: light.h01
@@ -476,7 +476,7 @@
         - thu
         - fri
     - condition: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.vacation
       state: "off"
 #    - condition: state
 #      entity_id: light.xxxxx
@@ -502,7 +502,7 @@
         - thu
         - fri
     - condition: state
-      entity_id: input_boolean.vacation_mode
+      entity_id: input_boolean.vacation
       state: "off"
   action:
     - service: script.turn_on
