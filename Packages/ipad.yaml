@@ -33,6 +33,14 @@ homeassistant:
       hidden: true
     sensor.phone_to_home_noah_sin_ipad:
       hidden: true
+    sensor.noah_sin_iphone_battery_level:
+      hidden: true
+    sensor.noah_sin_iphone_battery_state:
+      hidden: true
+    device_tracker.noah_sin_iphone:
+      hidden: true
+    sensor.phone_to_home_noah_sin_iphone:
+      hidden: true
     sensor.phone_to_home_superlangbeins_2017:
       hidden: true
 #######################################################################################################################################
@@ -58,6 +66,11 @@ sensor:
         friendly_name: Noah sin iPad
         value_template: "{%if (states.device_tracker.noah_sin_ipad.state) != 'not_home' %}{{states.device_tracker.noah_sin_ipad.state}}{%- elif is_state('sensor.phone_to_home_noah_sin_ipad', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_noah_sin_ipad.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.noah_sin_ipad_battery_level.attributes.icon}}"
+        
+      template_noah_sin_iphone: 
+        friendly_name: Noah sin iPad
+        value_template: "{%if (states.device_tracker.noah_sin_iphone.state) != 'not_home' %}{{states.device_tracker.noah_sin_iphone.state}}{%- elif is_state('sensor.phone_to_home_noah_sin_iphone', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_noah_sin_iphone.state}} Minutes to home{%- endif %}"
+        icon_template: "{{states.sensor.noah_sin_iphone_battery_level.attributes.icon}}"
 #######################################################################################################################################
   - platform: google_travel_time
     name: Phone To Home Superlangbeins iPro
@@ -81,5 +94,11 @@ sensor:
     name: Phone To Home Noah sin iPad
     api_key: !secret googleapi
     origin: device_tracker.noah_sin_ipad
+    destination: zone.home
+    
+  - platform: google_travel_time
+    name: Phone To Home Noah sin iPhone
+    api_key: !secret googleapi
+    origin: device_tracker.noah_sin_iphone
     destination: zone.home
 #######################################################################################################################################
