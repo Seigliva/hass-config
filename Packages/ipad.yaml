@@ -68,7 +68,7 @@ sensor:
         icon_template: "{{states.sensor.noah_sin_ipad_battery_level.attributes.icon}}"
         
       template_noah_sin_iphone: 
-        friendly_name: Noah sin iPad
+        friendly_name: Noah sin iPhone
         value_template: "{%if (states.device_tracker.noah_sin_iphone.state) != 'not_home' %}{{states.device_tracker.noah_sin_iphone.state}}{%- elif is_state('sensor.phone_to_home_noah_sin_iphone', 'unknown')%}Error getting location{%- else -%}{{states.sensor.phone_to_home_noah_sin_iphone.state}} Minutes to home{%- endif %}"
         icon_template: "{{states.sensor.noah_sin_iphone_battery_level.attributes.icon}}"
 #######################################################################################################################################
