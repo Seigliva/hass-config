@@ -5,7 +5,7 @@ homeassistant:
   customize:
     device_tracker.ec9bf3b218e4: #Samsung S6 FruSheriff
       icon: mdi:cellphone-android
-      hidden: false
+      hidden: true
     device_tracker.30074d89e3ef: #Samsung S8+ Sheriff
       icon: mdi:cellphone-android
       hidden: false
@@ -29,7 +29,7 @@ group:
   enheter:
     control: hidden
     entities:
-      - device_tracker.ec9bf3b218e4
+      #- device_tracker.ec9bf3b218e4
       - device_tracker.30074d89e3ef
       - sensor.template_theos_iphone
       - sensor.template_noah_sin_ipad
