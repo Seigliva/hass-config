@@ -61,7 +61,7 @@ script:
       - service: switch.broadlink_send_packet_192_168_1_191
         data:
           packet: 
-            - "JgBQAFsGJp8TERITEjgSNxMREjgPFhISExISExI3EzYTEhI3ExITERMSEzYRFBM3EhITEhMSEjcTNhMSEjcTEglAEzcSNxISEwAF/ZOTEzcTAA0FAAAAAAAAAAA="
+            - "JgBWAJKUExAUEhM3EjcTEhI3ExITERQRExIUNRM2ExISNxMSExISEhM3EzYUERI3EzYTEhM2EzcTERMSEzYTEhMSEzYTEhIABf2TlBM2EwAMSpKUEzYTAA0FAAA="
 #---------------------------------------------------------------------------
   hdmiswitch_next:
     alias: 'HDMI switch - neste'
