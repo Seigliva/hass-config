@@ -2,14 +2,9 @@
 ## Home Assistant info
 ############################################################################
 sensor:
-  - platform: rest
+  - platform: command_line
     name: 'PyPi HA Version'
-    resource: https://api.github.com/repos/home-assistant/home-assistant/releases/latest
-    value_template: '{{ value_json.tag_name }}'
-    headers:
-      Accept: application/vnd.github.v3+json
-      Content-Type: application/json
-      User-Agent: Home Assistant REST sensor
+    command: curl -s https://github.com/home-assistant/home-assistant/releases/latest | awk -F'/' '{print $8}' | awk -F'"' '{print $1 }'
     
 homeassistant:
   customize:
