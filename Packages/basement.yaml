@@ -27,6 +27,10 @@ homeassistant:
       hidden: true
     light.tradfri_bulb_e27_opal_1000lm:
       friendly_name: "Kjellerkrok"
+    switch.basement_door_status:
+      hidden: true   
+    sensor.basement_door:
+      friendly_name: "Kjellerdør"
 
 group:
   vaskerom:
@@ -34,6 +38,7 @@ group:
     entities:
       - binary_sensor.torketrommel
       - binary_sensor.vaskemaskin
+      - sensor.basement_door
   
 input_boolean:
   rf01:
@@ -58,7 +63,7 @@ sensor:
   - platform: template
     sensors:
       basement_door:
-        value_template: "{%- if is_state('switch.basement_door_status','on') %}åpen{% elif is_state('switch.basement_door_status','off') %}lukket{%else%}error_reading_state{%- endif %}"
+        value_template: "{%- if is_state('switch.basement_door_status','on') %}Åpen{% elif is_state('switch.basement_door_status','off') %}Lukket{%else%}error_reading_state{%- endif %}"
 
 switch:
   - platform: wake_on_lan
