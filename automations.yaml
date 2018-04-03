@@ -331,6 +331,9 @@
       data:
         entity_id: input_select.radio
         option: "NRK P3"
+#################################################
+# Kjeller varsler
+################################################
 - id: varsel_vaskemaskin_ferdig
   alias: "Varsel vaskemaskin ferdig"
   initial_state: "on"
@@ -344,6 +347,23 @@
       data:
         title: "HelleBOT"
         message: "Vaskemaskinen er ferdig."
+##################################################
+- id: basement_door
+  alias: "Varsel kjellerdør"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.basement_door
+    from: "off"
+    to: "on"
+  action:
+    - service: notify.pushbullet
+      data:
+        title: "HelleBOT"
+        message: "Noen åpnet døra i kjelleren!!! serr!! hva faen!"
+##################################################
+# Arbeidsuke
+##################################################
 - id: aktiver_arbeidsuke
   alias: "Aktiver 'Arbeidsuke'"
   initial_state: "on"
