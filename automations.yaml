@@ -83,13 +83,9 @@
     platform: time
     at: "07:00:00"
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    - condition: state
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
   action:
     - service: cover.open_cover
       entity_id: cover.garasjeport
@@ -200,13 +196,9 @@
     platform: time
     at: "06:30:00"
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    - condition: state
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
   action:
     service: light.turn_on
     entity_id: light.h03
@@ -443,16 +435,9 @@
     platform: time
     at: "23:00:00"
   condition:
-    - condition: time
-      weekday:
-        - sun
-        - mon
-        - tue
-        - wed
-        - thu
     - condition: state
-      entity_id: input_boolean.vacation
-      state: "off"
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
     - condition: state
       entity_id: light.h01
       state: "on"
@@ -468,19 +453,9 @@
     platform: time
     at: "06:55:00"
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
     - condition: state
-      entity_id: input_boolean.vacation
-      state: "off"
-#    - condition: state
-#      entity_id: light.xxxxx
-#      state: "on"
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
   action:
     - service: light.turn_on
       entity_id: light.h01, light.h02, light.h03
@@ -494,16 +469,9 @@
     platform: time
     at: "08:30:00"
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
     - condition: state
-      entity_id: input_boolean.vacation
-      state: "off"
+      entity_id: input_boolean.workday_tomorrow
+      state: "on"
   action:
     - service: script.turn_on
       entity_id: script.good_night
