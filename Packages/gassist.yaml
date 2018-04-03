@@ -14,6 +14,8 @@ homeassistant:
       google_assistant: true
     switch:
       google_assistant: true
+    script:
+      google_assistant: true
     cover:
       google_assistant: true
       google_assistant_name: livingroom blinds
