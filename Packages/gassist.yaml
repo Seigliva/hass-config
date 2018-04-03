@@ -7,20 +7,15 @@ google_assistant:
   access_token: !secret gaccesstoken
   agent_user_id: !secret gagentuser
   api_key: !secret gapikey
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - script
+    - cover
+    - input_boolean
     
 homeassistant:
-  customize_domain:
-    light:
-      google_assistant: true
-    switch:
-      google_assistant: true
-    script:
-      google_assistant: true
-    cover:
-      google_assistant: true
-      google_assistant_name: livingroom blinds
-    input_boolean:
-      google_assistant: true
   customize_glob:
     "switch.rf*":
       google_assistant: false
