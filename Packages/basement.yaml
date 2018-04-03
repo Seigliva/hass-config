@@ -64,7 +64,7 @@ binary_sensor:
   - platform: template
     sensors:
       basement_door:
-        value_template: "{{ states.switch.basement_door_status.state }}
+        value_template: "{{ states.switch.basement_door_status.state }}"
         device_class: door
 
 switch:
