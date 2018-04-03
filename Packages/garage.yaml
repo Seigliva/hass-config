@@ -11,10 +11,6 @@ homeassistant:
     script.garage:
       icon: mdi:garage
       hidden: true
-    sensor.garage_status:
-      hidden: true
-    sensor.mqtt_garage_sensor:
-      hidden: true
     switch.garasjeport:
       hidden: false
 
@@ -44,14 +40,6 @@ cover:
     state_open: "opp"
     state_closed: "ned"
     optimistic: false
-sensor:
-  - platform: mqtt
-    name: "MQTT garage sensor"
-    state_topic: "HA/garage"
-  - platform: template
-    sensors:
-      garage_status:
-        value_template: "{%- if is_state('switch.garasjeport_status','on') %}opp{% elif is_state('switch.garasjeport_status','off') %}ned{%else%}error_reading_state{%- endif %}"
 
 switch:
   - platform: mqtt
@@ -62,10 +50,6 @@ switch:
     payload_off: "0"
     qos: 0
     retain: true
-  - platform: rfxtrx
-    devices:
-      0b110000013346760a000070:
-        name: Garasjeport status
                
 script:
   garage:
