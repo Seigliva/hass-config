@@ -40,7 +40,10 @@ cover:
     state_open: "opp"
     state_closed: "ned"
     optimistic: false
-
+sensor:
+  - platform: mqtt
+    name: "MQTT garage sensor"
+    state_topic: "HA/garage"
 switch:
   - platform: mqtt
     name: "Garasjeport"
