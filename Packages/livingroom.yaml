@@ -136,5 +136,5 @@ binary_sensor:
   - platform: ping
     host: 192.168.1.7
     name: TV
-    count: 1
-    scan_interval: 10
+    count: 2
+    scan_interval: 5
