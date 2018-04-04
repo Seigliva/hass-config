@@ -11,7 +11,7 @@ group:
     control: hidden
     name: 'IR Enheter'
     entities:
-      - script.tv_power
+      - switch.tv_power
       - script.soundbar_on_off
       - script.soundbar_function
       - script.soundbar_up
@@ -22,15 +22,6 @@ group:
       - script.heatpump_on
       - script.heatpump_off
 ############################################################################
-script:
-  tv_power:
-    alias: 'TV - Power'
-    sequence:
-      - service: switch.broadlink_send_packet_192_168_1_191
-        data:
-          packet: 
-            - "JgCMAJaQFTQVNRQ1FRAUERQQFRAVEBQ1FTUVNBQRFBAVEBQRFBEUEBU1FBAVEBUQFRAUEBUQFDUWDxU0FTUUNRU0FTUUNRYABgKVkRQ1FTUUNRQRFBAVEBQRFBEUNRQ1FTUUEBUQFBEUERQQFRAUNRUQFBEUEBUQFRAUERQ1FBEUNRU0FTUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA=="
-#---------------------------------------------------------------------------
   soundbar_up:
     alias: 'Lydplanke Volum opp'
     sequence:
@@ -102,3 +93,18 @@ script:
         data:
           packet: 
             - "JgC8AXU2EA0QKREMEQwQDBANEQsRDBEMEAwRDBEMEAwRKBEMEA0PDRANEQwRCxEMECkQKREpEQsRDBEoEQwRCxEMEQwSChEMEQwSChEMEgoRDBEMEQsRDBEMEAwRDBELEQwRDBELEQwRDBQHEgwRCxEMEQwODhEMESgRKBEMEQwRCxEMEQwRAAFGdTcQDREoEA0RCxEMEgsQDBEMEQsSCxEMEQsRDBEoEQwRCxEMEQwRCxEMFQcRKREoECkRDBEMECkRCxEMEQwRCxEMEQwRCxEMEAsSDBEMEQsRDA4rDw4RCxEpEAwRDBApEQwRCxEpESgSJxEMESgODxAMEQwRDBELEQwRDBAMEA0QKREMECkRDBAMEQwRDA8qEAwQKhAMECkRKRELEQwQDRAMEA0QCxIMDw4QDBANEQwQDBEMESgQKRAqEQsQDRANEAwPDhAMEA0RDBAMECoQKREoEQwRCxANEA0QDBANEAwQDRUHEgsQDRANEAwRDBAMEgsQDQ8NEA0PDhAMEA0RCxEpEQsQDRAMEQwRDBEMEAwSCxELESkRKBAMEQwQDRAMEA0RDBELEQwRCxEMDg8QKRApEwANBQAAAAAAAAAAAAAAAA=="
+switch:
+  - platform: template
+    switches:
+      tv_power:
+        value_template: "{{ is_state('binary_sensor.tv', 'on') }}"
+        turn_on:
+          service: switch.broadlink_send_packet_192_168_1_191
+          data:
+            packet: 
+              - "JgCMAJaQFTQVNRQ1FRAUERQQFRAVEBQ1FTUVNBQRFBAVEBQRFBEUEBU1FBAVEBUQFRAUEBUQFDUWDxU0FTUUNRU0FTUUNRYABgKVkRQ1FTUUNRQRFBAVEBQRFBEUNRQ1FTUUEBUQFBEUERQQFRAUNRUQFBEUEBUQFRAUERQ1FBEUNRU0FTUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA=="
+        turn_off:
+          service: switch.broadlink_send_packet_192_168_1_191
+          data:
+            packet: 
+              - "JgCMAJaQFTQVNRQ1FRAUERQQFRAVEBQ1FTUVNBQRFBAVEBQRFBEUEBU1FBAVEBUQFRAUEBUQFDUWDxU0FTUUNRU0FTUUNRYABgKVkRQ1FTUUNRQRFBAVEBQRFBEUNRQ1FTUUEBUQFBEUERQQFRAUNRUQFBEUEBUQFRAUERQ1FBEUNRU0FTUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA=="
