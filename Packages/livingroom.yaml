@@ -18,6 +18,8 @@ homeassistant:
       friendly_name: "Stuebord"
     light.stua:
       hidden: true
+    binary_sensor.TV:
+      hidden: true
     light.stue: #Tradfri gruppe spisebord
       hidden: true
     light.tradfri_bulb_e27_ws_opal_980lm:
@@ -130,3 +132,7 @@ switch:
       0b11000003f70bf20f010f70:
         name: rf05
         
+binary_sensor:
+  - platform: ping
+    host: 192.168.1.7
+    name: TV
