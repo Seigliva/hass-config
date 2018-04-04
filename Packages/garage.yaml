@@ -8,6 +8,8 @@ homeassistant:
     group.garage:
       friendly_name: "Garasje"
       hidden: false
+    sensor.mqtt_garage_sensor:
+      hidden: true
     script.garage:
       icon: mdi:garage
       hidden: true
