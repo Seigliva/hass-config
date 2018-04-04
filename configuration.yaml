@@ -30,6 +30,7 @@ logger:
   default: error
   logs:
     homeassistant.components.camera: critical
+    homeassistant.helpers.service: critical
 http:
   base_url: !secret base_url
   api_password: !secret http-password
