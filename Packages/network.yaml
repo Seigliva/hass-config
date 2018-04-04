@@ -3,7 +3,7 @@
 #######################################################################################################################################
 homeassistant:
   customize:
-    device_tracker.hosthome:
+    switch.flash:
       friendly_name: "Flash"
       icon: mdi:windows
     device_tracker.c8f733eddd2f:
@@ -39,7 +39,7 @@ group:
   network:
     control: hidden
     entities:
-      - device_tracker.hosthome
+      - switch.flash
       - device_tracker.c8f733eddd2f
       - device_tracker.hostspace
       - sensor.speedtest_ping
@@ -71,4 +71,8 @@ sensor:
     host: 192.168.1.25
   - platform: uptime
     name: HA Uptime
-    
+switch:
+  - platform: wake_on_lan
+    name: Flash
+    mac_address: "2C-56-DC-DC-3E-E9"
+    host: 192.168.1.25
