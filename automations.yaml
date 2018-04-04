@@ -97,6 +97,7 @@
       data:
         topic: HA/cover
         payload: "-"
+    - service: system_log.clear
 - id: rf_stikkkontakt_styring
   alias: "RF stikkontakt styring"
   initial_state: "on"
