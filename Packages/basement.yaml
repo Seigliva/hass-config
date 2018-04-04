@@ -73,12 +73,6 @@ binary_sensor:
       basement_door:
         value_template: "{{ is_state('switch.basement_door_status', 'on') }}"
         device_class: door
-
-switch:
-  - platform: wake_on_lan
-    name: Flash
-    mac_address: "2C-56-DC-DC-3E-E9"
-    host: 192.168.1.25
   - platform: rfxtrx
     automatic_add: True
     devices:
