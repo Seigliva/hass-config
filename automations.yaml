@@ -27,7 +27,7 @@
   condition:
     conditions:
       - condition: template
-        value_template:'{{ not is_state("sensor.mqttcover","-") }}'
+        value_template: '{{ not is_state("sensor.mqttcover","-") }}'
   action:
     service: script.turn_on
     data_template:
