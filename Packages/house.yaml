@@ -19,8 +19,9 @@ group:
       - input_boolean.rf01
       - light.tradfri_bulb_e27_opal_1000lm
       - input_boolean.rf06
-      - script.restart
+      - switch.w03
       - input_boolean.privacy_mode
+
       
   view_home_light:
     control: hidden
