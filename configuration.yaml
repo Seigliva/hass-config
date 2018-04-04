@@ -30,8 +30,7 @@ logger:
   default: error
   logs:
     homeassistant.components.camera: critical
-    homeassistant.helpers.service: critical
-    homeassistant.components.wemo: critical
+    homeassistant.components.switch.wemo: critical
 http:
   base_url: !secret base_url
   api_password: !secret http-password
