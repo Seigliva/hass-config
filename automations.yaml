@@ -58,16 +58,6 @@
       data:
         title: "HelleBOT"
         message: "Tørketrommelen er ferdig"
-- id: garasjeport_status_fra_sensor
-  alias: "Garasjeport status fra sensor"
-  trigger:
-    platform: state
-    entity_id: sensor.garage_status
-  action:
-    service: mqtt.publish
-    data_template:
-      topic: "HA/garage/state"
-      payload_template: "{{trigger.to_state.state}}"
 - id: garasjeport_aktiveres
   alias: "Garasjeport aktiveres"
   trigger:
