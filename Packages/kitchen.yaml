@@ -1,20 +1,20 @@
 #######################################################################################################################################
 ##  Kjøkken:
 #######################################################################################################################################
-homeassistant:
-  customize:
-    automation.rf06:
-      hidden: true
-    switch.rf06:
-      hidden: true
+#homeassistant:
+#  customize:
+#    automation.rf06:
+#      hidden: true
+#    switch.rf06:
+#      hidden: true
 
-input_boolean:
-  rf06:
-    name: Kaffe
-    icon: mdi:coffee
-switch:
-  - platform: rfxtrx
-    automatic_add: True
-    devices:
-      0b11000d03f70bf20e010f70:
-        name: rf06
+#input_boolean:
+#  rf06:
+#    name: Kaffe
+#    icon: mdi:coffee
+#switch:
+#  - platform: rfxtrx
+#    automatic_add: True
+#    devices:
+#      0b11000d03f70bf20e010f70:
+#        name: rf06
