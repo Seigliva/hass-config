@@ -13,8 +13,8 @@ homeassistant:
       friendly_name: "Tørketrommel"
       icon: mdi:washing-machine
     switch.w03:
-      friendly_name: "Kupevarmer"
-      icon: mdi:washing-machine
+      friendly_name: "Kaffe"
+      icon: mdi:coffee
     automation.rf01:
       hidden: true
     switch.rf01:
