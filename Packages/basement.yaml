@@ -19,6 +19,10 @@ homeassistant:
       hidden: true
     switch.rf01:
       hidden: true
+    automation.rf06:
+      hidden: true
+    switch.rf06:
+      hidden: true
     sensor.netatmo_kjellersoverom_min_temp:
       hidden: true
     sensor.netatmo_kjellersoverom_max_temp:
@@ -43,6 +47,9 @@ group:
 input_boolean:
   rf01:
     name: Kjellerlys
+    icon: mdi:lightbulb
+  rf06:
+    name: Kjellerstue
     icon: mdi:lightbulb
 sensor:
   - platform: netatmo
@@ -80,6 +87,9 @@ switch:
     devices:
       0b110000013346760a000070:
         name: Basement door status
+      0b11000d03f70bf20e010f70:
+        name: rf06
+
 wemo:
   static:
    - 192.168.1.48
