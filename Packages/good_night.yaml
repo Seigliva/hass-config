@@ -6,7 +6,7 @@ script:
     alias: God natt
     sequence:
       - service: homeassistant.turn_off
-        entity_id: group.stue, group.all_lights, switch.lyslenke, switch.lyslenke2, input_boolean.rf01
+        entity_id: group.stue, group.all_lights, switch.lyslenke, switch.lyslenke2, input_boolean.rf01, switch.tv_power
 #      - delay: '00:00:05'
 #      - service: light.turn_off
 #        data:
