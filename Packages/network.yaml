@@ -76,3 +76,5 @@ switch:
     name: Flash
     mac_address: "2C-56-DC-DC-3E-E9"
     host: 192.168.1.25
+  - hadockermon:
+    host: 192.168.1.205
